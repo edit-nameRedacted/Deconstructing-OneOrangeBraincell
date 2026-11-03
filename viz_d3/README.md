@@ -80,3 +80,13 @@ Every control calls `store.set({...})`. `main.js` hears which keys changed and r
 | `SVG/cat_kit.svg` | Bodies, white zones, eye sets |
 | `SVG/white_stages.json` | % white after each white zone, per body |
 | `SVG/tails/tail_geometry.json` | AC's two tail drawings, as outlines and stations |
+
+## Deploy
+
+Live at https://oneorangebraincell.web.app (Firebase project `oneorangebraincell`). From the Orange_Braincells folder:
+
+    python viz_d3/build_media_index.py   # only if posts or media changed
+    python viz_d3/build_site.py          # copies what the page needs into site/
+    npx firebase-tools deploy --only hosting
+
+Photos and videos load from their original Reddit/imgur links, so they are not uploaded; only video posters and posts without a direct link are.

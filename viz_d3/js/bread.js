@@ -14,7 +14,7 @@
   Gives back: setupBread({ data, models }).
 */
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
-import { PATHS } from "./config.js";
+import { PATHS, mediaUrl } from "./config.js";
 
 const BREAD_ID = "wqtzrl";
 
@@ -67,7 +67,7 @@ function fill(popup, post, data, models) {
   // The picture, if the media index was loaded.
   const media = data.media?.[BREAD_ID];
   const img = popup.querySelector("#bread-img");
-  if (media?.type === "image") img.src = PATHS.mediaRoot + media.src;
+  if (media?.type === "image") img.src = mediaUrl(media.src);
   else popup.querySelector("#bread-figure").hidden = true;
 
   // The two internet-trained models (the robot button's), if their readings were loaded.

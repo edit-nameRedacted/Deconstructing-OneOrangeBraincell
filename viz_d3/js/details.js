@@ -25,7 +25,7 @@
   it is now D3 scales, an axis and a join of circles).
 */
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
-import { INVERT, UNIT, PATHS, formatValue, ordinal } from "./config.js";
+import { INVERT, UNIT, mediaUrl, formatValue, ordinal } from "./config.js";
 import { stableHash, isTailArrangement } from "./data.js";
 import { CATEGORY_TEXT, TAILVAR_TEXT } from "./text.js";
 
@@ -126,7 +126,7 @@ function examplePost(box, data, cat) {
   const post = chosenExample.get(cat.id);
   if (!post) return;                                   // no media index, or no media in this group
   const media = data.media[post.id];
-  const src = (path) => PATHS.mediaRoot + path;
+  const src = mediaUrl;
 
   const figure = box.append("figure").attr("class", "example");
   if (media.type === "video") {

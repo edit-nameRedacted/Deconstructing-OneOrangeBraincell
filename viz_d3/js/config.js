@@ -30,6 +30,10 @@ export const PATHS = {
   reasoning: "../oobc_archive/ai_opinion/reasoning_measures.csv",
 };
 
+// A media path from the index as a URL: most are the posts' original Reddit/imgur links, used as is;
+// the rest are local files under the Orange_Braincells folder.
+export const mediaUrl = (path) => (/^https?:\/\//.test(path) ? path : PATHS.mediaRoot + path);
+
 // ---- What the page shows when it first opens ----
 export const DEFAULTS = {
   arrange: "braincell",          // the category shown as the row of cats

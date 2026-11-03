@@ -20,7 +20,8 @@ desktop.ini
 ~$*
 *.tmp
 *.part
-*.png
+# Stray PNGs in the top folder only (Blender review images); keeps docs/ and SVG/ images
+/*.png
 
 # ---------------------------------------------------------------- unrelated / personal
 /discussion4_full.csv
@@ -59,3 +60,7 @@ desktop.ini
 
 # ---------------------------------------------------------------- Blender pounce animation (kept local for now)
 /blender/
+
+# ---------------------------------------------------------------- Firebase Hosting (built by viz_d3/build_site.py)
+/site/
+/.firebase/
