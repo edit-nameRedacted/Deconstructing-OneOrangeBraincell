@@ -157,7 +157,7 @@ The earlier single-file prototype is `viz/oobc_cat_viz.html` (rebuild with `pyth
 - [ ] A way to present the three rating sources (computer, internet, human)
 - [ ] Mix segments always sum to 100%, so they add the same length to every tail; consider a fixed-width band at the tip
 - [ ] Code the 6-month sets the same way, if the decline story comes back
-- [ ] Pursue question: did the subreddit drift away from its own joke? As it grew, did posts stop being about a cat that is very dumb (or, now and then, very smart)? If so, when was the joke at its peak?
+
 
 ---
 
