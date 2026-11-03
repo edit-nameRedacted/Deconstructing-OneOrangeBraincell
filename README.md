@@ -1,9 +1,10 @@
 # One Orange Braincell: typical cats and the tails of the distribution
 
-A small private research and visualization project about [r/OneOrangeBraincell](https://www.reddit.com/r/OneOrangeBraincell/), the subreddit built on the joke that all orange cats share a single brain cell. It asks two questions:
+A small private research and visualization project about [r/OneOrangeBraincell](https://www.reddit.com/r/OneOrangeBraincell/), the subreddit built on the joke that all orange cats share a single brain cell. It asks:
 
-1. **Did the subreddit drift away from its own joke?** As it grew, did posts stop being about a cat that is very dumb (or, now and then, very smart)? If so, when was the joke at its peak?
-2. **What does the typical "head empty, zero thoughts" cat look like?** If you code the peak-era posts by their braincell status, what does the typical cat in each group look like, and how do its posts behave?
+**What does the typical "head empty, zero thoughts" cat look like?** If you code the peak-era posts by their braincell status, what does the typical cat in each group look like, and how do its posts behave?
+
+**What drives perceptions of a cat not having a braincell?** What category memberships travel together? Is it really adherence to the missing braincell paradigmn that makes a post popular, or are we just suckers for any image of a cute cat?
 
 The result is an interactive D3 page of "typical cats". Each cat's body shows what its group of cats looks like, and its tail carries the group's post data. It's a literal take on *the tails of the distribution*.
 
@@ -156,6 +157,7 @@ The earlier single-file prototype is `viz/oobc_cat_viz.html` (rebuild with `pyth
 - [ ] A way to present the three rating sources (computer, internet, human)
 - [ ] Mix segments always sum to 100%, so they add the same length to every tail; consider a fixed-width band at the tip
 - [ ] Code the 6-month sets the same way, if the decline story comes back
+- [ ] Pursue question: did the subreddit drift away from its own joke? As it grew, did posts stop being about a cat that is very dumb (or, now and then, very smart)? If so, when was the joke at its peak?
 
 ---
 
