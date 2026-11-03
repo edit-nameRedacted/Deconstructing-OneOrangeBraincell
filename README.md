@@ -149,21 +149,6 @@ The earlier single-file prototype is `viz/oobc_cat_viz.html` (rebuild with `pyth
 | `docs/` | Current-state, D3 handoff and build-plan notes |
 | `docs/readme/` | This README's charts, the script that draws them, and their input data |
 
-### Kept local, not in the repo
-
-`.gitignore` keeps the repo to code, the cat kit, docs and the data files that something reads. These stay on the working machine only:
-
-- `oobc_media/`: the 558 MB cache of the posts' photos and videos. They belong to their posters. Without it the D3 page still draws every cat and tail, but shows no example photos. `oobc_cat_traits.py` rebuilds the cache from the archive.
-- The early exploratory pulls (`oobc_top_30days*`, `oobc_6mo_*`), the first coding sheet, review pages (`*_cats_review.html`), merged convenience copies (`*_with_meta.csv`, `*_enriched.csv`) and backups of the coding sheet.
-- `blender/`: the Blender source for the pounce animation, for now.
-
-### Rebuilding the README charts
-
-```
-python docs/readme/make_readme_charts.py docs/readme/oobc_monthly.csv oobc_archive docs/readme
-```
-
-`oobc_monthly.csv` is the month-by-month summary of the full history (posts, posters, framing shares, flair shares) as of 20 Oct 2026. The scripts that downloaded the history and scored it (`oobc_history.py`, `oobc_ecology.py`, `oobc_comments.py`) aren't in this folder. Rerunning them against Arctic Shift would refresh the monthly numbers.
 
 ## Open items
 
