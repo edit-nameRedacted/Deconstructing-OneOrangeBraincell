@@ -1,0 +1,454 @@
+<title>Cat Coat Painter</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: the cat on a stage at left (sticky when wide), grouped controls at right; one column when narrow. */
+:root {
+  --bg: #F4F3F1; --panel: #FFFFFF; --stage: #E9E6E1; --fg: #1E1C19; --muted: #67625B; --line: #DDD8D1; --accent: #C2601C; --accent-fg: #FFFFFF; --chip-on: #F6E3D3;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151413; --panel: #1F1D1B; --stage: #2A2825; --fg: #EDE9E3; --muted: #A49E95; --line: #36332F; --accent: #F08C3E; --accent-fg: #1A120B; --chip-on: #3A2A1E; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #151413; --panel: #1F1D1B; --stage: #2A2825; --fg: #EDE9E3; --muted: #A49E95; --line: #36332F; --accent: #F08C3E; --accent-fg: #1A120B; --chip-on: #3A2A1E; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 40px; }
+.wrap { max-width: 1080px; margin-inline: auto; display: grid; gap: 20px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: 28px; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.lead { margin: 4px 0 0; color: var(--muted); max-width: 66ch; }
+.grid { display: grid; gap: 20px; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+@media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.stage { background: var(--stage); border-radius: 14px; padding: 20px; display: grid; justify-items: center; gap: 10px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+@media (max-width: 760px) { .stage { position: static; } }
+.stage > svg { height: min(460px, 60vh); width: auto; max-width: 100%; }
+@media (max-width: 760px) { .stage > svg { width: 100%; height: auto; max-height: 70vh; } }
+.stage { --tail-label: var(--muted); --tail-label-on: var(--fg); --tail-font: var(--font-body); }
+.tail-card[hidden] { display: none; }
+.readout { font-family: var(--font-mono); font-size: 13px; color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; }
+.controls { display: grid; gap: 14px; min-width: 0; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; min-width: 0; }
+.panel h2 { font-family: var(--font-display); font-weight: 500; font-size: 16px; margin: 0; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+button, .chip { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button:hover, .chip:hover { border-color: var(--muted); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.chip { display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+.chip input { accent-color: var(--accent); margin: 0; }
+.chip:has(input:checked) { background: var(--chip-on); border-color: var(--accent); }
+.slider-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.big { font-family: var(--font-mono); font-size: 18px; font-variant-numeric: tabular-nums; min-width: 4.5ch; text-align: right; }
+.eye-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.eye-opt { border: 1px solid var(--line); border-radius: 8px; padding: 6px; display: grid; justify-items: center; gap: 2px; cursor: pointer; background: var(--bg); font-size: 12px; color: var(--muted); }
+.eye-opt svg { width: 100%; height: 34px; }
+.eye-opt:has(input:checked) { border-color: var(--accent); background: var(--chip-on); color: var(--fg); }
+.eye-opt input { position: absolute; opacity: 0; pointer-events: none; }
+.seg-rows { display: grid; gap: 6px; }
+.seg-row { display: grid; grid-template-columns: 9.5em minmax(0, 1fr) 3.5em; gap: 10px; align-items: center; font-size: 14px; }
+.seg-row output { font-family: var(--font-mono); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.tail-card { width: 100%; max-width: 420px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 8px; font-size: 14px; }
+.tail-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 16px; margin: 0; }
+.tail-card p { margin: 0; }
+.tail-card svg { width: 100%; height: auto; }
+.tail-card .curve { fill: none; stroke: var(--fg); stroke-width: 1.5; }
+.tail-card .tail-area { fill: var(--accent); opacity: 0.28; }
+.tail-card .body-area { fill: var(--muted); opacity: 0.12; }
+.tail-card .marker { stroke: var(--accent); stroke-width: 2; }
+.tail-card .axis { font-family: var(--font-mono); font-size: 10px; fill: var(--muted); }
+.tail-card .formula { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.body-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.body-grid .eye-opt svg { height: 72px; }
+.colours { display: grid; gap: 4px 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.col { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; padding: 3px 0; }
+.col input[type=color] { width: 34px; height: 28px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; cursor: pointer; }
+.col .hex { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.out { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.status { font-size: 13px; color: var(--muted); }
+textarea { width: 100%; min-height: 90px; font-family: var(--font-mono); font-size: 12px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 8px; box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { .stage .k-coat, .stage .k-stripes, .stage .w-zone { transition: fill 220ms ease-out; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Cat Coat Painter</h1>
+    <p class="lead">Your outline, eyes and colour areas as one cat, in four body types drawn to the same scale. Pick a body, a tail and a coat, set how much of it is orange, and the white markings spread the way they do on real cats: chin and chest first, then muzzle, blaze, belly, paws and legs.</p>
+  </header>
+  <div class="grid">
+    <div class="stage" id="cat-wrap">
+__KIT__
+      <div class="readout" id="readout">—</div>
+      <div class="tail-card" id="tail-card" hidden aria-live="polite"></div>
+    </div>
+    <div class="controls">
+      <section class="panel" aria-labelledby="h-body">
+        <h2 id="h-body">Body type</h2>
+        <div class="body-grid" id="bodies" role="radiogroup" aria-labelledby="h-body"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-tail">
+        <h2 id="h-tail">Tail</h2>
+        <div class="chips" id="tails" role="radiogroup" aria-labelledby="h-tail"></div>
+        <div class="slider-row">
+          <input type="range" id="tail-length" min="30" max="100" step="1" value="100" aria-label="Tail length">
+          <span class="big" id="tail-length-val">100%</span>
+        </div>
+        <div class="slider-row">
+          <input type="range" id="tail-size" min="100" max="200" step="5" value="150" aria-label="Tail size">
+          <span class="big" id="tail-size-val">1.5×</span>
+        </div>
+        <p class="note">Length trims your drawing; size scales it. Life-size is 1×; the default 1.5× leaves room to read the data on it.</p>
+        <label class="chip" style="justify-self:start"><input type="checkbox" id="tail-data"> Post-data segments</label>
+        <div id="tail-data-controls" class="seg-rows" hidden>
+          <p class="note">Example values: set where a group's typical post sits in each variable. Hover a segment to make it bristle; click it for the distribution.</p>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="h-presets">
+        <h2 id="h-presets">Coat presets</h2>
+        <div class="chips" id="presets"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-orange">
+        <h2 id="h-orange">How much of the cat is coloured, not white</h2>
+        <div class="slider-row">
+          <input type="range" id="orange" min="0" max="100" step="1" value="100" aria-describedby="orange-note">
+          <span class="big" id="orange-val">100%</span>
+        </div>
+        <p class="note" id="orange-note">—</p>
+        <div class="chips" id="zones" aria-label="White markings"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-eyes">
+        <h2 id="h-eyes">Eyes</h2>
+        <div class="eye-grid" id="eyes" role="radiogroup" aria-labelledby="h-eyes"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-colours">
+        <h2 id="h-colours">Colours</h2>
+        <div class="colours" id="colours"></div>
+        <label class="chip" style="justify-self:start"><input type="checkbox" id="stripes" checked> Tabby stripes</label>
+      </section>
+      <section class="panel" aria-labelledby="h-out">
+        <h2 id="h-out">Take it with you</h2>
+        <div class="out">
+          <button class="primary" id="copy-css">Copy settings</button>
+          <button id="copy-svg">Copy SVG of this cat</button>
+          <span class="status" id="status" role="status"></span>
+        </div>
+        <textarea id="fallback" aria-label="Copied text" readonly hidden></textarea>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+__TAILJS__
+</script>
+<script>
+(() => {
+  const STAGES_BY_BODY = __STAGES__;   // per body: white share (%) of the cat after each zone is added, in spreading order
+  let STAGES = STAGES_BY_BODY.typical;
+  const EYE_SETS = [
+    ['original', 'Your original'], ['almond', 'Almond'], ['round', 'Round'], ['big-shiny', 'Big and shiny'],
+    ['slit', 'Slit pupil'], ['half-lidded', 'Half-lidded'], ['squint', 'Squint']
+  ];
+  const COLOURS = [
+    ['coat', 'Coat'], ['stripes', 'Stripes'], ['white', 'White markings'], ['nose', 'Nose'], ['outline', 'Outline and pupils'], ['eye-white', 'Whites of the eyes']
+  ];
+  const DEFAULT = { coat: '#E8913A', stripes: '#B4561E', white: '#FBF8F3', nose: '#E7A49E', outline: '#1B1714', 'eye-white': '#FFFFFF' };
+  const PRESETS = {
+    'Orange tabby': { c: { coat: '#E8913A', stripes: '#B4561E' }, white: [], stripes: true },
+    'Solid orange': { c: { coat: '#E58835', stripes: '#C86A26' }, white: [], stripes: false },
+    'Cream': { c: { coat: '#F2C48D', stripes: '#E3A766' }, white: ['chin'], stripes: true },
+    'Orange and white': { c: { coat: '#E37F2B', stripes: '#B9581C' }, white: ['chin', 'locket', 'muzzle', 'bib', 'blaze', 'belly', 'paws'], stripes: true },
+    'Brown tabby and white': { c: { coat: '#8B7A66', stripes: '#2F2823', nose: '#E39A9A' }, white: ['chin', 'locket', 'muzzle', 'bib', 'blaze', 'paws'], stripes: true },
+    'Mostly white': { c: { coat: '#E8913A', stripes: '#B4561E' }, white: ['chin', 'locket', 'muzzle', 'bib', 'blaze', 'belly', 'paws', 'stockings', 'face', 'body'], stripes: true }
+  };
+
+  const wrap = document.getElementById('cat-wrap');
+  const cat = wrap.querySelector('#cat');
+  const zonePaths = [...cat.querySelectorAll('.body[data-body="typical"] .w-zone')];
+  const ZONES = zonePaths.map((p) => ({ key: [...p.classList].find((c) => c.startsWith('w-') && c !== 'w-zone').slice(2), label: p.dataset.label }));
+  let colours = { ...DEFAULT };
+  let white = new Set();
+
+  // zone chips
+  const zoneWrap = document.getElementById('zones');
+  const zoneBoxes = {};
+  for (const z of ZONES) {
+    const l = document.createElement('label'); l.className = 'chip';
+    const i = document.createElement('input'); i.type = 'checkbox'; i.id = 'z-' + z.key;
+    i.addEventListener('change', () => { i.checked ? white.add(z.key) : white.delete(z.key); syncSliderToZones(); render(); });
+    l.append(i, document.createTextNode(z.label)); zoneWrap.append(l); zoneBoxes[z.key] = i;
+  }
+
+  // eye options, each drawn from the kit's own eye set
+  const eyeWrap = document.getElementById('eyes');
+  for (const [key, label] of EYE_SETS) {
+    const g = cat.querySelector(`.eyes[data-set="${key}"]`);
+    const opt = document.createElement('label'); opt.className = 'eye-opt';
+    const r = document.createElement('input'); r.type = 'radio'; r.name = 'eyes'; r.value = key; r.id = 'e-' + key; if (key === 'original') r.checked = true;
+    r.addEventListener('change', () => { cat.dataset.eyes = key; });
+    const pv = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    pv.setAttribute('viewBox', '36 82 116 32'); pv.setAttribute('aria-hidden', 'true');
+    const clone = g.cloneNode(true); clone.style.display = 'inline'; clone.style.fill = 'var(--fg)';
+    clone.querySelectorAll('.k-eye-white').forEach((w) => { w.style.fill = 'var(--panel)'; });
+    pv.append(clone);
+    opt.append(r, pv, document.createTextNode(label)); eyeWrap.append(opt);
+  }
+
+  // body types, each previewed from the kit's own drawing
+  const bodyWrap = document.getElementById('bodies');
+  const vb = cat.getAttribute('viewBox');
+  for (const g of cat.querySelectorAll('.body')) {
+    const key = g.dataset.body;
+    const opt = document.createElement('label'); opt.className = 'eye-opt';
+    const r = document.createElement('input'); r.type = 'radio'; r.name = 'body'; r.value = key; r.id = 'b-' + key; if (key === 'typical') r.checked = true;
+    r.addEventListener('change', () => {
+      cat.dataset.body = key; STAGES = STAGES_BY_BODY[key] || STAGES_BY_BODY.typical;
+      drawTail();
+      stageOrange = [100, ...STAGES.map((w) => 100 - w), 0];
+      syncSliderToZones(); render();
+    });
+    const pv = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    pv.setAttribute('viewBox', vb); pv.setAttribute('aria-hidden', 'true');
+    const coat = g.querySelector('.k-coat').cloneNode(true); coat.style.fill = 'var(--chip-on)';
+    const line = g.querySelector('.outline').cloneNode(true); line.style.fill = 'var(--fg)';
+    line.querySelectorAll('.k-nose, .k-coat').forEach((n) => { n.style.fill = 'var(--chip-on)'; });
+    line.querySelectorAll('.k-outline').forEach((n) => { n.style.fill = 'var(--fg)'; });
+    pv.append(coat, line);
+    opt.append(r, pv, document.createTextNode(g.dataset.label || key)); bodyWrap.append(opt);
+  }
+
+  // tail: none, or one of your two drawings, attached to whichever body is showing
+  const VB_BODY = cat.getAttribute('viewBox').split(/\s+/).map(Number);
+  let tailType = 'long', tailLen = 1, tailSize = window.CatTail ? CatTail.SIZE : 1.5, tail = null, tailData = false, tailPick = null;
+  // post-data segments, base to tip. Cut points are from the 200 heyday posts (top 40 a month, Apr-Aug 2022):
+  // left tail = below the 10th percentile, right tail = above the 90th. Skewed counts are fitted in log space.
+  const SEGVARS = [
+    { key: 'score', label: 'Upvotes', pct: 0.91, dist: { kind: 'lognormal', mu: 8.172, sd: 0.701, p10: 1095, p50: 3866, p90: 7138, n: 200 } },
+    { key: 'comments', label: 'Comments', pct: 0.64, dist: { kind: 'lognormal', mu: 4.083, sd: 0.83, p10: 20, p50: 64, p90: 154, n: 200 } },
+    { key: 'rank', label: 'Rank in month', pct: 0.3, dist: { kind: 'uniform', lo: 1, hi: 40, p10: 4, p50: 20, p90: 36, n: 200 } },
+  ];
+  function drawTail() {
+    tail?.remove(); tail = null;
+    const vb = [...VB_BODY];
+    if (tailType !== 'none' && window.CatTail) {
+      const segments = tailData ? SEGVARS.map((v) => ({ key: v.key, label: v.label, pct: v.pct, value: valueAt(v) })) : null;
+      tail = CatTail.draw(cat, { type: tailType, length: tailLen, size: tailSize, rings: !tailData, segments, labels: true,
+                                 onSelect: (s) => { tailPick = s.key; showCard(); } });
+      if (tailPick && tailData) tail.select(tailPick);
+    }
+    cat.setAttribute('viewBox', vb.join(' '));
+    if (tail) {  // widen the view to take in the tail and its labels; the cat keeps its size
+      const g = cat.querySelector(`.body[data-body="${cat.dataset.body}"]`), bb = g.getBBox(), pad = 8;
+      const x0 = Math.min(vb[0], bb.x - pad), y0 = Math.min(vb[1], bb.y - pad);
+      const x1 = Math.max(vb[0] + vb[2], bb.x + bb.width + pad), y1 = Math.max(vb[1] + vb[3], bb.y + bb.height + pad);
+      cat.setAttribute('viewBox', [x0, y0, x1 - x0, y1 - y0].map((v) => Math.round(v)).join(' '));
+    }
+    if (!tailData || tailType === 'none') { tailPick = null; showCard(); } else if (tailPick) showCard();
+  }
+
+  // the value at a percentile of a variable's distribution
+  const erfinv = (x) => { const a = 0.147, l = Math.log(1 - x * x), t = 2 / (Math.PI * a) + l / 2; return Math.sign(x) * Math.sqrt(Math.sqrt(t * t - l / a) - t); };
+  const zAt = (p) => Math.SQRT2 * erfinv(2 * Math.min(0.999, Math.max(0.001, p)) - 1);
+  function valueAt(v) {
+    const d = v.dist;
+    if (d.kind === 'lognormal') return Math.round(Math.exp(d.mu + d.sd * zAt(v.pct)));
+    return Math.round(d.lo + (d.hi - d.lo) * v.pct);
+  }
+  const fmt = (n) => n.toLocaleString('en-US');
+  const ord = (n) => n + ((n % 100 >= 11 && n % 100 <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'));
+
+  // the card under the cat: where the group sits in the clicked variable, and what chasing that tail would do
+  function showCard() {
+    const card = document.getElementById('tail-card');
+    const v = SEGVARS.find((x) => x.key === tailPick);
+    if (!v) { card.hidden = true; card.innerHTML = ''; return; }
+    const d = v.dist, val = valueAt(v), pc = Math.round(v.pct * 100);
+    const where = v.pct < 0.1 ? 'in the left tail' : v.pct > 0.9 ? 'in the right tail' : 'in the body of the distribution';
+    const W = 380, H = 120, X0 = 14, X1 = W - 14, Y0 = 12, Y1 = H - 26;
+    let curve = '', tails = '', bodyA = '', ticks = '', formula = '';
+    if (d.kind === 'lognormal') {
+      // drawn in log space, where it is a normal curve; axis labels in the variable's own units
+      const lo = d.mu - 3.2 * d.sd, hi = d.mu + 3.2 * d.sd;
+      const xs = (x) => X0 + ((x - lo) / (hi - lo)) * (X1 - X0);
+      const pdf = (x) => Math.exp(-0.5 * ((x - d.mu) / d.sd) ** 2);
+      const ys = (y) => Y1 - y * (Y1 - Y0);
+      const pts = []; for (let i = 0; i <= 120; i++) { const x = lo + ((hi - lo) * i) / 120; pts.push([xs(x), ys(pdf(x))]); }
+      curve = 'M' + pts.map((p) => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L');
+      const area = (a, b) => { const p = pts.filter((q) => q[0] >= xs(a) && q[0] <= xs(b)); return p.length ? `M${p[0][0].toFixed(1)},${Y1} L` + p.map((q) => q[0].toFixed(1) + ',' + q[1].toFixed(1)).join(' L') + ` L${p[p.length - 1][0].toFixed(1)},${Y1} Z` : ''; };
+      const l10 = Math.log(d.p10), l90 = Math.log(d.p90);
+      tails = `<path class="tail-area" d="${area(lo, l10)}"/><path class="tail-area" d="${area(l90, hi)}"/>`;
+      bodyA = `<path class="body-area" d="${area(l10, l90)}"/>`;
+      ticks = [[l10, fmt(d.p10)], [Math.log(d.p50), fmt(d.p50)], [l90, fmt(d.p90)]].map(([x, t]) => `<line x1="${xs(x).toFixed(1)}" x2="${xs(x).toFixed(1)}" y1="${Y1}" y2="${Y1 + 4}" stroke="currentColor" opacity=".5"/><text class="axis" x="${xs(x).toFixed(1)}" y="${Y1 + 15}" text-anchor="middle">${t}</text>`).join('');
+      var mx = xs(Math.log(val));
+      formula = `log(${v.label.toLowerCase()}) ~ Normal(μ = ${d.mu.toFixed(2)}, σ = ${d.sd.toFixed(2)}) · z = ${zAt(v.pct).toFixed(2)}`;
+    } else {
+      const xs = (x) => X0 + ((x - d.lo) / (d.hi - d.lo)) * (X1 - X0);
+      const y = Y0 + (Y1 - Y0) * 0.45;
+      curve = `M${X0},${Y1} L${X0},${y} L${X1},${y} L${X1},${Y1}`;
+      tails = `<rect class="tail-area" x="${X0}" y="${y}" width="${xs(d.p10) - X0}" height="${Y1 - y}"/><rect class="tail-area" x="${xs(d.p90)}" y="${y}" width="${X1 - xs(d.p90)}" height="${Y1 - y}"/>`;
+      bodyA = `<rect class="body-area" x="${xs(d.p10)}" y="${y}" width="${xs(d.p90) - xs(d.p10)}" height="${Y1 - y}"/>`;
+      ticks = [[d.p10, d.p10], [d.p50, d.p50], [d.p90, d.p90]].map(([x, t]) => `<text class="axis" x="${xs(x).toFixed(1)}" y="${Y1 + 15}" text-anchor="middle">${t}</text>`).join('');
+      var mx = xs(val);
+      formula = `Rank is spread evenly over 1–${d.hi} within each month`;
+    }
+    card.innerHTML = `
+      <h3>${v.label}</h3>
+      <p>This group's typical post: ${fmt(val)} (${ord(pc)} percentile), ${where}.</p>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Distribution of ${v.label.toLowerCase()} with the 10% tails shaded and this group marked">
+        ${bodyA}${tails}<path class="curve" d="${curve}"/>
+        <line class="marker" x1="${mx.toFixed(1)}" x2="${mx.toFixed(1)}" y1="${Y0 - 4}" y2="${Y1}"/>
+      ${ticks}</svg>
+      <p class="formula">${formula}</p>
+      <p><strong>Chase this tail:</strong> regroups the ${d.n} heyday posts by ${v.label.toLowerCase()}: left tail under ${fmt(d.p10)} (bottom 10%), body ${fmt(d.p10)}–${fmt(d.p90)}, right tail over ${fmt(d.p90)} (top 10%). Each group then gets its own typical cat.</p>`;
+    card.hidden = false;
+  }
+
+  const segWrap = document.getElementById('tail-data-controls');
+  for (const v of SEGVARS) {
+    const row = document.createElement('div'); row.className = 'seg-row';
+    const lab = document.createElement('label'); lab.textContent = v.label; lab.htmlFor = 'seg-' + v.key;
+    const inp = document.createElement('input'); inp.type = 'range'; inp.min = 0; inp.max = 99; inp.value = Math.round(v.pct * 100); inp.id = 'seg-' + v.key;
+    const out = document.createElement('output'); out.textContent = ord(+inp.value);
+    inp.addEventListener('input', () => { v.pct = inp.value / 100; out.textContent = ord(+inp.value); drawTail(); });
+    row.append(lab, inp, out); segWrap.append(row);
+  }
+  document.getElementById('tail-data').addEventListener('change', (e) => {
+    tailData = e.target.checked; segWrap.hidden = !tailData;
+    if (tailData && tailType === 'none') { tailType = 'long'; document.querySelector('#tails input[value="long"]').checked = true; tailLenInput.disabled = false; }
+    drawTail();
+  });
+  const tailWrap = document.getElementById('tails');
+  for (const [key, label] of [['none', 'No tail'], ['short', 'Short'], ['long', 'Long']]) {
+    const l = document.createElement('label'); l.className = 'chip';
+    const r = document.createElement('input'); r.type = 'radio'; r.name = 'tail'; r.value = key; if (key === tailType) r.checked = true;
+    r.addEventListener('change', () => { tailType = key; tailLenInput.disabled = tailSizeInput.disabled = key === 'none'; drawTail(); });
+    l.append(r, document.createTextNode(label)); tailWrap.append(l);
+  }
+  const tailLenInput = document.getElementById('tail-length'), tailLenVal = document.getElementById('tail-length-val');
+  const tailSizeInput = document.getElementById('tail-size'), tailSizeVal = document.getElementById('tail-size-val');
+  tailSizeInput.value = Math.round(tailSize * 100); tailSizeVal.textContent = tailSize.toFixed(2).replace(/0$/, '') + '×';
+  tailSizeInput.addEventListener('input', () => { tailSize = tailSizeInput.value / 100; tailSizeVal.textContent = tailSize.toFixed(2).replace(/0$/, '') + '×'; drawTail(); });
+  tailLenInput.addEventListener('input', () => { tailLen = tailLenInput.value / 100; tailLenVal.textContent = tailLenInput.value + '%'; drawTail(); });
+  drawTail();
+
+  // colour pickers
+  const colWrap = document.getElementById('colours');
+  const pickers = {};
+  for (const [key, label] of COLOURS) {
+    const row = document.createElement('div'); row.className = 'col';
+    const inp = document.createElement('input'); inp.type = 'color'; inp.id = 'c-' + key;
+    const lab = document.createElement('label'); lab.htmlFor = inp.id; lab.textContent = label + ' ';
+    const hex = document.createElement('span'); hex.className = 'hex'; lab.append(hex);
+    inp.addEventListener('input', () => { colours[key] = inp.value.toUpperCase(); render(); });
+    row.append(inp, lab); colWrap.append(row); pickers[key] = { inp, hex };
+  }
+  const stripes = document.getElementById('stripes');
+  stripes.addEventListener('change', () => { cat.dataset.stripes = stripes.checked ? 'on' : 'off'; render(); });
+
+  // presets
+  const pw = document.getElementById('presets');
+  for (const [name, p] of Object.entries(PRESETS)) {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = name;
+    b.addEventListener('click', () => {
+      colours = { ...DEFAULT, ...p.c }; white = new Set(p.white);
+      stripes.checked = p.stripes; cat.dataset.stripes = p.stripes ? 'on' : 'off';
+      syncSliderToZones(); render();
+    });
+    pw.append(b);
+  }
+
+  // slider: snap to the nearest stage; 0% also turns the coat white
+  const slider = document.getElementById('orange'), val = document.getElementById('orange-val'), note = document.getElementById('orange-note');
+  let stageOrange = [100, ...STAGES.map((w) => 100 - w), 0];  // index = number of zones turned white; last = all white
+  slider.addEventListener('input', () => {
+    const want = Number(slider.value);
+    let best = 0;
+    stageOrange.forEach((o, i) => { if (Math.abs(o - want) < Math.abs(stageOrange[best] - want)) best = i; });
+    white = new Set(ZONES.slice(0, Math.min(best, ZONES.length)).map((z) => z.key));
+    allWhite = best === stageOrange.length - 1;
+    val.textContent = want + '%';
+    fromSlider = true;
+    render();
+  });
+  let allWhite = false;
+  let fromSlider = false;
+  function syncSliderToZones() {
+    allWhite = false;
+    const n = ZONES.findIndex((z) => !white.has(z.key));
+    const prefix = n === -1 ? ZONES.length : n;
+    const isPrefix = [...white].every((k) => ZONES.findIndex((z) => z.key === k) < prefix);
+    if (isPrefix) { slider.value = Math.round(100 - (prefix ? STAGES[prefix - 1] : 0)); val.textContent = slider.value + '%'; }
+  }
+
+  // exact share of white, measured from the drawing itself
+  let measureToken = 0;
+  async function measure() {
+    const token = ++measureToken;
+    try {
+      const clone = cat.cloneNode(true);
+      const CW = 160, CH = Math.round(160 * VB_BODY[3] / VB_BODY[2]);
+      clone.setAttribute('width', CW); clone.setAttribute('height', CH);
+      clone.setAttribute('style', '--cat-coat:#000;--cat-stripes:#000;--cat-white:#f00');
+      clone.querySelectorAll('.outline, .eye-sets, .cat-tail').forEach((n) => n.remove());
+      clone.setAttribute('viewBox', VB_BODY.join(' '));
+      clone.querySelectorAll('.body').forEach((n) => { if (n.dataset.body !== cat.dataset.body) n.remove(); });
+      if (allWhite) clone.setAttribute('style', '--cat-coat:#f00;--cat-stripes:#f00;--cat-white:#f00');
+      const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+      const img = new Image(); img.src = url; await img.decode();
+      const cv = document.createElement('canvas'); cv.width = CW; cv.height = CH;
+      const ctx = cv.getContext('2d'); ctx.drawImage(img, 0, 0);
+      const d = ctx.getImageData(0, 0, CW, CH).data;
+      let red = 0, dark = 0;
+      for (let i = 0; i < d.length; i += 4) {
+        if (d[i + 3] < 128) continue;
+        if (d[i] > 180 && d[i + 1] < 90) red++; else if (d[i] < 90 && d[i + 1] < 90) dark++;
+      }
+      if (token !== measureToken) return;
+      const w = 100 * red / Math.max(1, red + dark);
+      const ord = ZONES.filter((z) => white.has(z.key)).map((z) => z.label.toLowerCase());
+      document.getElementById('readout').textContent = `${(100 - w).toFixed(0)}% coloured, ${w.toFixed(0)}% white`;
+      if (!fromSlider) { slider.value = Math.round(100 - w); val.textContent = slider.value + '%'; }
+      fromSlider = false;
+      note.textContent = allWhite ? 'All white: no orange left.' : ord.length ? `White on: ${ord.join(', ')}.` : 'No white markings.';
+    } catch (e) {
+      document.getElementById('readout').textContent = '';
+    }
+  }
+
+  function render() {
+    const c = allWhite ? { ...colours, coat: colours.white, stripes: colours.white } : colours;
+    for (const [key] of COLOURS) {
+      wrap.style.setProperty('--cat-' + key, c[key]);
+      pickers[key].inp.value = colours[key].toLowerCase();
+      pickers[key].hex.textContent = colours[key];
+    }
+    cat.dataset.white = [...white].join(' ');
+    for (const z of ZONES) zoneBoxes[z.key].checked = white.has(z.key);
+    measure();
+  }
+
+  // copy
+  const status = document.getElementById('status'), fb = document.getElementById('fallback');
+  const settings = () => JSON.stringify({ body: cat.dataset.body, tail: tailType === 'none' ? null : { type: tailType, length: tailLen, size: tailSize }, colours, white: [...white], eyes: cat.dataset.eyes, stripes: cat.dataset.stripes === 'on', all_white: allWhite }, null, 2);
+  const svgText = () => {
+    const clone = cat.cloneNode(true);
+    const c = allWhite ? { ...colours, coat: colours.white, stripes: colours.white } : colours;
+    clone.setAttribute('style', COLOURS.map(([k]) => `--cat-${k}:${c[k]}`).join(';'));
+    // keep only the body on show, so the copied SVG is just this cat
+    clone.querySelectorAll('.body').forEach((n) => { if (n.dataset.body !== cat.dataset.body) n.remove(); });
+    clone.querySelectorAll('clipPath[id^="sil-"]').forEach((n) => { if (n.id !== 'sil-' + cat.dataset.body) n.remove(); });
+    return new XMLSerializer().serializeToString(clone);
+  };
+  async function copy(text, what) {
+    try { await navigator.clipboard.writeText(text); status.textContent = what + ' copied.'; fb.hidden = true; }
+    catch (e) { fb.hidden = false; fb.value = text; fb.focus(); fb.select(); status.textContent = 'Copy didn’t work here; the text is selected below.'; }
+  }
+  document.getElementById('copy-css').addEventListener('click', () => copy(settings(), 'Settings'));
+  document.getElementById('copy-svg').addEventListener('click', () => copy(svgText(), 'SVG'));
+
+  render();
+})();
+</script>

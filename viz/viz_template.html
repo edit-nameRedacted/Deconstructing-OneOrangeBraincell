@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typical Orange Cats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+:root {
+  --bg: #F4F3F1; --panel: #FFFFFF; --fg: #1E1C19; --muted: #6E6962; --line: #DDD8D1;
+  --accent: #C2601C; --accent-fg: #FFFFFF; --chip-on: #F6E3D3; --dot: #BDB6AC; --tailband: #E7E1D8;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --cat-coat: #E8913A; --cat-stripes: #B4561E; --cat-white: #FBF8F3; --cat-nose: #E7A49E; --cat-outline: #1B1714; --cat-eye-white: #FFFFFF;
+  --tail-label: var(--muted); --tail-label-on: var(--fg); --tail-font: var(--font-body);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151413; --panel: #1F1D1B; --fg: #EDE9E3; --muted: #A49E95; --line: #36332F;
+  --accent: #F08C3E; --accent-fg: #1A120B; --chip-on: #3A2A1E; --dot: #57524B; --tailband: #2C2926; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #151413; --panel: #1F1D1B; --fg: #EDE9E3; --muted: #A49E95; --line: #36332F;
+  --accent: #F08C3E; --accent-fg: #1A120B; --chip-on: #3A2A1E; --dot: #57524B; --tailband: #2C2926; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+body { padding: 28px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px)); }
+.wrap { max-width: 1240px; margin-inline: auto; display: grid; gap: 20px; }
+.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.dataset { margin: 0; font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+.title { position: relative; display: inline-block; }
+.title select { appearance: none; -webkit-appearance: none; border: 0; background: transparent; color: var(--fg); cursor: pointer;
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.01em; padding: 0 1.1em 0 0; margin: 0; }
+.title::after { content: ""; position: absolute; right: .25em; top: 50%; width: .42em; height: .42em; border: solid var(--muted); border-width: 0 2px 2px 0;
+  transform: translateY(-70%) rotate(45deg); pointer-events: none; font-size: clamp(26px, 4vw, 38px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.icon { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); display: grid; place-items: center; cursor: pointer; padding: 0; flex: none; }
+.icon svg { width: 20px; height: 20px; }
+.icon[aria-expanded="true"] { background: var(--chip-on); border-color: var(--accent); }
+.settings { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 12px; }
+.settings[hidden] { display: none; }
+.vargroups { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.vargroup { display: grid; gap: 4px; align-content: start; }
+.vargroup > span, .settings label.field { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.settings label.field { display: grid; gap: 4px; max-width: 320px; }
+.settings select { font: inherit; text-transform: none; letter-spacing: 0; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 13px; cursor: pointer; background: var(--bg); user-select: none; }
+.chip:has(input:checked) { background: var(--chip-on); border-color: var(--accent); }
+.chip input { accent-color: var(--accent); margin: 0; }
+.settings p { margin: 0; font-size: 13px; color: var(--muted); max-width: 90ch; }
+.row[hidden] { display: none; }
+.row { display: flex; gap: clamp(4px, 1.5vw, 18px); align-items: flex-end; justify-content: center; }
+.cat { flex: 1 1 0; min-width: 0; max-width: 250px; display: grid; gap: 4px; justify-items: center; background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; }
+.cat svg.cat-kit { width: 100%; height: auto; display: block; overflow: visible; }
+.cat .lab { font-size: clamp(11px, 1.3vw, 15px); font-weight: 500; text-align: center; line-height: 1.25; }
+.cat:hover .lab, .cat:focus-visible .lab { color: var(--accent); }
+/* zoomed tail */
+.zoom { display: grid; gap: 14px; }
+.zoom[hidden] { display: none; }
+.zoom-head { display: flex; align-items: center; gap: 12px; }
+.zoom-head h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; margin: 0; }
+.zoom-head .n { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.zoom-stage { display: grid; justify-items: center; }
+.zoom-stage svg.cat-kit { width: 100%; height: min(62vh, 640px); display: block; max-width: 100%; }
+.zoom-stage .body > :not(.cat-tail):not(.t-labels) { transition: opacity 500ms ease; }
+.zoom-stage .body.faded > :not(.cat-tail):not(.t-labels) { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .zoom-stage .body > * { transition: none; } }
+#measure { position: absolute; visibility: hidden; white-space: pre; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.01em; }
+.zoom-stage .cat-tail .t-label { font-size: var(--lab, 13px); }
+.zoom-stage svg.cat-kit { --cat-outline: var(--fg); }
+.zoom-stage .body.faded .cat-tail .t-coat { fill: transparent; }
+.info { display: grid; gap: 10px; }
+.info[hidden] { display: none; }
+.info h3 { font-family: var(--font-display); font-size: 19px; margin: 0; }
+.info p { margin: 0; max-width: 78ch; color: var(--muted); }
+.info p strong { color: var(--fg); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button.primary { font: inherit; font-weight: 600; border: 0; border-radius: 8px; padding: 8px 14px; background: var(--accent); color: var(--accent-fg); cursor: pointer; }
+.strip { width: 100%; max-width: 760px; height: auto; }
+.strip .axis { font: 11px var(--font-mono); fill: var(--muted); }
+.strip .dot { fill: var(--dot); } .strip .dot.in { fill: var(--accent); } .strip .band { fill: var(--tailband); } .strip .med { stroke: var(--fg); stroke-width: 2; }
+details { font-size: 14px; color: var(--muted); }
+details ol { margin: 6px 0 0; padding-left: 22px; columns: 2 320px; }
+details li { break-inside: avoid; } details li span { color: var(--fg); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+/* cat kit */
+__KITCSS__
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="dataset">r/OneOrangeBraincell</p>
+      <div class="title"><label class="sr" for="arrange">Category shown</label><select id="arrange"></select><span id="measure" aria-hidden="true"></span></div>
+    </div>
+    <button class="icon" id="gear" type="button" aria-expanded="false" aria-controls="settings" aria-label="Tail settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+    </button>
+  </header>
+
+  <section class="settings" id="settings" hidden aria-label="Tail settings">
+    <div class="vargroups" id="vars"></div>
+    <label class="field">Group's mix of <select id="mix"></select></label>
+    <p>Body and coat: median share of white fur, plus markings over-represented in the group (at least 1.3× overall and on 30% of its cats; 3 cats minimum). Big shiny eyes: highest average cuteness and dumbness in the view; other eyes are random. Tail items each have their own shade, white to brown, base to tip; a segment's length is the percentile of the group's median among all posts, or a share of the group. 182 top posts, Apr–Aug 2022, memorial posts excluded.</p>
+  </section>
+
+  <main>
+    <div class="row" id="row"></div>
+    <section class="zoom" id="zoom" hidden aria-live="polite">
+      <div class="zoom-head">
+        <button class="icon" id="back" type="button" aria-label="Back to all cats">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <h2 id="zoom-title"></h2><span class="n" id="zoom-n"></span>
+      </div>
+      <div class="zoom-stage" id="zoom-stage"></div>
+      <div class="info" id="info" hidden></div>
+    </section>
+  </main>
+</div>
+
+<template id="kit">__KIT__</template>
+<script>const DATA = __DATA__; const STAGES = __STAGES__;</script>
+<script>__TAILJS__</script>
+<script>
+(() => {
+  const TILT = 5;  // degrees clockwise: stands the drawn cat up a little straighter
+  const ZONES = ["chin", "locket", "muzzle", "bib", "blaze", "belly", "paws", "stockings", "face", "body"];
+  const EYES_OTHER = ["original", "almond", "round", "slit", "half-lidded", "squint"];
+  const SOURCES = [["post", "Reddit"], ["ac", "Hand ratings"], ["look", "How the cats look"]];
+  const INVERT = { rank: true };
+  const UNIT = { score: "", comments: "", score_rel: " per 1k subscribers", talk: "", crossposts: "", awards: "", rank: "", ac_dumb: " of 5", ac_cute: " of 5", look_white: "% white", look_kg: " kg" };
+  const DIGITS = { talk: 2, score_rel: 1, look_kg: 1, ac_dumb: 1, ac_cute: 1 };
+  const POSTS = DATA.posts, TV = DATA.tailvars, GR = DATA.groupings;
+  const ALLT = POSTS.filter((p) => p.traits.pct_white != null);
+  const KIT = document.getElementById("kit").content.firstElementChild;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const fmt = (k, v) => v == null ? "–" : (DIGITS[k] ? v.toFixed(DIGITS[k]) : Math.round(v).toLocaleString("en-US"));
+  const ord = (n) => n + ((n % 100 >= 11 && n % 100 <= 13) ? "th" : ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th"));
+  const median = (xs) => { const s = [...xs].sort((a, b) => a - b), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+  const mean = (xs) => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
+  const pctRank = (xs, v) => (xs.filter((x) => x < v).length + 0.5 * xs.filter((x) => x === v).length) / xs.length;
+  const hash = (s) => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; };
+  const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const allVals = Object.fromEntries(Object.keys(TV).map((k) => [k, POSTS.map((p) => p.vals[k]).filter((v) => v != null)]));
+
+  // ---- colours: white -> orange -> brown, interpolated in OKLab ----
+  const STOPS = ["#FFF7EE", "#F8D2A2", "#EDA35A", "#D9782C", "#A7531D", "#5E2C0E"];
+  const toLin = (c) => { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const fromLin = (c) => Math.round(255 * Math.min(1, Math.max(0, c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055)));
+  const hex2lab = (h) => { const [r, g, b] = [1, 3, 5].map((i) => toLin(parseInt(h.slice(i, i + 2), 16)));
+    const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b), m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b), s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+    return [0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s, 1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s]; };
+  const lab2hex = ([L, a, b]) => { const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
+    return "#" + [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s].map((c) => fromLin(c).toString(16).padStart(2, "0")).join(""); };
+  const LABS = STOPS.map(hex2lab);
+  const shade = (t) => { const x = t * (LABS.length - 1), i = Math.min(LABS.length - 2, Math.floor(x)), u = x - i; return lab2hex(LABS[i].map((v, j) => v * (1 - u) + LABS[i + 1][j] * u)); };
+  const palette = (n) => Array.from({ length: n }, (_, i) => shade(n === 1 ? 0.5 : i / (n - 1)));
+
+  // ---- the typical cat for a set of posts (same rule as build_viz_data.py) ----
+  const share = (ps, test) => ps.length ? ps.filter((p) => test(p.traits)).length / ps.length : 0;
+  function typicalCat(posts) {
+    const ps = posts.filter((p) => p.traits.pct_white != null);
+    if (!ps.length) return { body: "typical", zones: [], stripes: true, distinctive: [], extra: [], small: true };
+    const pw = median(ps.map((p) => p.traits.pct_white));
+    const stripes = share(ps, (t) => t.stripes) >= 0.5;
+    const dist = [], MIN = 3, cnt = (test) => ps.filter((p) => test(p.traits)).length;
+    for (const b of ["kitten", "slender", "chunky"]) {
+      const test = (t) => t.body === b, s = share(ps, test), s0 = share(ALLT, test);
+      if (s0 && cnt(test) >= MIN) dist.push({ kind: "body", trait: b, share: s, lift: s / s0 });
+    }
+    for (const z of ZONES) {
+      const test = (t) => t.zones.includes(z), s = share(ps, test), s0 = share(ALLT, test);
+      if (s0 && cnt(test) >= MIN) dist.push({ kind: "zone", trait: z, share: s, lift: s / s0 });
+    }
+    const body = (dist.filter((d) => d.kind === "body" && d.lift >= 1.5 && d.share >= 0.25).sort((a, b) => b.lift - a.lift)[0] || {}).trait || "typical";
+    const extra = dist.filter((d) => d.kind === "zone" && d.lift >= 1.3 && d.share >= 0.3).map((d) => d.trait);
+    const st = STAGES[body] || STAGES.typical;
+    let k = 0; st.forEach((w, i) => { if (Math.abs(w - pw) < Math.abs(st[k] - pw)) k = i; });
+    return { body, zones: [...new Set([...ZONES.slice(0, k), ...extra])], stripes, pw, extra, small: ps.length < 10, n: ps.length };
+  }
+
+  // ---- arrangements ----
+  function arrangement(key) {
+    if (key.startsWith("tail:")) {
+      const k = key.slice(5), d = TV[k].dist, u = UNIT[k];
+      const lab = { left: `Under ${fmt(k, d.p10)}${u}`, body: `${fmt(k, d.p10)}–${fmt(k, d.p90)}${u}`, right: `Over ${fmt(k, d.p90)}${u}` };
+      return { key, grouping: null, groups: ["left", "body", "right"].map((v) => ({ value: v, label: lab[v], posts: POSTS.filter((p) => p.tails[k] === v) })).filter((g) => g.posts.length) };
+    }
+    const lab = (v) => key === "dumb" ? `Dumbness ${v}` : key === "cute" ? `Cuteness ${v}` : v;
+    return { key, grouping: key, groups: GR[key].values.map((v) => ({ value: v, label: lab(v), posts: POSTS.filter((p) => p.groups[key] === v) })).filter((x) => x.posts.length) };
+  }
+
+  // ---- state and controls ----
+  const state = { arrange: "braincell", vars: new Set(["score", "comments"]), mix: "failure", zoom: null, sel: null };
+  const arrSel = $("arrange");
+  { const og1 = document.createElement("optgroup"); og1.label = "Hand codes";
+    for (const [k, g] of Object.entries(GR)) og1.append(new Option(g.label, k));
+    const og2 = document.createElement("optgroup"); og2.label = "Tails of…";
+    for (const [k, t] of Object.entries(TV)) og2.append(new Option(`Tails of ${t.label.toLowerCase()}`, "tail:" + k));
+    arrSel.append(og1, og2); }
+  const sizeTitle = () => { const m = $("measure"); m.textContent = arrSel.options[arrSel.selectedIndex]?.text || ""; arrSel.style.width = Math.ceil(m.getBoundingClientRect().width + m.getBoundingClientRect().height * 0.75) + "px"; };
+  document.fonts?.ready.then(sizeTitle);
+  arrSel.addEventListener("change", () => { state.arrange = arrSel.value; sizeTitle(); fixMix(); closeZoom(); render(); });
+  $("gear").addEventListener("click", (e) => { const s = $("settings"), open = s.hidden; s.hidden = !open; e.currentTarget.setAttribute("aria-expanded", open); });
+  const varWrap = $("vars");
+  for (const [src, srcLabel] of SOURCES) {
+    const box = document.createElement("div"); box.className = "vargroup";
+    const h = document.createElement("span"); h.textContent = srcLabel; const chips = document.createElement("div"); chips.className = "chips";
+    for (const [k, t] of Object.entries(TV)) if (t.source === src) {
+      const l = document.createElement("label"); l.className = "chip";
+      const i = document.createElement("input"); i.type = "checkbox"; i.checked = state.vars.has(k);
+      i.addEventListener("change", () => { i.checked ? state.vars.add(k) : state.vars.delete(k); refresh(); });
+      l.append(i, document.createTextNode(t.label)); chips.append(l);
+    }
+    box.append(h, chips); varWrap.append(box);
+  }
+  const mixSel = $("mix");
+  function fixMix() {
+    const cur = state.arrange.startsWith("tail:") ? null : state.arrange;
+    mixSel.innerHTML = ""; mixSel.append(new Option("nothing", ""));
+    for (const [k, g] of Object.entries(GR)) if (k !== cur) mixSel.append(new Option(g.label.toLowerCase(), k));
+    if (state.mix === cur) state.mix = Object.keys(GR).find((k) => k !== cur);
+    mixSel.value = state.mix || "";
+  }
+  mixSel.addEventListener("change", () => { state.mix = mixSel.value; refresh(); });
+  const refresh = () => { const z = state.zoom, sel = state.sel; $("row").hidden = false; render(); if (z != null) openZoom(z, sel, false); };  // the row must be visible to be measured
+
+  // ---- each cat: typical cat + tail segments ----
+  let VIEW = null;
+  function describe(arr) {
+    const kinds = [];
+    for (const k of Object.keys(TV)) if (state.vars.has(k)) kinds.push({ id: k, kind: "var", label: TV[k].label });
+    if (state.mix) for (const v of GR[state.mix].values) kinds.push({ id: "mix:" + v, kind: "mix", value: v, label: state.mix === "dumb" ? `Dumbness ${v}` : state.mix === "cute" ? `Cuteness ${v}` : v });
+    const cols = palette(kinds.length); kinds.forEach((k, i) => (k.fill = cols[i]));
+    const cats = arr.groups.map((g) => {
+      const cat = typicalCat(g.posts);
+      const segs = kinds.map((kd) => {
+        if (kd.kind === "var") {
+          const xs = g.posts.map((p) => p.vals[kd.id]).filter((v) => v != null), med = median(xs);
+          const pct = med == null ? 0 : pctRank(allVals[kd.id], med), w = INVERT[kd.id] ? 1 - pct : pct;
+          return { key: kd.id, label: kd.label, short: `${kd.label} ${fmt(kd.id, med)}${UNIT[kd.id]}`, fill: kd.fill, weight: w, med, pct,
+                   aria: `${kd.label}: group median ${fmt(kd.id, med)}${UNIT[kd.id]}, ${ord(Math.round(pct * 100))} percentile` };
+        }
+        const s = g.posts.filter((p) => p.groups[state.mix] === kd.value).length / g.posts.length;
+        return { key: kd.id, label: kd.label, short: `${kd.label} ${Math.round(s * 100)}%`, fill: kd.fill, weight: s, share: s, aria: `${kd.label}: ${Math.round(s * 100)}% of this group` };
+      });
+      return { g, cat, segs, total: segs.reduce((t, s) => t + s.weight, 0),
+               cute: mean(g.posts.map((p) => p.vals.ac_cute)), dumb: mean(g.posts.map((p) => p.vals.ac_dumb)) };
+    });
+    const topCute = cats.reduce((a, b) => (b.cute > a.cute ? b : a), cats[0]), topDumb = cats.reduce((a, b) => (b.dumb > a.dumb ? b : a), cats[0]);
+    for (const c of cats) c.eyes = (c === topCute || c === topDumb) ? "big-shiny" : EYES_OTHER[hash(arr.key + ":" + c.g.value) % EYES_OTHER.length];
+    return { arr, kinds, cats, maxT: Math.max(1e-9, ...cats.map((c) => c.total)) };
+  }
+
+  // ---- drawing ----
+  function catSvg(c) {
+    const svg = KIT.cloneNode(true);
+    svg.querySelectorAll(".body").forEach((b) => { if (b.dataset.body !== c.cat.body) b.remove(); });
+    Object.assign(svg.dataset, { body: c.cat.body, eyes: c.eyes, white: c.cat.zones.join(" "), stripes: c.cat.stripes ? "on" : "off" });
+    svg.setAttribute("aria-hidden", "true");
+    return svg;
+  }
+  function tilt(svg) {  // rotate the body (and the tail inside it) about the middle of its base
+    const b = svg.querySelector(".body"), bb = b.getBBox();
+    b.setAttribute("transform", `rotate(${TILT} ${(bb.x + bb.width / 2).toFixed(1)} ${(bb.y + bb.height).toFixed(1)})`);
+  }
+  function drawTail(svg, c, labels, onSelect) {
+    if (!VIEW.kinds.length) return null;
+    const H = CatTail.HIDDEN, len = Math.max(0.3, H + (1 - H) * (c.total / VIEW.maxT));
+    return CatTail.draw(svg, { type: "long", length: len, size: 1.6, rings: false, labels,
+      segments: c.segs.map((s) => ({ key: s.key, label: labels ? s.short : s.label, fill: s.fill, weight: s.weight, aria: s.aria })), onSelect });
+  }
+  // bounding box of some elements, in the svg's own units (works through transforms)
+  function boxOf(svg, els) {
+    const inv = svg.getScreenCTM().inverse(); let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const el of els) { if (!el) continue; const r = el.getBoundingClientRect(); if (!r.width && !r.height) continue;
+      for (const [x, y] of [[r.left, r.top], [r.right, r.top], [r.left, r.bottom], [r.right, r.bottom]]) {
+        const p = new DOMPoint(x, y).matrixTransform(inv); x0 = Math.min(x0, p.x); y0 = Math.min(y0, p.y); x1 = Math.max(x1, p.x); y1 = Math.max(y1, p.y); } }
+    return [x0, y0, x1 - x0, y1 - y0];
+  }
+
+  let ROW_VB = null;
+  function render() {
+    VIEW = describe(arrangement(state.arrange));
+    const row = $("row"); row.innerHTML = "";
+    const svgs = [];
+    VIEW.cats.forEach((c, i) => {
+      const btn = document.createElement("button"); btn.type = "button"; btn.className = "cat";
+      btn.setAttribute("aria-label", `${c.g.label}, ${c.g.posts.length} posts. Show its tail.`);
+      const svg = catSvg(c); btn.append(svg);
+      const lab = document.createElement("span"); lab.className = "lab"; lab.textContent = c.g.label; btn.append(lab);
+      row.append(btn);
+      tilt(svg);
+      drawTail(svg, c, false, (s) => openZoom(i, s.key, true));
+      btn.addEventListener("click", (e) => { if (!e.target.closest(".t-seg")) openZoom(i, null, true); });
+      svgs.push(svg);
+    });
+    // a shared viewBox so every cat is drawn at the same scale
+    svgs.forEach((s) => s.setAttribute("viewBox", KIT.getAttribute("viewBox")));
+    const boxes = svgs.map((s) => boxOf(s, [s.querySelector(".body")]));
+    const x0 = Math.min(...boxes.map((b) => b[0])), y0 = Math.min(...boxes.map((b) => b[1]));
+    const x1 = Math.max(...boxes.map((b) => b[0] + b[2])), y1 = Math.max(...boxes.map((b) => b[1] + b[3])), pad = 6;
+    ROW_VB = [x0 - pad, y0 - pad, x1 - x0 + 2 * pad, y1 - y0 + 2 * pad];
+    svgs.forEach((s) => s.setAttribute("viewBox", ROW_VB.map((v) => v.toFixed(1)).join(" ")));
+  }
+
+  // ---- zoom: just the tail ----
+  let anim = 0;
+  function openZoom(i, segKey, animate) {
+    const c = VIEW.cats[i]; if (!c) return;
+    state.zoom = i; state.sel = segKey;
+    $("row").hidden = true; $("zoom").hidden = false;
+    $("zoom-title").textContent = c.g.label; $("zoom-n").textContent = `${c.g.posts.length} posts`;
+    const stage = $("zoom-stage"); stage.innerHTML = "";
+    const svg = catSvg(c); svg.removeAttribute("aria-hidden"); svg.setAttribute("role", "group"); svg.setAttribute("aria-label", `Tail of ${c.g.label}`);
+    stage.append(svg); svg.setAttribute("viewBox", ROW_VB.join(" ")); tilt(svg);
+    const tail = drawTail(svg, c, true, (s) => { state.sel = s.key; showInfo(c); });
+    if (!tail) { showInfo(c); return; }
+    if (segKey) tail.select(segKey);
+    // frame just the tail (and its labels): size the svg to the tail's shape, keep labels ~14px once zoomed
+    const parts = () => [svg.querySelector(".cat-tail"), svg.querySelector(".t-labels")];
+    const H0 = svg.clientHeight, W0 = stage.clientWidth;
+    let end = null;
+    for (let pass = 0; pass < 3; pass++) {
+      const b = boxOf(svg, parts()), pad = Math.max(b[2], b[3]) * 0.05;
+      end = [b[0] - pad, b[1] - pad, b[2] + 2 * pad, b[3] + 2 * pad];
+      const w = Math.min(W0, H0 * end[2] / end[3]), scale = Math.min(w / end[2], H0 / end[3]);
+      svg.style.width = Math.round(w) + "px";
+      svg.style.setProperty("--lab", (14 / scale).toFixed(2) + "px");
+    }
+    svg.querySelector(".body").classList.add("faded");
+    const from = ROW_VB.slice(), t0 = performance.now(), D = animate && !reduced() ? 650 : 0, my = ++anim;
+    const ease = (t) => 1 - (1 - t) ** 3;
+    const step = (now) => { if (my !== anim) return;
+      const t = D ? Math.min(1, (now - t0) / D) : 1, e = ease(t);
+      svg.setAttribute("viewBox", from.map((v, j) => (v + (end[j] - v) * e).toFixed(2)).join(" "));
+      if (t < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+    showInfo(c);
+    $("back").focus({ preventScroll: true });
+  }
+  function closeZoom() { anim++; state.zoom = null; state.sel = null; $("zoom").hidden = true; $("row").hidden = false; $("info").hidden = true; }
+  $("back").addEventListener("click", () => { const i = state.zoom; closeZoom(); const b = $("row").children[i]; b && b.focus(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.zoom != null) $("back").click(); });
+
+  function strip(k, groupPosts) {
+    const d = TV[k].dist, W = 720, H = 96, X0 = 16, X1 = W - 16, Y0 = 10, Y1 = H - 26;
+    const logS = d.kind === "lognormal", tr = (v) => (logS ? Math.log(v) : v);
+    const lo = tr(d.min), hi = tr(d.max) === lo ? lo + 1 : tr(d.max);
+    const xs = (v) => X0 + ((tr(v) - lo) / (hi - lo)) * (X1 - X0);
+    const ids = new Set(groupPosts.map((p) => p.id));
+    let dots = "";
+    for (const p of POSTS) { const v = p.vals[k]; if (v == null) continue;
+      const y = Y0 + 6 + (hash(p.id) % 1000) / 1000 * (Y1 - Y0 - 12);
+      dots += `<circle class="dot${ids.has(p.id) ? " in" : ""}" cx="${xs(v).toFixed(1)}" cy="${y.toFixed(1)}" r="${ids.has(p.id) ? 3.6 : 2.8}"/>`; }
+    const med = median(groupPosts.map((p) => p.vals[k]).filter((v) => v != null));
+    const bands = `<rect class="band" x="${X0}" y="${Y0}" width="${Math.max(0, xs(d.p10) - X0).toFixed(1)}" height="${Y1 - Y0}"/><rect class="band" x="${xs(d.p90).toFixed(1)}" y="${Y0}" width="${Math.max(0, X1 - xs(d.p90)).toFixed(1)}" height="${Y1 - Y0}"/>`;
+    const ticks = [[d.min, ""], [d.p10, "10th"], [d.p50, "median"], [d.p90, "90th"], [d.max, ""]].map(([v, t]) =>
+      `<text class="axis" x="${xs(v).toFixed(1)}" y="${Y1 + 13}" text-anchor="middle">${fmt(k, v)}</text>${t ? `<text class="axis" x="${xs(v).toFixed(1)}" y="${Y1 + 24}" text-anchor="middle">${t}</text>` : ""}`).join("");
+    return `<svg class="strip" viewBox="0 0 ${W} ${H + 4}" role="img" aria-label="All posts' ${esc(TV[k].label.toLowerCase())}, this group highlighted, outer 10% on each side shaded">${bands}${dots}${med != null ? `<line class="med" x1="${xs(med).toFixed(1)}" x2="${xs(med).toFixed(1)}" y1="${Y0 - 4}" y2="${Y1 + 2}"/>` : ""}${ticks}</svg>`;
+  }
+  function showInfo(c) {
+    const box = $("info"), s = state.sel && c.segs.find((x) => x.key === state.sel);
+    if (!s) { box.hidden = true; box.innerHTML = ""; return; }
+    const list = `<details><summary>The ${c.g.posts.length} posts</summary><ol>${c.g.posts.map((p) => `<li><span>${esc(p.title)}</span> · ${p.month}, #${p.rank}</li>`).join("")}</ol></details>`;
+    let html;
+    if (!s.key.startsWith("mix:")) {
+      const k = s.key, d = TV[k].dist, where = s.pct < 0.1 ? "left tail" : s.pct > 0.9 ? "right tail" : "body";
+      html = `<h3>${esc(TV[k].label)}</h3>
+        <p>Median <strong>${fmt(k, s.med)}${UNIT[k]}</strong>, ${ord(Math.round(s.pct * 100))} percentile of all ${d.n} posts (${where}).${INVERT[k] ? " Lower rank is higher on the month's list; the segment is longer the nearer the top." : ""}</p>
+        ${strip(k, c.g.posts)}
+        <div class="btnrow"><button type="button" class="primary" id="chase">Chase this tail</button></div>${list}`;
+    } else {
+      const v = s.key.slice(4), all = POSTS.filter((p) => p.groups[state.mix] === v).length / POSTS.length;
+      html = `<h3>${esc(GR[state.mix].label)}: ${esc(s.label)}</h3>
+        <p><strong>${Math.round(s.share * 100)}%</strong> of this group, ${Math.round(all * 100)}% of all posts.</p>
+        <div class="btnrow"><button type="button" class="primary" id="chase">Chase this tail</button></div>${list}`;
+    }
+    box.innerHTML = html; box.hidden = false;
+    $("chase").addEventListener("click", () => {
+      state.arrange = s.key.startsWith("mix:") ? state.mix : "tail:" + s.key; arrSel.value = state.arrange; sizeTitle(); fixMix(); closeZoom(); render();
+    });
+  }
+
+  fixMix(); arrSel.value = state.arrange; sizeTitle(); render();
+  window.__viz = { describe, arrangement, typicalCat, state, openZoom };
+})();
+</script>
+</body>
+</html>

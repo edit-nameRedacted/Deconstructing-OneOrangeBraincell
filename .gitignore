@@ -1,0 +1,60 @@
+# .gitignore for the r/OneOrangeBraincell project
+#
+# Rule of thumb: code, the cat kit, docs, and only the data files that a script or the
+# visualization actually reads. Everything else (scratch outputs, backups, review pages,
+# early exploratory pulls, local tooling) stays on this machine.
+
+# ---------------------------------------------------------------- local tooling and system files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.remember/
+.claude/
+.vscode/
+.idea/
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+*.tmp
+*.part
+
+# ---------------------------------------------------------------- unrelated / personal
+/discussion4_full.csv
+/_to_delete/
+/2x/
+
+# ---------------------------------------------------------------- media cache (558 MB of Reddit users' photos and videos)
+# The D3 page's "example post" pictures read from here; with it excluded, a fresh clone shows the
+# cats and tails but no example photos. The media also belongs to the original posters.
+# To publish it anyway, delete the next line (individual videos run up to 36 MB).
+/oobc_media/
+
+# ---------------------------------------------------------------- superseded data and process outputs (root)
+# Early exploratory pulls (last 30 days, last 6 months), not used by anything now
+/oobc_top_30days*
+/oobc_6mo_*
+# Old coding sheet from the first coding scheme
+/Orange Braincell Data - Sheet2.csv
+# Convenience merges and review pages (rebuild with oobc_archive/join_meta.py, build_post_meta.py, oobc_cat_traits.py)
+*_with_meta.csv
+/oobc_heyday_2022-04_08_top40_enriched.csv
+*_cats_review.html
+
+# ---------------------------------------------------------------- oobc_archive process files
+/oobc_archive/backups/
+/oobc_archive/final_codes/codes_transcribed.txt
+/oobc_archive/ai_opinion/tokenprobs/probe_test.py
+/oobc_archive/bread_rerun/wqtzrl_cats_raw.jsonl
+/oobc_archive/bread_rerun/wqtzrl_original_thinking.txt
+
+# ---------------------------------------------------------------- cat kit: exported PNGs (the SVGs are the source)
+/SVG/2x/
+
+# ---------------------------------------------------------------- prototype: earlier card layout
+/viz/viz_template_v1.html
+
+# ---------------------------------------------------------------- Blender pounce animation (kept local for now)
+/blender/

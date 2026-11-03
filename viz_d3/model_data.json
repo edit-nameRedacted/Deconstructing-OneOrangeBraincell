@@ -1,0 +1,4945 @@
+{
+ "qwen": {
+  "model": "qwen3.5:9b",
+  "families": [
+   "cute",
+   "funny",
+   "calm",
+   "body",
+   "mind"
+  ],
+  "openings": [
+   "This cat is so",
+   "What a"
+  ],
+  "posts": {
+   "u9y0e9": {
+    "cute": 0.4695,
+    "funny": 0.412,
+    "calm": 0.011,
+    "body": 0.0165,
+    "mind": 0.002,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "u196np": {
+    "cute": 0.4145,
+    "funny": 0.0995,
+    "calm": 0.021,
+    "body": 0.293,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "fluffy",
+      "cute",
+      "big"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "u4x707": {
+    "cute": 0.2235,
+    "funny": 0.6135,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0595,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "determined"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "cute"
+     ]
+    }
+   },
+   "u8nf6x": {
+    "cute": 0.0895,
+    "funny": 0.643,
+    "calm": 0.0705,
+    "body": 0.0,
+    "mind": 0.057,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "expressive",
+      "cute"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "h"
+     ]
+    }
+   },
+   "ub1710": {
+    "cute": 0.387,
+    "funny": 0.2765,
+    "calm": 0.2775,
+    "body": 0.006,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "comfortable",
+      "relaxed"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "cozy"
+     ]
+    }
+   },
+   "ubnfe6": {
+    "cute": 0.758,
+    "funny": 0.128,
+    "calm": 0.0095,
+    "body": 0.016,
+    "mind": 0.0105,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "funny"
+     ]
+    }
+   },
+   "ufar1s": {
+    "cute": 0.553,
+    "funny": 0.0105,
+    "calm": 0.0145,
+    "body": 0.001,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "classic",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "ufmnwt": {
+    "cute": 0.785,
+    "funny": 0.021,
+    "calm": 0.0835,
+    "body": 0.0015,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "delightful"
+     ]
+    }
+   },
+   "uaiqan": {
+    "cute": 0.706,
+    "funny": 0.0675,
+    "calm": 0.0,
+    "body": 0.0115,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "colorful"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "fun"
+     ]
+    }
+   },
+   "ud4szr": {
+    "cute": 0.7405,
+    "funny": 0.147,
+    "calm": 0.001,
+    "body": 0.012,
+    "mind": 0.0045,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "sweet"
+     ]
+    }
+   },
+   "uc7bo9": {
+    "cute": 0.1795,
+    "funny": 0.6755,
+    "calm": 0.002,
+    "body": 0.0,
+    "mind": 0.0285,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "clumsy"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "cute"
+     ]
+    }
+   },
+   "u4qc8d": {
+    "cute": 0.8805,
+    "funny": 0.0325,
+    "calm": 0.004,
+    "body": 0.0025,
+    "mind": 0.0085,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "sweet"
+     ]
+    }
+   },
+   "udtuz7": {
+    "cute": 0.2595,
+    "funny": 0.5,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.1785,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "focused"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "ue93p5": {
+    "cute": 0.342,
+    "funny": 0.376,
+    "calm": 0.0105,
+    "body": 0.0,
+    "mind": 0.0435,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "gr"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "udw7ut": {
+    "cute": 0.8145,
+    "funny": 0.0155,
+    "calm": 0.0555,
+    "body": 0.0025,
+    "mind": 0.017,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "cut"
+     ]
+    }
+   },
+   "u5ri53": {
+    "cute": 0.524,
+    "funny": 0.162,
+    "calm": 0.008,
+    "body": 0.023,
+    "mind": 0.108,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "playful",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "fun"
+     ]
+    }
+   },
+   "u5uomf": {
+    "cute": 0.3345,
+    "funny": 0.4455,
+    "calm": 0.0085,
+    "body": 0.0,
+    "mind": 0.012,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "cute"
+     ]
+    }
+   },
+   "uc41v7": {
+    "cute": 0.8165,
+    "funny": 0.01,
+    "calm": 0.1245,
+    "body": 0.0025,
+    "mind": 0.005,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "cozy",
+      "lovely"
+     ]
+    }
+   },
+   "uco2mx": {
+    "cute": 0.933,
+    "funny": 0.0115,
+    "calm": 0.0,
+    "body": 0.003,
+    "mind": 0.0035,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "sweet",
+      "cut"
+     ]
+    }
+   },
+   "udlakh": {
+    "cute": 0.61,
+    "funny": 0.0435,
+    "calm": 0.0395,
+    "body": 0.1415,
+    "mind": 0.0155,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "gr"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "ubtzd7": {
+    "cute": 0.781,
+    "funny": 0.025,
+    "calm": 0.008,
+    "body": 0.0545,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "uckzhb": {
+    "cute": 0.7755,
+    "funny": 0.0045,
+    "calm": 0.1015,
+    "body": 0.053,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "heart",
+      "cute",
+      "cozy"
+     ]
+    }
+   },
+   "uexnzh": {
+    "cute": 0.2055,
+    "funny": 0.3835,
+    "calm": 0.23,
+    "body": 0.0,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "funny",
+      "cute"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "u0mttp": {
+    "cute": 0.878,
+    "funny": 0.0235,
+    "calm": 0.021,
+    "body": 0.017,
+    "mind": 0.0065,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "delightful"
+     ]
+    }
+   },
+   "ubl3ik": {
+    "cute": 0.465,
+    "funny": 0.0125,
+    "calm": 0.429,
+    "body": 0.005,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "comfortable"
+     ],
+     "What a": [
+      "cozy",
+      "lovely",
+      "cute"
+     ]
+    }
+   },
+   "u5jk13": {
+    "cute": 0.8905,
+    "funny": 0.007,
+    "calm": 0.007,
+    "body": 0.006,
+    "mind": 0.008,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "ue88g6": {
+    "cute": 0.3905,
+    "funny": 0.2725,
+    "calm": 0.0785,
+    "body": 0.094,
+    "mind": 0.004,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "classic"
+     ]
+    }
+   },
+   "u4zodi": {
+    "cute": 0.2885,
+    "funny": 0.4375,
+    "calm": 0.001,
+    "body": 0.0,
+    "mind": 0.1,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "expressive"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "ubas6r": {
+    "cute": 0.447,
+    "funny": 0.2665,
+    "calm": 0.2005,
+    "body": 0.0,
+    "mind": 0.0045,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "uej64j": {
+    "cute": 0.28,
+    "funny": 0.087,
+    "calm": 0.4365,
+    "body": 0.0025,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "comfortable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "ufct8j": {
+    "cute": 0.8065,
+    "funny": 0.1,
+    "calm": 0.0115,
+    "body": 0.0,
+    "mind": 0.011,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "funny"
+     ]
+    }
+   },
+   "u71kxc": {
+    "cute": 0.298,
+    "funny": 0.2695,
+    "calm": 0.2585,
+    "body": 0.0,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "relaxed",
+      "cute"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "u6oxya": {
+    "cute": 0.865,
+    "funny": 0.015,
+    "calm": 0.006,
+    "body": 0.0025,
+    "mind": 0.0135,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "expressive"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "u3vm8m": {
+    "cute": 0.868,
+    "funny": 0.0185,
+    "calm": 0.0,
+    "body": 0.001,
+    "mind": 0.02,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "u9eeg3": {
+    "cute": 0.3185,
+    "funny": 0.2945,
+    "calm": 0.1555,
+    "body": 0.0045,
+    "mind": 0.0095,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "funny"
+     ],
+     "What a": [
+      "delightful",
+      "funny",
+      "cute"
+     ]
+    }
+   },
+   "u9ja6n": {
+    "cute": 0.8095,
+    "funny": 0.0525,
+    "calm": 0.0775,
+    "body": 0.001,
+    "mind": 0.0025,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "cozy",
+      "cut"
+     ]
+    }
+   },
+   "u4zg3x": {
+    "cute": 0.175,
+    "funny": 0.544,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.1975,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "surprised"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "classic"
+     ]
+    }
+   },
+   "uqs343": {
+    "cute": 0.479,
+    "funny": 0.049,
+    "calm": 0.147,
+    "body": 0.0,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "peaceful"
+     ],
+     "What a": [
+      "delightful",
+      "beautiful",
+      "wonderful"
+     ]
+    }
+   },
+   "uuzhlb": {
+    "cute": 0.1895,
+    "funny": 0.6575,
+    "calm": 0.0035,
+    "body": 0.0,
+    "mind": 0.0585,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "hilarious",
+      "funny",
+      "dramatic"
+     ]
+    }
+   },
+   "v0y5vj": {
+    "cute": 0.375,
+    "funny": 0.531,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0215,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "uzib2o": {
+    "cute": 0.7885,
+    "funny": 0.0535,
+    "calm": 0.049,
+    "body": 0.0,
+    "mind": 0.013,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "charming"
+     ]
+    }
+   },
+   "uhtf24": {
+    "cute": 0.691,
+    "funny": 0.089,
+    "calm": 0.0225,
+    "body": 0.0,
+    "mind": 0.031,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "funny"
+     ]
+    }
+   },
+   "uvlxzg": {
+    "cute": 0.643,
+    "funny": 0.224,
+    "calm": 0.0005,
+    "body": 0.0015,
+    "mind": 0.0415,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "cut"
+     ]
+    }
+   },
+   "uketbt": {
+    "cute": 0.2565,
+    "funny": 0.272,
+    "calm": 0.0,
+    "body": 0.025,
+    "mind": 0.0665,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "high",
+      "funny"
+     ],
+     "What a": [
+      "fun",
+      "delightful",
+      "wonderful"
+     ]
+    }
+   },
+   "v1ev0p": {
+    "cute": 0.324,
+    "funny": 0.459,
+    "calm": 0.01,
+    "body": 0.0,
+    "mind": 0.0395,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "silly"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "cute"
+     ]
+    }
+   },
+   "uyr31n": {
+    "cute": 0.65,
+    "funny": 0.235,
+    "calm": 0.001,
+    "body": 0.0,
+    "mind": 0.0135,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "uj4bzg": {
+    "cute": 0.6605,
+    "funny": 0.085,
+    "calm": 0.0075,
+    "body": 0.0095,
+    "mind": 0.024,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cool",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "charming"
+     ]
+    }
+   },
+   "ulqb2b": {
+    "cute": 0.924,
+    "funny": 0.002,
+    "calm": 0.001,
+    "body": 0.016,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "darling"
+     ]
+    }
+   },
+   "uy5w0p": {
+    "cute": 0.8285,
+    "funny": 0.0035,
+    "calm": 0.0025,
+    "body": 0.0855,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "delightful"
+     ]
+    }
+   },
+   "up1nsh": {
+    "cute": 0.5975,
+    "funny": 0.093,
+    "calm": 0.0695,
+    "body": 0.004,
+    "mind": 0.014,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "delight"
+     ]
+    }
+   },
+   "uxcgve": {
+    "cute": 0.1945,
+    "funny": 0.531,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.128,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "expressive"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "delightful"
+     ]
+    }
+   },
+   "uwo9cj": {
+    "cute": 0.5835,
+    "funny": 0.241,
+    "calm": 0.006,
+    "body": 0.0,
+    "mind": 0.0615,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "utgkd6": {
+    "cute": 0.662,
+    "funny": 0.0035,
+    "calm": 0.1165,
+    "body": 0.073,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "adorable"
+     ],
+     "What a": [
+      "heart",
+      "delightful",
+      "cozy"
+     ]
+    }
+   },
+   "umdo3u": {
+    "cute": 0.904,
+    "funny": 0.0255,
+    "calm": 0.0,
+    "body": 0.002,
+    "mind": 0.008,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "v0jk2d": {
+    "cute": 0.708,
+    "funny": 0.0035,
+    "calm": 0.122,
+    "body": 0.097,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "relaxed"
+     ],
+     "What a": [
+      "lovely",
+      "beautiful",
+      "cute"
+     ]
+    }
+   },
+   "utbap2": {
+    "cute": 0.6405,
+    "funny": 0.012,
+    "calm": 0.133,
+    "body": 0.0,
+    "mind": 0.015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "gr"
+     ],
+     "What a": [
+      "lovely",
+      "cozy",
+      "cute"
+     ]
+    }
+   },
+   "uwgjr2": {
+    "cute": 0.7925,
+    "funny": 0.0385,
+    "calm": 0.0515,
+    "body": 0.006,
+    "mind": 0.0085,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "charming"
+     ]
+    }
+   },
+   "v232cr": {
+    "cute": 0.6255,
+    "funny": 0.1295,
+    "calm": 0.05,
+    "body": 0.003,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "umtgzd": {
+    "cute": 0.9275,
+    "funny": 0.002,
+    "calm": 0.0,
+    "body": 0.034,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "sweet",
+      "adorable"
+     ],
+     "What a": [
+      "heart",
+      "sweet",
+      "lovely"
+     ]
+    }
+   },
+   "uyj7nj": {
+    "cute": 0.521,
+    "funny": 0.363,
+    "calm": 0.0,
+    "body": 0.0025,
+    "mind": 0.0195,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "uul4ti": {
+    "cute": 0.6515,
+    "funny": 0.032,
+    "calm": 0.0585,
+    "body": 0.005,
+    "mind": 0.002,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "delightful",
+      "cute",
+      "delight"
+     ]
+    }
+   },
+   "uvzkkx": {
+    "cute": 0.435,
+    "funny": 0.417,
+    "calm": 0.005,
+    "body": 0.0035,
+    "mind": 0.0125,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "weird"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "uyaxr5": {
+    "cute": 0.496,
+    "funny": 0.0,
+    "calm": 0.1205,
+    "body": 0.282,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "fluffy",
+      "cute",
+      "big"
+     ],
+     "What a": [
+      "lovely",
+      "cozy",
+      "delightful"
+     ]
+    }
+   },
+   "uv5uwl": {
+    "cute": 0.411,
+    "funny": 0.04,
+    "calm": 0.4705,
+    "body": 0.0,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "comfortable"
+     ],
+     "What a": [
+      "cozy",
+      "cute",
+      "lovely"
+     ]
+    }
+   },
+   "uu64rh": {
+    "cute": 0.579,
+    "funny": 0.1145,
+    "calm": 0.0015,
+    "body": 0.0065,
+    "mind": 0.0925,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "sad"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "very"
+     ]
+    }
+   },
+   "uoccbm": {
+    "cute": 0.8015,
+    "funny": 0.0215,
+    "calm": 0.1075,
+    "body": 0.004,
+    "mind": 0.0035,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "uw7y1p": {
+    "cute": 0.5205,
+    "funny": 0.0365,
+    "calm": 0.331,
+    "body": 0.0,
+    "mind": 0.0035,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "funny"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "beautiful"
+     ]
+    }
+   },
+   "upl1sg": {
+    "cute": 0.887,
+    "funny": 0.0025,
+    "calm": 0.013,
+    "body": 0.0085,
+    "mind": 0.003,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "uy4r8x": {
+    "cute": 0.904,
+    "funny": 0.0025,
+    "calm": 0.002,
+    "body": 0.005,
+    "mind": 0.0065,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "beautiful"
+     ],
+     "What a": [
+      "lovely",
+      "charming",
+      "cute"
+     ]
+    }
+   },
+   "uzrslg": {
+    "cute": 0.56,
+    "funny": 0.1215,
+    "calm": 0.135,
+    "body": 0.003,
+    "mind": 0.015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "funny"
+     ]
+    }
+   },
+   "uyefj2": {
+    "cute": 0.7585,
+    "funny": 0.0175,
+    "calm": 0.0265,
+    "body": 0.007,
+    "mind": 0.001,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "cut"
+     ]
+    }
+   },
+   "v1peku": {
+    "cute": 0.393,
+    "funny": 0.392,
+    "calm": 0.072,
+    "body": 0.0,
+    "mind": 0.025,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "relaxed"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "uhir9e": {
+    "cute": 0.4425,
+    "funny": 0.05,
+    "calm": 0.286,
+    "body": 0.067,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cozy",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "vi6pz5": {
+    "cute": 0.8925,
+    "funny": 0.0115,
+    "calm": 0.0,
+    "body": 0.021,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "sweet"
+     ],
+     "What a": [
+      "heart",
+      "sweet",
+      "lovely"
+     ]
+    }
+   },
+   "v98h6m": {
+    "cute": 0.117,
+    "funny": 0.623,
+    "calm": 0.006,
+    "body": 0.0,
+    "mind": 0.116,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "silly"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "classic"
+     ]
+    }
+   },
+   "vkkwu2": {
+    "cute": 0.4945,
+    "funny": 0.0625,
+    "calm": 0.198,
+    "body": 0.0035,
+    "mind": 0.002,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "delightful",
+      "cute",
+      "lovely"
+     ]
+    }
+   },
+   "v61co9": {
+    "cute": 0.2265,
+    "funny": 0.228,
+    "calm": 0.0,
+    "body": 0.0655,
+    "mind": 0.019,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cool",
+      "funny"
+     ],
+     "What a": [
+      "fantastic",
+      "fun",
+      "funny"
+     ]
+    }
+   },
+   "v9tufv": {
+    "cute": 0.5365,
+    "funny": 0.313,
+    "calm": 0.0515,
+    "body": 0.0075,
+    "mind": 0.0045,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "relaxed"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "v707qs": {
+    "cute": 0.8815,
+    "funny": 0.0405,
+    "calm": 0.0025,
+    "body": 0.0,
+    "mind": 0.0195,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "vo7jf1": {
+    "cute": 0.4935,
+    "funny": 0.275,
+    "calm": 0.0255,
+    "body": 0.0,
+    "mind": 0.045,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "v5bs65": {
+    "cute": 0.555,
+    "funny": 0.2515,
+    "calm": 0.018,
+    "body": 0.0,
+    "mind": 0.0155,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "vduj47": {
+    "cute": 0.8505,
+    "funny": 0.034,
+    "calm": 0.0025,
+    "body": 0.023,
+    "mind": 0.01,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "vk44nd": {
+    "cute": 0.428,
+    "funny": 0.1425,
+    "calm": 0.1675,
+    "body": 0.002,
+    "mind": 0.0075,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cozy",
+      "adorable"
+     ],
+     "What a": [
+      "delightful",
+      "funny",
+      "cute"
+     ]
+    }
+   },
+   "v8elcx": {
+    "cute": 0.6335,
+    "funny": 0.138,
+    "calm": 0.0035,
+    "body": 0.003,
+    "mind": 0.05,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "playful"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "v3xg7j": {
+    "cute": 0.6815,
+    "funny": 0.132,
+    "calm": 0.0,
+    "body": 0.001,
+    "mind": 0.016,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "vjkzcw": {
+    "cute": 0.4265,
+    "funny": 0.451,
+    "calm": 0.0,
+    "body": 0.003,
+    "mind": 0.054,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "fun"
+     ]
+    }
+   },
+   "vaya3y": {
+    "cute": 0.441,
+    "funny": 0.006,
+    "calm": 0.46,
+    "body": 0.012,
+    "mind": 0.007,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cozy",
+      "adorable"
+     ],
+     "What a": [
+      "cozy",
+      "lovely",
+      "peaceful"
+     ]
+    }
+   },
+   "vmld6t": {
+    "cute": 0.405,
+    "funny": 0.2065,
+    "calm": 0.214,
+    "body": 0.0,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "vakbne": {
+    "cute": 0.6495,
+    "funny": 0.143,
+    "calm": 0.0,
+    "body": 0.0025,
+    "mind": 0.0655,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "playful"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "fun"
+     ]
+    }
+   },
+   "v5ocwv": {
+    "cute": 0.505,
+    "funny": 0.0585,
+    "calm": 0.1065,
+    "body": 0.009,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "orange",
+      "relaxed"
+     ],
+     "What a": [
+      "great",
+      "lovely",
+      "cute"
+     ]
+    }
+   },
+   "vhg1h4": {
+    "cute": 0.7215,
+    "funny": 0.077,
+    "calm": 0.0145,
+    "body": 0.0,
+    "mind": 0.0545,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "funny"
+     ]
+    }
+   },
+   "vllacr": {
+    "cute": 0.098,
+    "funny": 0.5315,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0645,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cool",
+      "cute"
+     ],
+     "What a": [
+      "hilarious",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "vlxwns": {
+    "cute": 0.912,
+    "funny": 0.0,
+    "calm": 0.023,
+    "body": 0.017,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "darling",
+      "sweet"
+     ]
+    }
+   },
+   "vdquxi": {
+    "cute": 0.317,
+    "funny": 0.2925,
+    "calm": 0.006,
+    "body": 0.0055,
+    "mind": 0.0115,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "cool"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "fun"
+     ]
+    }
+   },
+   "v8vn8l": {
+    "cute": 0.9125,
+    "funny": 0.01,
+    "calm": 0.001,
+    "body": 0.0035,
+    "mind": 0.009,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "vd5iay": {
+    "cute": 0.7735,
+    "funny": 0.005,
+    "calm": 0.1075,
+    "body": 0.0205,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "lovely",
+      "heart",
+      "cute"
+     ]
+    }
+   },
+   "vh4j63": {
+    "cute": 0.8005,
+    "funny": 0.002,
+    "calm": 0.0,
+    "body": 0.0145,
+    "mind": 0.0025,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "tiny"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "precious"
+     ]
+    }
+   },
+   "vem1dx": {
+    "cute": 0.368,
+    "funny": 0.402,
+    "calm": 0.0135,
+    "body": 0.0,
+    "mind": 0.036,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "cool"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "funny"
+     ]
+    }
+   },
+   "vngngl": {
+    "cute": 0.9205,
+    "funny": 0.0015,
+    "calm": 0.005,
+    "body": 0.004,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "sweet",
+      "adorable"
+     ],
+     "What a": [
+      "heart",
+      "beautiful",
+      "sweet"
+     ]
+    }
+   },
+   "vew26s": {
+    "cute": 0.3455,
+    "funny": 0.067,
+    "calm": 0.337,
+    "body": 0.007,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "comfortable"
+     ],
+     "What a": [
+      "delightful",
+      "cute",
+      "cozy"
+     ]
+    }
+   },
+   "v82dp5": {
+    "cute": 0.211,
+    "funny": 0.5295,
+    "calm": 0.0015,
+    "body": 0.0,
+    "mind": 0.0185,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "expressive"
+     ],
+     "What a": [
+      "delightful",
+      "funny",
+      "fun"
+     ]
+    }
+   },
+   "v7rsbu": {
+    "cute": 0.317,
+    "funny": 0.3835,
+    "calm": 0.0205,
+    "body": 0.002,
+    "mind": 0.107,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "playful"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "cute"
+     ]
+    }
+   },
+   "v6tc4j": {
+    "cute": 0.6895,
+    "funny": 0.0155,
+    "calm": 0.138,
+    "body": 0.0495,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "cozy"
+     ]
+    }
+   },
+   "vg6p33": {
+    "cute": 0.3255,
+    "funny": 0.51,
+    "calm": 0.024,
+    "body": 0.0,
+    "mind": 0.0105,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "stretch"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "v4iaug": {
+    "cute": 0.6645,
+    "funny": 0.1775,
+    "calm": 0.0,
+    "body": 0.004,
+    "mind": 0.0165,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "cut"
+     ]
+    }
+   },
+   "vlc7p5": {
+    "cute": 0.5495,
+    "funny": 0.286,
+    "calm": 0.0,
+    "body": 0.003,
+    "mind": 0.042,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "shy"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "v9ikem": {
+    "cute": 0.7515,
+    "funny": 0.048,
+    "calm": 0.0245,
+    "body": 0.018,
+    "mind": 0.0015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "classic"
+     ]
+    }
+   },
+   "vg24o4": {
+    "cute": 0.8655,
+    "funny": 0.0,
+    "calm": 0.0855,
+    "body": 0.012,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "heart",
+      "sweet",
+      "lovely"
+     ]
+    }
+   },
+   "vfmsox": {
+    "cute": 0.7455,
+    "funny": 0.118,
+    "calm": 0.0275,
+    "body": 0.005,
+    "mind": 0.0155,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "v2fn65": {
+    "cute": 0.824,
+    "funny": 0.0105,
+    "calm": 0.001,
+    "body": 0.0,
+    "mind": 0.0165,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "lovely",
+      "delightful",
+      "charming"
+     ]
+    }
+   },
+   "v7g3if": {
+    "cute": 0.5905,
+    "funny": 0.0615,
+    "calm": 0.174,
+    "body": 0.051,
+    "mind": 0.015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "adorable"
+     ],
+     "What a": [
+      "cozy",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "w4fail": {
+    "cute": 0.6155,
+    "funny": 0.0175,
+    "calm": 0.0665,
+    "body": 0.2285,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cozy"
+     ]
+    }
+   },
+   "vpr3v1": {
+    "cute": 0.7585,
+    "funny": 0.018,
+    "calm": 0.0625,
+    "body": 0.0,
+    "mind": 0.053,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "focused",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "w8tzsm": {
+    "cute": 0.292,
+    "funny": 0.5535,
+    "calm": 0.0045,
+    "body": 0.0,
+    "mind": 0.0445,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "expressive"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "vv4o70": {
+    "cute": 0.7795,
+    "funny": 0.025,
+    "calm": 0.0175,
+    "body": 0.0025,
+    "mind": 0.0255,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "playful",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "heart",
+      "delightful"
+     ]
+    }
+   },
+   "w5iuva": {
+    "cute": 0.626,
+    "funny": 0.1465,
+    "calm": 0.0445,
+    "body": 0.037,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "wa5fnn": {
+    "cute": 0.8215,
+    "funny": 0.04,
+    "calm": 0.007,
+    "body": 0.0015,
+    "mind": 0.015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "wbl1e8": {
+    "cute": 0.0815,
+    "funny": 0.7775,
+    "calm": 0.005,
+    "body": 0.009,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "gr"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "delightful"
+     ]
+    }
+   },
+   "w2qcls": {
+    "cute": 0.4215,
+    "funny": 0.3455,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0235,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "classic",
+      "cute"
+     ]
+    }
+   },
+   "w6b92w": {
+    "cute": 0.8595,
+    "funny": 0.0555,
+    "calm": 0.0125,
+    "body": 0.001,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "delightful"
+     ]
+    }
+   },
+   "w2bkbx": {
+    "cute": 0.759,
+    "funny": 0.0365,
+    "calm": 0.007,
+    "body": 0.053,
+    "mind": 0.0235,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "vwqpx0": {
+    "cute": 0.5635,
+    "funny": 0.2495,
+    "calm": 0.0,
+    "body": 0.002,
+    "mind": 0.069,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "cut"
+     ]
+    }
+   },
+   "vyegpm": {
+    "cute": 0.953,
+    "funny": 0.0015,
+    "calm": 0.0015,
+    "body": 0.013,
+    "mind": 0.001,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cut"
+     ]
+    }
+   },
+   "w78j35": {
+    "cute": 0.6475,
+    "funny": 0.065,
+    "calm": 0.0055,
+    "body": 0.0,
+    "mind": 0.018,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "gr",
+      "funny"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "w7pgl4": {
+    "cute": 0.5565,
+    "funny": 0.2005,
+    "calm": 0.0,
+    "body": 0.026,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "fun",
+      "funny"
+     ]
+    }
+   },
+   "vs3tve": {
+    "cute": 0.469,
+    "funny": 0.472,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0145,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "wb25g2": {
+    "cute": 0.621,
+    "funny": 0.1755,
+    "calm": 0.0355,
+    "body": 0.0095,
+    "mind": 0.003,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "lovely"
+     ]
+    }
+   },
+   "w1929y": {
+    "cute": 0.1595,
+    "funny": 0.35,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.043,
+    "words": {
+     "This cat is so": [
+      "angry",
+      "cute",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "dramatic",
+      "hilarious"
+     ]
+    }
+   },
+   "w8j8ms": {
+    "cute": 0.9175,
+    "funny": 0.0015,
+    "calm": 0.0205,
+    "body": 0.0025,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "sleepy"
+     ],
+     "What a": [
+      "heart",
+      "sweet",
+      "cute"
+     ]
+    }
+   },
+   "vovjk2": {
+    "cute": 0.949,
+    "funny": 0.0025,
+    "calm": 0.0075,
+    "body": 0.0035,
+    "mind": 0.003,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "sweet"
+     ],
+     "What a": [
+      "sweet",
+      "lovely",
+      "heart"
+     ]
+    }
+   },
+   "vxf9bf": {
+    "cute": 0.7015,
+    "funny": 0.01,
+    "calm": 0.156,
+    "body": 0.0115,
+    "mind": 0.004,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "cozy",
+      "cute",
+      "lovely"
+     ]
+    }
+   },
+   "w9p7qt": {
+    "cute": 0.6935,
+    "funny": 0.016,
+    "calm": 0.183,
+    "body": 0.004,
+    "mind": 0.0085,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "lovely",
+      "cozy",
+      "heart"
+     ]
+    }
+   },
+   "vyrjm2": {
+    "cute": 0.817,
+    "funny": 0.046,
+    "calm": 0.0,
+    "body": 0.0005,
+    "mind": 0.007,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "cut"
+     ]
+    }
+   },
+   "vq7v0f": {
+    "cute": 0.366,
+    "funny": 0.4525,
+    "calm": 0.005,
+    "body": 0.0105,
+    "mind": 0.0065,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "vqdvr2": {
+    "cute": 0.746,
+    "funny": 0.015,
+    "calm": 0.1875,
+    "body": 0.006,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "sweet",
+      "cozy"
+     ]
+    }
+   },
+   "w92dos": {
+    "cute": 0.2045,
+    "funny": 0.2685,
+    "calm": 0.295,
+    "body": 0.004,
+    "mind": 0.004,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "cute"
+     ]
+    }
+   },
+   "vzz95v": {
+    "cute": 0.912,
+    "funny": 0.0065,
+    "calm": 0.001,
+    "body": 0.001,
+    "mind": 0.0035,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "sweet"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "vqinii": {
+    "cute": 0.947,
+    "funny": 0.0215,
+    "calm": 0.001,
+    "body": 0.002,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "cut",
+      "delightful"
+     ]
+    }
+   },
+   "wd1f7j": {
+    "cute": 0.729,
+    "funny": 0.0245,
+    "calm": 0.1235,
+    "body": 0.0,
+    "mind": 0.0015,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "charming"
+     ]
+    }
+   },
+   "w9d3ze": {
+    "cute": 0.3085,
+    "funny": 0.1315,
+    "calm": 0.256,
+    "body": 0.0125,
+    "mind": 0.004,
+    "words": {
+     "This cat is so": [
+      "relaxed",
+      "cute",
+      "funny"
+     ],
+     "What a": [
+      "delightful",
+      "lovely",
+      "cute"
+     ]
+    }
+   },
+   "w6pt06": {
+    "cute": 0.7895,
+    "funny": 0.042,
+    "calm": 0.0095,
+    "body": 0.0015,
+    "mind": 0.0115,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "delightful"
+     ]
+    }
+   },
+   "wbxn54": {
+    "cute": 0.484,
+    "funny": 0.2145,
+    "calm": 0.086,
+    "body": 0.0025,
+    "mind": 0.016,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cozy",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "classic",
+      "cute"
+     ]
+    }
+   },
+   "w3ln30": {
+    "cute": 0.7475,
+    "funny": 0.0895,
+    "calm": 0.0,
+    "body": 0.001,
+    "mind": 0.019,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "lovely"
+     ]
+    }
+   },
+   "w0whx5": {
+    "cute": 0.718,
+    "funny": 0.022,
+    "calm": 0.001,
+    "body": 0.104,
+    "mind": 0.0265,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "fluffy",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "w5za4n": {
+    "cute": 0.239,
+    "funny": 0.5165,
+    "calm": 0.065,
+    "body": 0.0,
+    "mind": 0.0115,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "relaxed"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "w832eq": {
+    "cute": 0.5695,
+    "funny": 0.0,
+    "calm": 0.002,
+    "body": 0.354,
+    "mind": 0.001,
+    "words": {
+     "This cat is so": [
+      "fluffy",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "beautiful",
+      "delightful"
+     ]
+    }
+   },
+   "vsq8k7": {
+    "cute": 0.792,
+    "funny": 0.0215,
+    "calm": 0.122,
+    "body": 0.001,
+    "mind": 0.0125,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "cozy",
+      "lovely"
+     ]
+    }
+   },
+   "vxa915": {
+    "cute": 0.399,
+    "funny": 0.003,
+    "calm": 0.3945,
+    "body": 0.1115,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cozy",
+      "round"
+     ],
+     "What a": [
+      "cozy",
+      "cute",
+      "lovely"
+     ]
+    }
+   },
+   "wesisa": {
+    "cute": 0.2035,
+    "funny": 0.5575,
+    "calm": 0.0125,
+    "body": 0.0,
+    "mind": 0.015,
+    "words": {
+     "This cat is so": [
+      "funny",
+      "cute",
+      "silly"
+     ],
+     "What a": [
+      "funny",
+      "delightful",
+      "hilarious"
+     ]
+    }
+   },
+   "wy9q9z": {
+    "cute": 0.457,
+    "funny": 0.1705,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0245,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "unique"
+     ]
+    }
+   },
+   "x00d9z": {
+    "cute": 0.3835,
+    "funny": 0.4395,
+    "calm": 0.0025,
+    "body": 0.0,
+    "mind": 0.023,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "chaotic"
+     ]
+    }
+   },
+   "x1kml1": {
+    "cute": 0.613,
+    "funny": 0.1315,
+    "calm": 0.0175,
+    "body": 0.0025,
+    "mind": 0.0435,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "lovely"
+     ]
+    }
+   },
+   "wuv0zc": {
+    "cute": 0.689,
+    "funny": 0.1205,
+    "calm": 0.005,
+    "body": 0.005,
+    "mind": 0.008,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "delightful",
+      "cute",
+      "funny"
+     ]
+    }
+   },
+   "wp0cvf": {
+    "cute": 0.4935,
+    "funny": 0.1425,
+    "calm": 0.1895,
+    "body": 0.0,
+    "mind": 0.0075,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "wdqcfv": {
+    "cute": 0.915,
+    "funny": 0.0015,
+    "calm": 0.0275,
+    "body": 0.005,
+    "mind": 0.004,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "beautiful"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "beautiful"
+     ]
+    }
+   },
+   "wwmlpp": {
+    "cute": 0.761,
+    "funny": 0.0115,
+    "calm": 0.1135,
+    "body": 0.016,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "relaxed"
+     ],
+     "What a": [
+      "cute",
+      "sweet",
+      "lovely"
+     ]
+    }
+   },
+   "x0ob0n": {
+    "cute": 0.473,
+    "funny": 0.1995,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.153,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "curious",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "wj1c5t": {
+    "cute": 0.0785,
+    "funny": 0.514,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0175,
+    "words": {
+     "This cat is so": [
+      "covered",
+      "funny",
+      "messy"
+     ],
+     "What a": [
+      "chaotic",
+      "funny",
+      "hilarious"
+     ]
+    }
+   },
+   "wtzsk6": {
+    "cute": 0.3605,
+    "funny": 0.47,
+    "calm": 0.0,
+    "body": 0.002,
+    "mind": 0.0855,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "focused"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "wtoh1r": {
+    "cute": 0.627,
+    "funny": 0.242,
+    "calm": 0.0,
+    "body": 0.002,
+    "mind": 0.0095,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "delightful"
+     ]
+    }
+   },
+   "wkerbj": {
+    "cute": 0.306,
+    "funny": 0.395,
+    "calm": 0.1215,
+    "body": 0.013,
+    "mind": 0.006,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "funny"
+     ],
+     "What a": [
+      "funny",
+      "hilarious",
+      "delightful"
+     ]
+    }
+   },
+   "wm90d6": {
+    "cute": 0.366,
+    "funny": 0.3495,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.106,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "expressive"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "fun"
+     ]
+    }
+   },
+   "x2ox6y": {
+    "cute": 0.394,
+    "funny": 0.116,
+    "calm": 0.005,
+    "body": 0.0035,
+    "mind": 0.077,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "close",
+      "curious"
+     ],
+     "What a": [
+      "delightful",
+      "cute",
+      "funny"
+     ]
+    }
+   },
+   "wqtzrl": {
+    "cute": 0.2845,
+    "funny": 0.2135,
+    "calm": 0.0255,
+    "body": 0.297,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "round",
+      "cute",
+      "fluffy"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "wegz12": {
+    "cute": 0.427,
+    "funny": 0.015,
+    "calm": 0.0725,
+    "body": 0.0025,
+    "mind": 0.005,
+    "words": {
+     "This cat is so": [
+      "happy",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "delightful",
+      "heart",
+      "cute"
+     ]
+    }
+   },
+   "wrsf3v": {
+    "cute": 0.32,
+    "funny": 0.393,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.118,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "determined"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "whp4zr": {
+    "cute": 0.647,
+    "funny": 0.0,
+    "calm": 0.0165,
+    "body": 0.2625,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "fluffy",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "lovely",
+      "cute",
+      "beautiful"
+     ]
+    }
+   },
+   "wxlj6w": {
+    "cute": 0.636,
+    "funny": 0.0355,
+    "calm": 0.0035,
+    "body": 0.0,
+    "mind": 0.0035,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "classic",
+      "cute",
+      "delightful"
+     ]
+    }
+   },
+   "wjivz0": {
+    "cute": 0.246,
+    "funny": 0.499,
+    "calm": 0.006,
+    "body": 0.0,
+    "mind": 0.0835,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "mis"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "hilarious"
+     ]
+    }
+   },
+   "x1w9y2": {
+    "cute": 0.8385,
+    "funny": 0.0165,
+    "calm": 0.027,
+    "body": 0.0425,
+    "mind": 0.0075,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "sweet"
+     ]
+    }
+   },
+   "wipvtn": {
+    "cute": 0.135,
+    "funny": 0.01,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.139,
+    "words": {
+     "This cat is so": [
+      "sad",
+      "cute",
+      "injured"
+     ],
+     "What a": [
+      "tragic",
+      "terrible",
+      "heartbreaking"
+     ]
+    }
+   },
+   "wldqro": {
+    "cute": 0.602,
+    "funny": 0.137,
+    "calm": 0.0155,
+    "body": 0.0,
+    "mind": 0.017,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "cool"
+     ],
+     "What a": [
+      "delightful",
+      "funny",
+      "charming"
+     ]
+    }
+   },
+   "wytw00": {
+    "cute": 0.7145,
+    "funny": 0.063,
+    "calm": 0.002,
+    "body": 0.0055,
+    "mind": 0.001,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "classic",
+      "delightful"
+     ]
+    }
+   },
+   "wmlwp0": {
+    "cute": 0.8225,
+    "funny": 0.0095,
+    "calm": 0.0825,
+    "body": 0.0035,
+    "mind": 0.002,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "heart"
+     ]
+    }
+   },
+   "wqab4v": {
+    "cute": 0.48,
+    "funny": 0.171,
+    "calm": 0.0785,
+    "body": 0.0355,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "relaxed",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "funny",
+      "classic"
+     ]
+    }
+   },
+   "wzsbt7": {
+    "cute": 0.6545,
+    "funny": 0.1385,
+    "calm": 0.0205,
+    "body": 0.0055,
+    "mind": 0.003,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "delightful",
+      "funny"
+     ]
+    }
+   },
+   "x24lw8": {
+    "cute": 0.371,
+    "funny": 0.378,
+    "calm": 0.0135,
+    "body": 0.0,
+    "mind": 0.0425,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "funny",
+      "gr"
+     ],
+     "What a": [
+      "funny",
+      "cute",
+      "classic"
+     ]
+    }
+   },
+   "wp8eks": {
+    "cute": 0.7775,
+    "funny": 0.0055,
+    "calm": 0.1315,
+    "body": 0.01,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "cozy",
+      "adorable"
+     ],
+     "What a": [
+      "cute",
+      "cozy",
+      "sweet"
+     ]
+    }
+   },
+   "wicla4": {
+    "cute": 0.221,
+    "funny": 0.0345,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.1885,
+    "words": {
+     "This cat is so": [
+      "sad",
+      "cute",
+      "adorable"
+     ],
+     "What a": [
+      "tragic",
+      "heartbreaking",
+      "heart"
+     ]
+    }
+   },
+   "x12c4q": {
+    "cute": 0.7755,
+    "funny": 0.0805,
+    "calm": 0.0,
+    "body": 0.0,
+    "mind": 0.0325,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "funny"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "funny"
+     ]
+    }
+   },
+   "wg06by": {
+    "cute": 0.637,
+    "funny": 0.0325,
+    "calm": 0.134,
+    "body": 0.014,
+    "mind": 0.0,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "cozy"
+     ],
+     "What a": [
+      "cute",
+      "cozy",
+      "delightful"
+     ]
+    }
+   },
+   "wo1tj7": {
+    "cute": 0.8425,
+    "funny": 0.013,
+    "calm": 0.0745,
+    "body": 0.018,
+    "mind": 0.0045,
+    "words": {
+     "This cat is so": [
+      "cute",
+      "adorable",
+      "fluffy"
+     ],
+     "What a": [
+      "cute",
+      "lovely",
+      "cozy"
+     ]
+    }
+   }
+  }
+ },
+ "siglip": {
+  "model": "google/siglip2-so400m-patch14-384",
+  "scores": [
+   "dumb",
+   "cute",
+   "fat",
+   "derp",
+   "blank",
+   "loaf"
+  ],
+  "posts": {
+   "u9y0e9": {
+    "dumb": 2.871,
+    "cute": -0.734,
+    "fat": 3.436,
+    "derp": 4.388,
+    "blank": -2.763,
+    "loaf": -8.797
+   },
+   "u196np": {
+    "dumb": 3.344,
+    "cute": -0.243,
+    "fat": 5.68,
+    "derp": 4.454,
+    "blank": -2.628,
+    "loaf": -7.733
+   },
+   "u4x707": {
+    "dumb": 1.299,
+    "cute": 0.593,
+    "fat": 2.723,
+    "derp": 4.264,
+    "blank": -1.873,
+    "loaf": -8.203
+   },
+   "u8nf6x": {
+    "dumb": 3.551,
+    "cute": -0.837,
+    "fat": 5.326,
+    "derp": 3.033,
+    "blank": -1.57,
+    "loaf": -9.04
+   },
+   "ub1710": {
+    "dumb": 1.84,
+    "cute": 0.056,
+    "fat": 1.694,
+    "derp": 3.365,
+    "blank": -0.751,
+    "loaf": -7.882
+   },
+   "ubnfe6": {
+    "dumb": 2.19,
+    "cute": -1.725,
+    "fat": -2.582,
+    "derp": 1.205,
+    "blank": -0.851,
+    "loaf": -8.36
+   },
+   "ufar1s": {
+    "dumb": 1.399,
+    "cute": 2.198,
+    "fat": 2.134,
+    "derp": 1.883,
+    "blank": -0.877,
+    "loaf": -8.345
+   },
+   "ufmnwt": {
+    "dumb": 3.062,
+    "cute": -0.088,
+    "fat": 2.282,
+    "derp": 5.829,
+    "blank": -1.05,
+    "loaf": -8.951
+   },
+   "uaiqan": {
+    "dumb": 1.774,
+    "cute": 0.125,
+    "fat": 3.165,
+    "derp": 1.76,
+    "blank": -1.792,
+    "loaf": -10.353
+   },
+   "ud4szr": {
+    "dumb": 2.228,
+    "cute": -3.1,
+    "fat": -2.7,
+    "derp": 3.405,
+    "blank": -1.785,
+    "loaf": -7.894
+   },
+   "uc7bo9": {
+    "dumb": 1.558,
+    "cute": 0.557,
+    "fat": 1.367,
+    "derp": 4.95,
+    "blank": -2.538,
+    "loaf": -11.107
+   },
+   "u4qc8d": {
+    "dumb": 3.809,
+    "cute": 2.113,
+    "fat": 1.365,
+    "derp": 3.3,
+    "blank": -0.477,
+    "loaf": -8.404
+   },
+   "udtuz7": {
+    "dumb": 1.054,
+    "cute": 0.954,
+    "fat": 1.445,
+    "derp": 3.288,
+    "blank": -2.636,
+    "loaf": -11.74
+   },
+   "ue93p5": {
+    "dumb": 1.722,
+    "cute": 0.766,
+    "fat": 0.223,
+    "derp": 0.165,
+    "blank": -2.035,
+    "loaf": -9.818
+   },
+   "udw7ut": {
+    "dumb": 2.59,
+    "cute": 0.028,
+    "fat": 0.747,
+    "derp": 1.752,
+    "blank": -1.28,
+    "loaf": -9.867
+   },
+   "u5ri53": {
+    "dumb": 3.965,
+    "cute": -0.055,
+    "fat": 1.646,
+    "derp": 4.892,
+    "blank": -2.109,
+    "loaf": -10.245
+   },
+   "u5uomf": {
+    "dumb": 3.191,
+    "cute": 0.916,
+    "fat": 1.697,
+    "derp": 4.275,
+    "blank": -1.92,
+    "loaf": -8.617
+   },
+   "uc41v7": {
+    "dumb": 3.976,
+    "cute": 0.007,
+    "fat": -0.31,
+    "derp": 3.081,
+    "blank": -1.004,
+    "loaf": -9.1
+   },
+   "uco2mx": {
+    "dumb": 3.975,
+    "cute": 0.054,
+    "fat": -0.802,
+    "derp": 3.083,
+    "blank": 0.093,
+    "loaf": -10.354
+   },
+   "udlakh": {
+    "dumb": 3.354,
+    "cute": -0.94,
+    "fat": 0.987,
+    "derp": 0.16,
+    "blank": -0.944,
+    "loaf": -8.442
+   },
+   "ubtzd7": {
+    "dumb": 0.697,
+    "cute": 3.804,
+    "fat": 2.832,
+    "derp": -0.021,
+    "blank": -1.807,
+    "loaf": -10.928
+   },
+   "uckzhb": {
+    "dumb": 1.931,
+    "cute": -1.302,
+    "fat": -2.703,
+    "derp": 3.317,
+    "blank": -0.642,
+    "loaf": -10.081
+   },
+   "uexnzh": {
+    "dumb": 3.578,
+    "cute": 0.233,
+    "fat": 0.511,
+    "derp": 6.673,
+    "blank": -1.447,
+    "loaf": -8.957
+   },
+   "u0mttp": {
+    "dumb": 4.845,
+    "cute": 2.39,
+    "fat": 2.524,
+    "derp": 7.122,
+    "blank": -1.78,
+    "loaf": -8.801
+   },
+   "ubl3ik": {
+    "dumb": 3.515,
+    "cute": 1.333,
+    "fat": -0.345,
+    "derp": 5.257,
+    "blank": -1.971,
+    "loaf": -8.016
+   },
+   "u5jk13": {
+    "dumb": 1.875,
+    "cute": 2.54,
+    "fat": 4.092,
+    "derp": 0.89,
+    "blank": -0.623,
+    "loaf": -8.511
+   },
+   "ue88g6": {
+    "dumb": 2.652,
+    "cute": 1.383,
+    "fat": 2.299,
+    "derp": 3.674,
+    "blank": -2.557,
+    "loaf": -8.487
+   },
+   "u4zodi": {
+    "dumb": 2.605,
+    "cute": 1.448,
+    "fat": 3.159,
+    "derp": 4.183,
+    "blank": -0.743,
+    "loaf": -7.865
+   },
+   "ubas6r": {
+    "dumb": 3.87,
+    "cute": -1.018,
+    "fat": -2.298,
+    "derp": 4.857,
+    "blank": -1.873,
+    "loaf": -7.851
+   },
+   "uej64j": {
+    "dumb": 2.246,
+    "cute": 0.286,
+    "fat": 4.068,
+    "derp": 0.95,
+    "blank": -1.56,
+    "loaf": -7.37
+   },
+   "ufct8j": {
+    "dumb": 0.717,
+    "cute": 0.829,
+    "fat": 2.204,
+    "derp": 0.838,
+    "blank": -1.8,
+    "loaf": -7.933
+   },
+   "u71kxc": {
+    "dumb": 3.257,
+    "cute": 0.27,
+    "fat": -1.825,
+    "derp": 5.127,
+    "blank": -0.75,
+    "loaf": -8.113
+   },
+   "u6oxya": {
+    "dumb": 2.688,
+    "cute": -0.11,
+    "fat": -1.245,
+    "derp": 2.168,
+    "blank": -1.207,
+    "loaf": -9.98
+   },
+   "u3vm8m": {
+    "dumb": 3.536,
+    "cute": 0.342,
+    "fat": 1.548,
+    "derp": 4.001,
+    "blank": -0.609,
+    "loaf": -8.888
+   },
+   "u9eeg3": {
+    "dumb": 4.167,
+    "cute": -0.996,
+    "fat": 2.259,
+    "derp": 5.392,
+    "blank": -0.858,
+    "loaf": -8.693
+   },
+   "u9ja6n": {
+    "dumb": 2.104,
+    "cute": 1.468,
+    "fat": 0.674,
+    "derp": 2.126,
+    "blank": -1.763,
+    "loaf": -8.915
+   },
+   "u4zg3x": {
+    "dumb": 2.455,
+    "cute": -0.359,
+    "fat": 2.989,
+    "derp": 1.948,
+    "blank": -0.135,
+    "loaf": -8.388
+   },
+   "uqs343": {
+    "dumb": 0.459,
+    "cute": 1.431,
+    "fat": -1.323,
+    "derp": 0.957,
+    "blank": -0.196,
+    "loaf": -9.915
+   },
+   "uuzhlb": {
+    "dumb": 2.406,
+    "cute": 0.483,
+    "fat": -0.079,
+    "derp": 5.21,
+    "blank": 0.176,
+    "loaf": -10.524
+   },
+   "v0y5vj": {
+    "dumb": 3.142,
+    "cute": -0.083,
+    "fat": 1.16,
+    "derp": 4.002,
+    "blank": -3.19,
+    "loaf": -8.944
+   },
+   "uzib2o": {
+    "dumb": 2.686,
+    "cute": 0.308,
+    "fat": 4.765,
+    "derp": 0.944,
+    "blank": -1.805,
+    "loaf": -8.404
+   },
+   "uhtf24": {
+    "dumb": 1.627,
+    "cute": 2.539,
+    "fat": -2.014,
+    "derp": 2.297,
+    "blank": -1.506,
+    "loaf": -7.204
+   },
+   "uvlxzg": {
+    "dumb": 4.609,
+    "cute": 0.019,
+    "fat": 3.153,
+    "derp": 3.926,
+    "blank": -0.796,
+    "loaf": -8.321
+   },
+   "uketbt": {
+    "dumb": -0.21,
+    "cute": 1.68,
+    "fat": -0.617,
+    "derp": 1.877,
+    "blank": -0.949,
+    "loaf": -9.227
+   },
+   "v1ev0p": {
+    "dumb": 3.991,
+    "cute": -0.097,
+    "fat": -0.848,
+    "derp": 7.722,
+    "blank": 0.002,
+    "loaf": -9.916
+   },
+   "uyr31n": {
+    "dumb": 1.913,
+    "cute": 1.119,
+    "fat": 1.69,
+    "derp": 4.823,
+    "blank": -1.533,
+    "loaf": -10.477
+   },
+   "uj4bzg": {
+    "dumb": 0.271,
+    "cute": 1.323,
+    "fat": 2.584,
+    "derp": 1.355,
+    "blank": -4.593,
+    "loaf": -11.106
+   },
+   "ulqb2b": {
+    "dumb": 2.09,
+    "cute": 0.926,
+    "fat": 2.192,
+    "derp": 0.863,
+    "blank": 0.366,
+    "loaf": -9.928
+   },
+   "uy5w0p": {
+    "dumb": 1.71,
+    "cute": 1.95,
+    "fat": 0.4,
+    "derp": -1.16,
+    "blank": 0.884,
+    "loaf": -8.119
+   },
+   "up1nsh": {
+    "dumb": 1.508,
+    "cute": 1.222,
+    "fat": -0.32,
+    "derp": 5.315,
+    "blank": -2.229,
+    "loaf": -8.528
+   },
+   "uxcgve": {
+    "dumb": 3.43,
+    "cute": 0.621,
+    "fat": 1.971,
+    "derp": 2.941,
+    "blank": -1.055,
+    "loaf": -8.116
+   },
+   "uwo9cj": {
+    "dumb": 3.857,
+    "cute": 0.369,
+    "fat": 2.868,
+    "derp": 5.882,
+    "blank": -2.43,
+    "loaf": -8.368
+   },
+   "utgkd6": {
+    "dumb": 1.928,
+    "cute": 0.707,
+    "fat": 1.883,
+    "derp": 2.617,
+    "blank": 0.073,
+    "loaf": -9.495
+   },
+   "umdo3u": {
+    "dumb": 3.809,
+    "cute": 1.016,
+    "fat": 3.938,
+    "derp": 3.067,
+    "blank": 0.576,
+    "loaf": -8.294
+   },
+   "v0jk2d": {
+    "dumb": 2.873,
+    "cute": 0.179,
+    "fat": 0.615,
+    "derp": 1.568,
+    "blank": -1.819,
+    "loaf": -9.461
+   },
+   "utbap2": {
+    "dumb": 1.629,
+    "cute": 0.653,
+    "fat": 2.918,
+    "derp": -0.789,
+    "blank": -0.815,
+    "loaf": -8.894
+   },
+   "uwgjr2": {
+    "dumb": 1.673,
+    "cute": -1.085,
+    "fat": -2.665,
+    "derp": 4.481,
+    "blank": -4.073,
+    "loaf": -12.108
+   },
+   "v232cr": {
+    "dumb": 3.28,
+    "cute": 1.769,
+    "fat": 3.819,
+    "derp": 2.822,
+    "blank": -1.014,
+    "loaf": -8.196
+   },
+   "umtgzd": {
+    "dumb": 0.27,
+    "cute": 1.519,
+    "fat": -0.312,
+    "derp": -0.344,
+    "blank": -0.923,
+    "loaf": -10.124
+   },
+   "uyj7nj": {
+    "dumb": 3.366,
+    "cute": 0.228,
+    "fat": 0.031,
+    "derp": 2.825,
+    "blank": 0.128,
+    "loaf": -7.998
+   },
+   "uul4ti": {
+    "dumb": 2.406,
+    "cute": -0.37,
+    "fat": 1.237,
+    "derp": 3.138,
+    "blank": -0.294,
+    "loaf": -10.205
+   },
+   "uvzkkx": {
+    "dumb": 2.203,
+    "cute": -1.415,
+    "fat": 0.404,
+    "derp": 3.629,
+    "blank": -2.097,
+    "loaf": -8.041
+   },
+   "uyaxr5": {
+    "dumb": 1.575,
+    "cute": 1.366,
+    "fat": 3.91,
+    "derp": 0.715,
+    "blank": 0.346,
+    "loaf": -7.508
+   },
+   "uv5uwl": {
+    "dumb": 3.793,
+    "cute": 0.286,
+    "fat": 1.41,
+    "derp": 3.387,
+    "blank": -1.095,
+    "loaf": -7.541
+   },
+   "uu64rh": {
+    "dumb": 3.027,
+    "cute": 0.653,
+    "fat": -1.59,
+    "derp": 2.987,
+    "blank": -1.798,
+    "loaf": -9.83
+   },
+   "uoccbm": {
+    "dumb": 4.404,
+    "cute": 0.158,
+    "fat": 5.015,
+    "derp": 3.7,
+    "blank": -2.626,
+    "loaf": -8.419
+   },
+   "uw7y1p": {
+    "dumb": 1.881,
+    "cute": 0.846,
+    "fat": 0.437,
+    "derp": 0.567,
+    "blank": -0.333,
+    "loaf": -7.832
+   },
+   "upl1sg": {
+    "dumb": 1.77,
+    "cute": 2.34,
+    "fat": 2.59,
+    "derp": 0.52,
+    "blank": 0.147,
+    "loaf": -5.738
+   },
+   "uy4r8x": {
+    "dumb": 1.339,
+    "cute": 2.243,
+    "fat": 2.392,
+    "derp": -1.042,
+    "blank": 0.167,
+    "loaf": -9.898
+   },
+   "uzrslg": {
+    "dumb": 3.689,
+    "cute": 0.406,
+    "fat": 2.511,
+    "derp": 4.906,
+    "blank": -0.668,
+    "loaf": -9.206
+   },
+   "uyefj2": {
+    "dumb": 2.971,
+    "cute": 2.611,
+    "fat": 1.603,
+    "derp": 4.65,
+    "blank": -0.498,
+    "loaf": -8.45
+   },
+   "v1peku": {
+    "dumb": 4.113,
+    "cute": -0.823,
+    "fat": -0.081,
+    "derp": 5.582,
+    "blank": -0.443,
+    "loaf": -8.171
+   },
+   "uhir9e": {
+    "dumb": 1.976,
+    "cute": -0.551,
+    "fat": 0.63,
+    "derp": 1.941,
+    "blank": -0.054,
+    "loaf": -9.284
+   },
+   "vi6pz5": {
+    "dumb": 2.086,
+    "cute": 0.952,
+    "fat": 1.033,
+    "derp": 1.509,
+    "blank": 1.795,
+    "loaf": -8.803
+   },
+   "v98h6m": {
+    "dumb": 0.817,
+    "cute": 0.568,
+    "fat": -0.317,
+    "derp": 4.252,
+    "blank": -1.526,
+    "loaf": -7.777
+   },
+   "vkkwu2": {
+    "dumb": 2.074,
+    "cute": 1.09,
+    "fat": -1.478,
+    "derp": 3.528,
+    "blank": -0.471,
+    "loaf": -9.706
+   },
+   "v61co9": {
+    "dumb": 0.965,
+    "cute": -0.01,
+    "fat": 5.491,
+    "derp": 2.096,
+    "blank": -1.544,
+    "loaf": -10.743
+   },
+   "v9tufv": {
+    "dumb": 2.161,
+    "cute": 0.852,
+    "fat": 2.216,
+    "derp": 3.606,
+    "blank": -1.281,
+    "loaf": -8.841
+   },
+   "v707qs": {
+    "dumb": 2.926,
+    "cute": 0.973,
+    "fat": 1.087,
+    "derp": 4.711,
+    "blank": -2.148,
+    "loaf": -9.432
+   },
+   "vo7jf1": {
+    "dumb": 2.186,
+    "cute": 0.796,
+    "fat": 3.818,
+    "derp": 3.721,
+    "blank": -2.657,
+    "loaf": -9.68
+   },
+   "v5bs65": {
+    "dumb": 3.133,
+    "cute": 0.288,
+    "fat": 1.927,
+    "derp": 4.007,
+    "blank": -1.066,
+    "loaf": -8.457
+   },
+   "vduj47": {
+    "dumb": 4.511,
+    "cute": -0.292,
+    "fat": 5.348,
+    "derp": 4.393,
+    "blank": -0.834,
+    "loaf": -8.36
+   },
+   "vk44nd": {
+    "dumb": 1.667,
+    "cute": 0.944,
+    "fat": 1.443,
+    "derp": 4.365,
+    "blank": -1.709,
+    "loaf": -9.952
+   },
+   "v8elcx": {
+    "dumb": 2.391,
+    "cute": -0.123,
+    "fat": 1.508,
+    "derp": 3.187,
+    "blank": -2.016,
+    "loaf": -7.073
+   },
+   "v3xg7j": {
+    "dumb": 3.847,
+    "cute": -0.73,
+    "fat": 1.201,
+    "derp": 3.734,
+    "blank": -1.33,
+    "loaf": -9.118
+   },
+   "vjkzcw": {
+    "dumb": 1.614,
+    "cute": -1.163,
+    "fat": -1.828,
+    "derp": 0.408,
+    "blank": -0.521,
+    "loaf": -11.234
+   },
+   "vaya3y": {
+    "dumb": 2.073,
+    "cute": -0.199,
+    "fat": 3.804,
+    "derp": -0.354,
+    "blank": -1.618,
+    "loaf": -7.221
+   },
+   "vmld6t": {
+    "dumb": 3.323,
+    "cute": 0.047,
+    "fat": -0.37,
+    "derp": 4.938,
+    "blank": -1.338,
+    "loaf": -7.004
+   },
+   "vakbne": {
+    "dumb": 2.353,
+    "cute": -0.899,
+    "fat": -2.19,
+    "derp": 4.535,
+    "blank": -3.069,
+    "loaf": -10.356
+   },
+   "v5ocwv": {
+    "dumb": 0.784,
+    "cute": 2.504,
+    "fat": 2.568,
+    "derp": 0.167,
+    "blank": -1.239,
+    "loaf": -9.518
+   },
+   "vhg1h4": {
+    "dumb": 2.575,
+    "cute": -1.058,
+    "fat": 1.249,
+    "derp": 1.366,
+    "blank": -1.275,
+    "loaf": -7.75
+   },
+   "vllacr": {
+    "dumb": 1.485,
+    "cute": 2.437,
+    "fat": -2.637,
+    "derp": 3.645,
+    "blank": -2.186,
+    "loaf": -7.311
+   },
+   "vlxwns": {
+    "dumb": 2.912,
+    "cute": 1.388,
+    "fat": -0.421,
+    "derp": 1.135,
+    "blank": -0.479,
+    "loaf": -9.024
+   },
+   "vdquxi": {
+    "dumb": -1.159,
+    "cute": -0.205,
+    "fat": -1.259,
+    "derp": -1.372,
+    "blank": -1.248,
+    "loaf": -12.83
+   },
+   "v8vn8l": {
+    "dumb": 2.381,
+    "cute": 0.924,
+    "fat": -0.558,
+    "derp": 1.586,
+    "blank": -0.04,
+    "loaf": -8.292
+   },
+   "vd5iay": {
+    "dumb": 2.45,
+    "cute": -0.795,
+    "fat": -2.228,
+    "derp": 1.879,
+    "blank": -0.407,
+    "loaf": -9.465
+   },
+   "vh4j63": {
+    "dumb": 5.177,
+    "cute": -2.803,
+    "fat": -3.238,
+    "derp": 3.866,
+    "blank": 1.244,
+    "loaf": -9.208
+   },
+   "vem1dx": {
+    "dumb": 1.596,
+    "cute": -0.421,
+    "fat": 1.24,
+    "derp": 3.792,
+    "blank": -1.452,
+    "loaf": -9.646
+   },
+   "vngngl": {
+    "dumb": 1.212,
+    "cute": 0.75,
+    "fat": 0.639,
+    "derp": 3.415,
+    "blank": 0.095,
+    "loaf": -11.238
+   },
+   "vew26s": {
+    "dumb": 2.248,
+    "cute": 1.394,
+    "fat": 4.892,
+    "derp": 1.772,
+    "blank": -0.935,
+    "loaf": -7.777
+   },
+   "v82dp5": {
+    "dumb": 2.853,
+    "cute": -0.24,
+    "fat": 3.707,
+    "derp": 4.403,
+    "blank": 0.297,
+    "loaf": -10.707
+   },
+   "v7rsbu": {
+    "dumb": 3.285,
+    "cute": 0.895,
+    "fat": -0.374,
+    "derp": 5.453,
+    "blank": -3.308,
+    "loaf": -9.351
+   },
+   "v6tc4j": {
+    "dumb": 2.186,
+    "cute": 1.153,
+    "fat": -0.181,
+    "derp": 1.737,
+    "blank": -1.915,
+    "loaf": -9.227
+   },
+   "vg6p33": {
+    "dumb": 4.089,
+    "cute": -1.657,
+    "fat": -2.611,
+    "derp": 4.18,
+    "blank": -0.005,
+    "loaf": -8.672
+   },
+   "v4iaug": {
+    "dumb": 3.305,
+    "cute": 0.841,
+    "fat": 4.425,
+    "derp": 4.247,
+    "blank": -0.243,
+    "loaf": -9.364
+   },
+   "vlc7p5": {
+    "dumb": 1.193,
+    "cute": -0.415,
+    "fat": -0.132,
+    "derp": 3.073,
+    "blank": -0.4,
+    "loaf": -8.138
+   },
+   "v9ikem": {
+    "dumb": 1.968,
+    "cute": 0.861,
+    "fat": 4.578,
+    "derp": 2.041,
+    "blank": 0.462,
+    "loaf": -7.442
+   },
+   "vg24o4": {
+    "dumb": 2.075,
+    "cute": 1.484,
+    "fat": 1.779,
+    "derp": 3.32,
+    "blank": -0.073,
+    "loaf": -9.485
+   },
+   "vfmsox": {
+    "dumb": 2.536,
+    "cute": -0.719,
+    "fat": -0.102,
+    "derp": 4.198,
+    "blank": -2.721,
+    "loaf": -8.246
+   },
+   "v2fn65": {
+    "dumb": -0.757,
+    "cute": 2.818,
+    "fat": -2.15,
+    "derp": -0.338,
+    "blank": -1.046,
+    "loaf": -11.316
+   },
+   "v7g3if": {
+    "dumb": -0.219,
+    "cute": 1.739,
+    "fat": 1.261,
+    "derp": -0.342,
+    "blank": -4.098,
+    "loaf": -10.245
+   },
+   "w4fail": {
+    "dumb": 2.049,
+    "cute": 0.435,
+    "fat": 1.979,
+    "derp": 3.495,
+    "blank": -3.106,
+    "loaf": -7.186
+   },
+   "vpr3v1": {
+    "dumb": 0.554,
+    "cute": 1.777,
+    "fat": 2.42,
+    "derp": 2.039,
+    "blank": -1.947,
+    "loaf": -8.857
+   },
+   "w8tzsm": {
+    "dumb": 4.196,
+    "cute": -1.445,
+    "fat": 0.023,
+    "derp": 4.25,
+    "blank": -1.411,
+    "loaf": -8.624
+   },
+   "vv4o70": {
+    "dumb": 0.093,
+    "cute": 1.144,
+    "fat": -1.406,
+    "derp": 3.123,
+    "blank": -1.216,
+    "loaf": -8.962
+   },
+   "w5iuva": {
+    "dumb": 0.053,
+    "cute": 1.668,
+    "fat": 4.859,
+    "derp": 3.288,
+    "blank": -1.118,
+    "loaf": -7.169
+   },
+   "wa5fnn": {
+    "dumb": 2.308,
+    "cute": 1.771,
+    "fat": 0.212,
+    "derp": 3.825,
+    "blank": -0.927,
+    "loaf": -8.933
+   },
+   "wbl1e8": {
+    "dumb": 1.814,
+    "cute": -0.916,
+    "fat": 1.618,
+    "derp": 0.925,
+    "blank": -1.256,
+    "loaf": -8.74
+   },
+   "w2qcls": {
+    "dumb": 2.741,
+    "cute": 0.335,
+    "fat": 0.339,
+    "derp": 2.643,
+    "blank": -0.206,
+    "loaf": -10.32
+   },
+   "w6b92w": {
+    "dumb": 1.661,
+    "cute": 3.846,
+    "fat": 4.466,
+    "derp": 0.755,
+    "blank": -1.036,
+    "loaf": -8.707
+   },
+   "w2bkbx": {
+    "dumb": 2.758,
+    "cute": 2.111,
+    "fat": 1.371,
+    "derp": 2.084,
+    "blank": -1.843,
+    "loaf": -8.643
+   },
+   "vwqpx0": {
+    "dumb": 3.245,
+    "cute": 0.601,
+    "fat": 4.896,
+    "derp": 3.426,
+    "blank": -0.82,
+    "loaf": -7.375
+   },
+   "vyegpm": {
+    "dumb": 4.248,
+    "cute": 0.356,
+    "fat": -0.598,
+    "derp": 5.198,
+    "blank": -2.297,
+    "loaf": -9.477
+   },
+   "w78j35": {
+    "dumb": 2.786,
+    "cute": -0.739,
+    "fat": 6.333,
+    "derp": 1.405,
+    "blank": -1.714,
+    "loaf": -8.396
+   },
+   "w7pgl4": {
+    "dumb": 2.192,
+    "cute": -1.637,
+    "fat": -2.005,
+    "derp": 1.389,
+    "blank": 0.821,
+    "loaf": -9.036
+   },
+   "vs3tve": {
+    "dumb": 1.75,
+    "cute": -0.571,
+    "fat": -1.703,
+    "derp": 3.398,
+    "blank": -1.78,
+    "loaf": -10.94
+   },
+   "wb25g2": {
+    "dumb": 1.023,
+    "cute": 0.565,
+    "fat": 4.321,
+    "derp": 1.304,
+    "blank": -0.45,
+    "loaf": -7.441
+   },
+   "w1929y": {
+    "dumb": 3.092,
+    "cute": -1.553,
+    "fat": 0.144,
+    "derp": 2.19,
+    "blank": -0.505,
+    "loaf": -8.629
+   },
+   "w8j8ms": {
+    "dumb": 0.173,
+    "cute": 2.756,
+    "fat": 2.466,
+    "derp": 1.329,
+    "blank": 0.37,
+    "loaf": -10.606
+   },
+   "vovjk2": {
+    "dumb": 1.11,
+    "cute": 0.289,
+    "fat": 1.539,
+    "derp": 2.956,
+    "blank": -0.329,
+    "loaf": -10.138
+   },
+   "vxf9bf": {
+    "dumb": 1.834,
+    "cute": -0.127,
+    "fat": 2.922,
+    "derp": 3.405,
+    "blank": -0.693,
+    "loaf": -8.249
+   },
+   "w9p7qt": {
+    "dumb": 1.522,
+    "cute": -0.079,
+    "fat": 0.367,
+    "derp": 3.542,
+    "blank": 0.697,
+    "loaf": -9.806
+   },
+   "vyrjm2": {
+    "dumb": 3.897,
+    "cute": 1.035,
+    "fat": 3.288,
+    "derp": 5.914,
+    "blank": 0.397,
+    "loaf": -9.034
+   },
+   "vq7v0f": {
+    "dumb": 1.45,
+    "cute": 0.807,
+    "fat": 2.811,
+    "derp": 1.581,
+    "blank": -2.446,
+    "loaf": -9.784
+   },
+   "vqdvr2": {
+    "dumb": 2.958,
+    "cute": 1.229,
+    "fat": 2.004,
+    "derp": 3.844,
+    "blank": -3.509,
+    "loaf": -8.796
+   },
+   "w92dos": {
+    "dumb": 2.987,
+    "cute": 0.21,
+    "fat": -0.538,
+    "derp": 5.041,
+    "blank": -0.244,
+    "loaf": -8.77
+   },
+   "vzz95v": {
+    "dumb": 0.706,
+    "cute": -0.287,
+    "fat": -5.23,
+    "derp": 2.812,
+    "blank": 0.121,
+    "loaf": -8.41
+   },
+   "vqinii": {
+    "dumb": 3.21,
+    "cute": 3.215,
+    "fat": -0.529,
+    "derp": 3.089,
+    "blank": -0.526,
+    "loaf": -8.223
+   },
+   "wd1f7j": {
+    "dumb": 1.373,
+    "cute": 0.589,
+    "fat": -0.124,
+    "derp": 1.234,
+    "blank": 0.237,
+    "loaf": -10.574
+   },
+   "w9d3ze": {
+    "dumb": 3.56,
+    "cute": 0.882,
+    "fat": 3.051,
+    "derp": 2.895,
+    "blank": -1.901,
+    "loaf": -9.014
+   },
+   "w6pt06": {
+    "dumb": 3.164,
+    "cute": -0.73,
+    "fat": 2.515,
+    "derp": 0.233,
+    "blank": -0.672,
+    "loaf": -10.045
+   },
+   "wbxn54": {
+    "dumb": 2.376,
+    "cute": 0.118,
+    "fat": 2.987,
+    "derp": 3.019,
+    "blank": -2.635,
+    "loaf": -7.539
+   },
+   "w3ln30": {
+    "dumb": 2.221,
+    "cute": -2.055,
+    "fat": 2.144,
+    "derp": 0.296,
+    "blank": -0.19,
+    "loaf": -8.757
+   },
+   "w0whx5": {
+    "dumb": 1.848,
+    "cute": 0.743,
+    "fat": 0.048,
+    "derp": 0.771,
+    "blank": -0.796,
+    "loaf": -10.012
+   },
+   "w5za4n": {
+    "dumb": 1.494,
+    "cute": 0.573,
+    "fat": -1.018,
+    "derp": 3.242,
+    "blank": -3.099,
+    "loaf": -9.795
+   },
+   "w832eq": {
+    "dumb": 1.066,
+    "cute": 2.162,
+    "fat": 3.951,
+    "derp": -1.79,
+    "blank": -1.323,
+    "loaf": -8.641
+   },
+   "vsq8k7": {
+    "dumb": 3.264,
+    "cute": 0.948,
+    "fat": -0.25,
+    "derp": 2.69,
+    "blank": -2.487,
+    "loaf": -9.672
+   },
+   "vxa915": {
+    "dumb": 3.586,
+    "cute": 0.465,
+    "fat": 4.137,
+    "derp": 2.799,
+    "blank": -0.029,
+    "loaf": -5.762
+   },
+   "wesisa": {
+    "dumb": 3.445,
+    "cute": 0.746,
+    "fat": -0.529,
+    "derp": 6.67,
+    "blank": -3.225,
+    "loaf": -8.172
+   },
+   "wy9q9z": {
+    "dumb": 2.365,
+    "cute": -4.056,
+    "fat": 0.52,
+    "derp": 0.915,
+    "blank": -1.145,
+    "loaf": -8.194
+   },
+   "x00d9z": {
+    "dumb": 1.852,
+    "cute": -0.041,
+    "fat": -0.855,
+    "derp": 3.399,
+    "blank": -0.562,
+    "loaf": -8.936
+   },
+   "x1kml1": {
+    "dumb": 2.979,
+    "cute": 1.44,
+    "fat": 3.086,
+    "derp": 3.944,
+    "blank": -2.591,
+    "loaf": -8.548
+   },
+   "wuv0zc": {
+    "dumb": 2.555,
+    "cute": -0.7,
+    "fat": 1.615,
+    "derp": 3.861,
+    "blank": -1.254,
+    "loaf": -9.582
+   },
+   "wp0cvf": {
+    "dumb": 3.026,
+    "cute": -0.019,
+    "fat": 4.76,
+    "derp": 0.83,
+    "blank": -0.879,
+    "loaf": -7.35
+   },
+   "wdqcfv": {
+    "dumb": 1.158,
+    "cute": 1.65,
+    "fat": 1.261,
+    "derp": -0.832,
+    "blank": 0.118,
+    "loaf": -7.621
+   },
+   "wwmlpp": {
+    "dumb": 2.152,
+    "cute": 2.402,
+    "fat": 2.182,
+    "derp": 4.851,
+    "blank": 0.165,
+    "loaf": -8.85
+   },
+   "x0ob0n": {
+    "dumb": 0.576,
+    "cute": 0.509,
+    "fat": 0.877,
+    "derp": 2.366,
+    "blank": -3.374,
+    "loaf": -8.385
+   },
+   "wj1c5t": {
+    "dumb": 2.13,
+    "cute": -2.225,
+    "fat": 0.978,
+    "derp": 3.353,
+    "blank": -1.215,
+    "loaf": -8.05
+   },
+   "wtzsk6": {
+    "dumb": 3.633,
+    "cute": -0.852,
+    "fat": 1.999,
+    "derp": 3.121,
+    "blank": -2.377,
+    "loaf": -8.63
+   },
+   "wtoh1r": {
+    "dumb": 3.069,
+    "cute": 1.405,
+    "fat": 4.895,
+    "derp": 5.068,
+    "blank": -4.16,
+    "loaf": -9.954
+   },
+   "wkerbj": {
+    "dumb": 3.56,
+    "cute": -1.252,
+    "fat": -0.882,
+    "derp": 5.283,
+    "blank": -0.057,
+    "loaf": -9.498
+   },
+   "wm90d6": {
+    "dumb": 3.465,
+    "cute": -0.683,
+    "fat": 1.019,
+    "derp": 4.652,
+    "blank": -0.704,
+    "loaf": -8.6
+   },
+   "x2ox6y": {
+    "dumb": 2.587,
+    "cute": -1.711,
+    "fat": -1.511,
+    "derp": 2.553,
+    "blank": 0.819,
+    "loaf": -10.807
+   },
+   "wqtzrl": {
+    "dumb": 1.858,
+    "cute": 0.615,
+    "fat": 4.414,
+    "derp": 0.214,
+    "blank": 0.443,
+    "loaf": 1.211
+   },
+   "wegz12": {
+    "dumb": 2.417,
+    "cute": 0.598,
+    "fat": 2.941,
+    "derp": 3.463,
+    "blank": -1.846,
+    "loaf": -10.123
+   },
+   "wrsf3v": {
+    "dumb": 1.003,
+    "cute": -0.57,
+    "fat": -1.973,
+    "derp": 2.382,
+    "blank": -1.62,
+    "loaf": -8.475
+   },
+   "whp4zr": {
+    "dumb": 2.005,
+    "cute": 2.81,
+    "fat": 4.315,
+    "derp": 0.581,
+    "blank": -1.035,
+    "loaf": -9.05
+   },
+   "wxlj6w": {
+    "dumb": 2.088,
+    "cute": 0.628,
+    "fat": 2.675,
+    "derp": 0.07,
+    "blank": -0.259,
+    "loaf": -7.668
+   },
+   "wjivz0": {
+    "dumb": 3.989,
+    "cute": 0.517,
+    "fat": 1.718,
+    "derp": 5.001,
+    "blank": -1.899,
+    "loaf": -11.058
+   },
+   "x1w9y2": {
+    "dumb": 3.501,
+    "cute": -1.411,
+    "fat": 1.756,
+    "derp": 3.401,
+    "blank": 0.613,
+    "loaf": -9.573
+   },
+   "wipvtn": {
+    "dumb": 3.291,
+    "cute": -2.645,
+    "fat": -1.489,
+    "derp": 2.831,
+    "blank": 2.757,
+    "loaf": -11.102
+   },
+   "wldqro": {
+    "dumb": 1.273,
+    "cute": 0.518,
+    "fat": 2.171,
+    "derp": 0.611,
+    "blank": -1.559,
+    "loaf": -8.713
+   },
+   "wytw00": {
+    "dumb": 2.789,
+    "cute": 1.491,
+    "fat": 0.154,
+    "derp": 2.533,
+    "blank": -2.185,
+    "loaf": -10.993
+   },
+   "wmlwp0": {
+    "dumb": 1.824,
+    "cute": 0.336,
+    "fat": -1.142,
+    "derp": 3.461,
+    "blank": -0.518,
+    "loaf": -9.259
+   },
+   "wqab4v": {
+    "dumb": 2.932,
+    "cute": -0.734,
+    "fat": -0.334,
+    "derp": 2.264,
+    "blank": -0.871,
+    "loaf": -9.122
+   },
+   "wzsbt7": {
+    "dumb": 2.82,
+    "cute": -2.346,
+    "fat": -2.405,
+    "derp": 3.691,
+    "blank": -0.581,
+    "loaf": -7.26
+   },
+   "x24lw8": {
+    "dumb": 2.211,
+    "cute": -1.038,
+    "fat": 1.123,
+    "derp": 1.261,
+    "blank": -0.085,
+    "loaf": -8.752
+   },
+   "wp8eks": {
+    "dumb": 3.939,
+    "cute": -0.36,
+    "fat": -1.706,
+    "derp": 4.514,
+    "blank": -0.247,
+    "loaf": -8.963
+   },
+   "wicla4": {
+    "dumb": 3.287,
+    "cute": -2.167,
+    "fat": -1.034,
+    "derp": 2.791,
+    "blank": 1.854,
+    "loaf": -10.291
+   },
+   "x12c4q": {
+    "dumb": 3.062,
+    "cute": 0.204,
+    "fat": -1.556,
+    "derp": 2.712,
+    "blank": -1.461,
+    "loaf": -5.498
+   },
+   "wg06by": {
+    "dumb": 2.791,
+    "cute": 1.927,
+    "fat": 4.337,
+    "derp": 3.675,
+    "blank": -2.291,
+    "loaf": -7.733
+   },
+   "wo1tj7": {
+    "dumb": 3.541,
+    "cute": 0.646,
+    "fat": 3.767,
+    "derp": 2.732,
+    "blank": -0.436,
+    "loaf": -9.147
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+187 posts, 374 calls
+
+== 'This cat is so ___'  top-1 word: [('cute', 153), ('funny', 17), ('relaxed', 7), ('fluffy', 4), ('sad', 2), ('angry', 1), ('covered', 1), ('round', 1)]
+   p_cute         min 0.10  p10 0.31  median 0.72  p90 0.93  max 0.98
+   p_funny        min 0.00  p10 0.00  median 0.04  p90 0.38  max 0.80
+   p_calm         min 0.00  p10 0.00  median 0.01  p90 0.23  max 0.74
+   p_body         min 0.00  p10 0.00  median 0.01  p90 0.10  max 0.70
+   p_mind         min 0.00  p10 0.00  median 0.01  p90 0.12  max 0.40
+   p_unassigned   min 0.00  p10 0.01  median 0.03  p90 0.15  max 0.55
+   entropy        min 0.62  p10 0.82  median 1.39  p90 1.98  max 2.42
+   funny_vs_cute  min 0.00  p10 0.01  median 0.06  p90 0.51  max 0.89
+
+== 'What a ___'  top-1 word: [('cute', 80), ('funny', 47), ('lovely', 23), ('delightful', 12), ('heart', 7), ('cozy', 7), ('classic', 2), ('hilarious', 2)]
+   p_cute         min 0.01  p10 0.13  median 0.49  p90 0.85  max 0.96
+   p_funny        min 0.00  p10 0.00  median 0.11  p90 0.58  max 0.89
+   p_calm         min 0.00  p10 0.00  median 0.01  p90 0.14  max 0.70
+   p_body         min 0.00  p10 0.00  median 0.00  p90 0.00  max 0.01
+   p_mind         min 0.00  p10 0.00  median 0.00  p90 0.01  max 0.08
+   p_unassigned   min 0.04  p10 0.09  median 0.21  p90 0.42  max 0.89
+   entropy        min 1.12  p10 1.62  median 2.14  p90 2.48  max 2.72
+   funny_vs_cute  min 0.00  p10 0.00  median 0.21  p90 0.80  max 0.98
+
+== Stability across the two openings (Spearman, n=187)
+   p_cute         rho = +0.72
+   p_funny        rho = +0.90
+   p_calm         rho = +0.62
+   p_body         rho = +0.15
+   p_mind         rho = +0.41
+   entropy        rho = +0.36
+   funny_vs_cute  rho = +0.87
+
+'This cat is so' most funny-leaning: wbl1e8 [funny cute gr] 0.888; u8nf6x [funny expressive cute] 0.827; v82dp5 [funny cute expressive] 0.732; wesisa [funny cute silly] 0.725; v98h6m [funny cute silly] 0.694
+'This cat is so' most cute-leaning:  whp4zr [fluffy cute adorable] 0.0; wipvtn [sad cute injured] 0.0; wicla4 [sad cute adorable] 0.0
+
+'What a' most funny-leaning: wj1c5t [chaotic funny hilarious] 0.981; x00d9z [funny hilarious chaotic] 0.969; u4zg3x [funny hilarious classic] 0.965; v98h6m [funny hilarious classic] 0.959; uc7bo9 [funny hilarious cute] 0.954
+'What a' most cute-leaning:  vxa915 [cozy cute lovely] 0.0; wdqcfv [lovely cute beautiful] 0.0; whp4zr [lovely cute beautiful] 0.0
+
+Bread (wqtzrl): {"This cat is so": {"top3": "round cute fluffy", "top1_p": 0.442, "word_mass": 0.849, "entropy": 1.632, "p_cute": 0.239, "p_funny": 0.047, "p_calm": 0.026, "p_body": 0.594, "p_mind": 0, "p_unassigned": 0.094, "funny_vs_cute": 0.164}, "What a": {"top3": "funny cute delightful", "top1_p": 0.255, "word_mass": 0.863, "entropy": 2.342, "p_cute": 0.33, "p_funny": 0.38, "p_calm": 0.025, "p_body": 0, "p_mind": 0, "p_unassigned": 0.265, "funny_vs_cute": 0.535}}

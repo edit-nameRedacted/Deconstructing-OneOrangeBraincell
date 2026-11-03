@@ -1,0 +1,56 @@
+195 posts (memorial posts excluded); comments per post: min 6, median 54, max 789
+
+== How common each family is (per 1,000 comment words), and split-half reliability (Spearman-Brown)
+  cute       median   8.30  p90  24.48  max  60.15  % comments using it (median post):   9.8  reliability +0.60
+  funny      median   8.36  p90  22.86  max  93.17  % comments using it (median post):   9.2  reliability +0.52
+  braincell  median   5.34  p90  16.13  max  31.91  % comments using it (median post):   6.0  reliability +0.54
+  dumb       median   1.67  p90   9.67  max  26.67  % comments using it (median post):   2.1  reliability +0.49
+  smart      median   0.00  p90   3.66  max  16.13  % comments using it (median post):   0.0  reliability +0.22
+  body       median   0.00  p90   5.59  max  25.35  % comments using it (median post):   0.0  reliability +0.50
+  calm       median   0.00  p90   1.72  max  10.66  % comments using it (median post):   0.0  reliability +0.51
+  kin        median   3.09  p90   9.43  max  29.38  % comments using it (median post):   2.9  reliability +0.36
+  love       median   8.24  p90  22.56  max 124.37  % comments using it (median post):   7.7  reliability +0.55
+  grief      median   0.00  p90   0.89  max   4.90  % comments using it (median post):   0.0  reliability +0.23
+  funny_vs_cute share: reliability +0.69 (n=180)
+
+== Internet (comments) vs computer (Spearman, posts with media)
+  cm_funny_vs_cute           funny_vs_cute:+0.39 derp:+0.07 dumb:-0.08 cute:-0.29 fat:-0.16 loaf:+0.06 reasoning_chars:-0.04
+  cm_funny_vs_cute_upvoted   funny_vs_cute:+0.34 derp:+0.11 dumb:-0.11 cute:-0.24 fat:-0.22 loaf:+0.04 reasoning_chars:-0.07
+  cm_funny_per1k             funny_vs_cute:+0.26 derp:+0.07 dumb:-0.05 cute:-0.14 fat:-0.04 loaf:+0.07 reasoning_chars:-0.04
+  cm_cute_per1k              funny_vs_cute:-0.36 derp:-0.06 dumb:+0.06 cute:+0.30 fat:+0.18 loaf:-0.04 reasoning_chars:+0.02
+  cm_dumb_per1k              funny_vs_cute:-0.01 derp:-0.01 dumb:+0.01 cute:-0.09 fat:+0.16 loaf:+0.01 reasoning_chars:+0.04
+  cm_braincell_per1k         funny_vs_cute:+0.02 derp:+0.09 dumb:+0.03 cute:+0.09 fat:+0.00 loaf:-0.09 reasoning_chars:-0.12
+  cm_body_per1k              funny_vs_cute:-0.16 derp:-0.08 dumb:+0.07 cute:+0.09 fat:+0.25 loaf:+0.08 reasoning_chars:-0.08
+  cm_kin_per1k               funny_vs_cute:-0.04 derp:-0.00 dumb:+0.01 cute:+0.01 fat:-0.11 loaf:-0.01 reasoning_chars:+0.06
+  cm_love_per1k              funny_vs_cute:-0.32 derp:+0.00 dumb:+0.09 cute:+0.13 fat:+0.01 loaf:-0.09 reasoning_chars:+0.00
+  cm_grief_per1k             funny_vs_cute:+0.14 derp:+0.02 dumb:+0.05 cute:-0.20 fat:-0.06 loaf:+0.10 reasoning_chars:+0.15
+  (columns: qwen funny_vs_cute, siglip derp, dumb, cute, fat, loaf, qwen reasoning_chars)
+
+== Internet vs post popularity
+  cm_funny_vs_cute       vs score: +0.07   vs n_comments: +0.14
+  cm_dumb_per1k          vs score: +0.06   vs n_comments: +0.12
+  cm_braincell_per1k     vs score: -0.06   vs n_comments: -0.15
+  cm_grief_per1k         vs score: +0.15   vs n_comments: +0.28
+  cm_love_per1k          vs score: -0.00   vs n_comments: -0.06
+
+== Most funny-leaning and most cute-leaning comment sections (posts with 30+ comments)
+  u4x707 1.00 qwen 0.73  'just gonna leave this here'
+  uel7bl 1.00 qwen nan  'Orange cat'
+  uv5uwl 1.00 qwen 0.09  'He’s not stuck, he’s just mad I didn’t give him my breakfast.'
+  vjkzcw 1.00 qwen 0.50  'Hold up'
+  vlc7p5 1.00 qwen 0.34  'One Orange Predator'
+  ...
+  v8vn8l 0.00 qwen 0.01  'Tommy ❤️'
+  vqinii 0.00 qwen 0.02  'One little innocent brain cell'
+  wg06by 0.00 qwen 0.05  'The sparking of the last one makes head go ouchy!'
+  wqtzrl 0.00 qwen 0.35  'Bread'
+  x12c4q 0.00 qwen 0.10  'Ladies and gentlemen, my boy who beat panleukopenia! ❤️❤️'
+
+== Most grief-heavy comment sections
+  vlc7p5 grief 4.9/1k  'One Orange Predator'
+  v5bs65 grief 4.44/1k  'He often sits on this foot stool with nothing going on upstairs but ra'
+  uhir9e grief 3.72/1k  'What’s on ur phone'
+  vaya3y grief 3.33/1k  'Peach is our special child, all heart and no brain'
+  u9y0e9 grief 2.99/1k  'Less than one brain cell'
+
+Bread (wqtzrl): {"n_comments": "111", "cm_funny_vs_cute": "0.0", "cm_body_per1k": "24.0", "cm_cute_per1k": "6.0", "cm_dumb_per1k": "1.0"}

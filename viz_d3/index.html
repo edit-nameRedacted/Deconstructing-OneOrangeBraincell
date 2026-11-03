@@ -1,0 +1,166 @@
+<!doctype html>
+<!--
+  Typical Orange Cats — r/OneOrangeBraincell, heyday posts (Apr–Aug 2022).
+
+  Run it: double-click "Open viz.bat" in this folder (or `python serve.py`). It starts a local
+  server and opens http://localhost:8000/viz_d3/ (add ?check to the address to run the checks).
+
+  This file is only the page's frame: containers the scripts fill in. Everything that draws
+  starts in js/main.js.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typical Orange Cats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+<!-- Opening screen: what the subreddit is and what the project is. Shown on every visit; the
+     "About" button in the heading brings it back. intro.js shows and hides it. -->
+<section class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+  <div class="intro-card">
+    <p class="dataset">r/OneOrangeBraincell · April–August 2022</p>
+    <h1 id="intro-title">Typical Orange Cats</h1>
+    <p class="intro-lede">There's a joke on the internet that all orange cats share a single brain cell, and only one cat gets to use it at a time.</p>
+    <p><strong>r/OneOrangeBraincell</strong> is the Reddit community built on that joke. It opened in February 2022 to collect "orange cat behavior": photos and videos of orange cats doing something baffling or, once in a while, something clever. It grew fast, from about 53,000 members at the end of May 2022 to about 175,000 by mid-September.</p>
+    <h2>The project</h2>
+    <p>These are the posts from that first summer: the top 40 of each month from April to August 2022. That makes 182 posts once memorial posts, and posts whose photo or video no longer loads, are set aside. Every post was coded by hand: whether the cat has the braincell, how you can tell, what went wrong, whether the cat is treated as a person, and how dumb and how cute it is. In addition, a small vision model (<a href="https://huggingface.co/Qwen/Qwen3.5-9B" target="_blank" rel="noopener">Qwen3.5-9B</a>; Qwen Team, 2026) was run to collect each featured cat's look: its build and where its white fur is.</p>
+    <h2>How to read it</h2>
+    <ul>
+      <li><strong>Each cat stands for a group of posts.</strong> Its body is the typical cat in that group: the usual amount of white fur, plus any markings or build that turn up there more than elsewhere.</li>
+      <li><strong>The tail carries the group's numbers.</strong> Segments show how the group's posts did on Reddit: reaching the top of the rankings generally meant a post stayed up longer, and thus maintained a high ranking. Stripes in shades of orange and white show what stands out about the group on each of the other hand codes: the thicker the stripe, the more of the group it covers.</li>
+      <li><strong>The eyes:</strong> wide, wonky eyes mark the dumbest group on screen; big sparkly eyes mark the cutest.</li>
+    </ul>
+    <p class="intro-hint">Click a cat to look at its tail, and a piece of the tail to see the posts behind it. The heading switches what the cats are grouped by.</p>
+    <button class="primary" id="intro-go" type="button">Meet the cats</button>
+  </div>
+</section>
+
+<!-- "Bread": one post, and how each source read it. The loaf button in the heading opens it;
+     bread.js fills the numbers marked data-fill from the data, shows the picture, and closes it
+     (the ✕ button, Esc, or a click outside the card). The words are here; edit freely. -->
+<section class="bread" id="bread" role="dialog" aria-modal="true" aria-labelledby="bread-title" hidden>
+  <div class="bread-card">
+    <button class="icon bread-close" id="bread-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="dataset">The cat the model called a capybara</p>
+    <h2 id="bread-title">Bread</h2>
+    <p class="bread-meta" data-fill="meta"></p>
+    <figure class="bread-figure" id="bread-figure">
+      <img id="bread-img" alt="The post titled “Bread”: an orange cat lying in a perfect loaf shape, paws and tail tucked out of sight.">
+    </figure>
+
+    <h3>The vision model: a capybara</h3>
+    <p>This photo was drawn to our attention because it was flagged for removal for not containing a cat. Human review confirmed there was a cat, and investigation into how the model came to its erroneous conclusion yielded surprising results.</p>
+    <p>The model that records each cat's look (<a href="https://huggingface.co/Qwen/Qwen3.5-9B" target="_blank" rel="noopener">Qwen3.5-9B</a>, run locally) reasons in writing before it answers. Of the <span data-fill="n-posts"></span> posts it read, Bread is the only one where it found no cat, and it did not get there easily. It struggled over cat versus capybara for longer, at greater length and with more second-guessing than over almost any other post:</p>
+    <div class="bread-charts" id="bread-charts" aria-label="Bread against every other post: time to answer, length of reasoning, and second-guesses"></div>
+    <p class="bread-note" data-fill="charts-note"></p>
+    <p>Its reasoning begins:</p>
+    <blockquote class="bread-thinking">
+      <p><strong>1. Analyze the Image:</strong></p>
+      <ul>
+        <li><strong>Subject:</strong> There is a large, furry animal lying on a wooden table.</li>
+        <li><strong>Appearance:</strong> It looks like a very round, brownish-orange blob. The fur is short and dense.</li>
+        <li><strong>Identity Check:</strong> Wait, looking closely at the shape and texture... this is NOT a cat. This is a capybara. It's a rodent, specifically the largest living rodent. The prompt says "In other_animals, name any animals that are not cats as a short plain phrase". So I need to classify this as an "other animal".</li>
+        <li><strong>BUT</strong>, looking at the image again... is it a very fluffy orange cat curled up? No, the shape is too smooth and rounded, characteristic of a capybara's body. The fur texture looks like coarse rodent hair, not cat fur. The ears are barely visible or hidden, which fits a capybara lying down. Wait, looking at the left side, there's a small ear-like structure. But the overall shape is distinctly capybara.</li>
+      </ul>
+    </blockquote>
+    <p>It goes on like this for nearly 300 lines. It re-reads the prompt, wonders whether the post is a trick, decides that “cats curl into tighter balls” and that this is “a long, smooth cylinder”, and even claims to recognise the photo as “a famous meme image of a capybara”. Its answer: no cats; other animals, one capybara.</p>
+
+    <h3>The rerun: told it is a cat</h3>
+    <p>So Bread got a rerun of its own, with one sentence added to the prompt: <q>A human coder has confirmed there is a cat in this photo. Code it as a cat.</q> Told that, the model saw an adult orange tabby of ideal weight, about <span data-fill="kg"></span> kg, with no white fur, lying on its side on a wooden table. That rerun is the look this page uses.</p>
+
+    <h3>The commenters: bread</h3>
+    <p>The subreddit agreed with the title. 55 of the 135 saved comments are about loaves or bread; the top one, at 481 points, admires a perfect loaf, and nine replies say only “Bread 👍”. Another commenter retraced the model's route in reverse: first bread, then a guinea pig, and only then, from the subreddit's name, a cat.</p>
+
+    <h3>The internet-trained models: round, and the loafiest</h3>
+    <p data-fill="models"></p>
+
+    <p class="bread-source">Sources: the post and its comments from the Arctic Shift archive; the first run's full reasoning (<code>wqtzrl_original_thinking.txt</code>) and the rerun in <code>oobc_archive/bread_rerun/</code>; time, reasoning length and second-guesses for every post in <code>oobc_archive/ai_opinion/reasoning_measures.csv</code> (<code>reasoning_measures.py</code>); the model readings in <code>model_data.json</code>.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- Heading: the dataset, then the category shown, which is also the switcher -->
+  <header class="top">
+    <div>
+      <p class="dataset">r/OneOrangeBraincell</p>
+      <div class="title">
+        <label class="sr" for="arrange">Category shown</label>
+        <select id="arrange"></select>
+        <span id="measure" aria-hidden="true"></span>
+      </div>
+      <!-- One sentence on what the current grouping means (text.js) -->
+      <p class="lede" id="lede"></p>
+    </div>
+    <div class="top-buttons">
+      <button class="icon" id="bread-btn" type="button" aria-haspopup="dialog" aria-controls="bread" aria-label="Bread: the cat the model called a capybara">
+        <!-- A loaf, side on, with three scores across the crust -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17.2V12.5A5.5 5.5 0 0 1 9.5 7h5a5.5 5.5 0 0 1 5.5 5.5v4.7a1.3 1.3 0 0 1-1.3 1.3H5.3A1.3 1.3 0 0 1 4 17.2z"/><path d="M8.6 8.2l-1.3 2.6M12.3 7.6l-1.3 2.6M16 8.2l-1.3 2.6"/></svg>
+      </button>
+      <button class="icon" id="about" type="button" aria-label="About this page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor"/></svg>
+      </button>
+      <button class="icon" id="gear" type="button" aria-expanded="false" aria-controls="settings" aria-label="Tail settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Tail settings, behind the sliders button -->
+  <section class="settings" id="settings" hidden aria-label="Tail settings">
+    <div class="vargroups" id="vars"></div>
+    <div class="vargroup"><span>Stripes on the tail</span><div class="chips" id="stripes"></div></div>
+    <!-- The pointer drawn as a neuron (neuronCursor.js); hidden on touch screens and with reduced motion -->
+    <div class="vargroup"><span>Pointer</span><div class="chips"><label class="chip"><input type="checkbox" id="neuron-toggle" checked><span>Neuron cursor</span></label></div></div>
+    <p>Body and coat: median share of white fur, plus markings over-represented in the group (at least 1.3× overall and on 30% of its cats; 3 cats minimum). Eyes: wide, wonky eyes for the highest average dumbness in the view; big sparkly eyes for the highest average cuteness among the others; other eyes are random. Tail segments each have their own shade, white to brown, base to tip; a segment's length is the percentile of the group's median among all posts. Stripes: one per hand code, each in its own shade of orange or white, showing the group's standout value for that code (the one most over-represented against all posts, held by at least 3 posts); a stripe is as thick as that value's share of the group. 182 top posts, Apr–Aug 2022, memorial posts excluded.</p>
+  </section>
+
+  <main>
+    <!-- The row of typical cats (catView.js), and a key to their tails (legend.js) -->
+    <div class="row" id="row"></div>
+    <div class="legend" id="legend"></div>
+
+    <!-- One cat's tail, zoomed (zoom.js), with its details beside it (details.js) -->
+    <section class="zoom" id="zoom" hidden aria-live="polite">
+      <div class="zoom-head" id="zoom-head">
+        <button class="icon" id="back" type="button" aria-label="Back to all cats">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <h2 id="zoom-title"></h2><span class="n" id="zoom-n"></span>
+      </div>
+      <div class="zoom-body" id="zoom-body">
+        <div class="zoom-left">
+          <div class="zoom-stage" id="zoom-stage"></div>
+          <!-- Opens the model view (modelView.js); hidden if model_data.json is missing -->
+          <button class="robot-btn" id="robot" type="button" hidden>
+            <svg class="robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3"/><circle cx="12" cy="2.6" r="0.9" fill="currentColor"/><rect x="4.5" y="6" width="15" height="11" rx="3"/><circle cx="9.3" cy="11.2" r="1.4" fill="currentColor"/><circle cx="14.7" cy="11.2" r="1.4" fill="currentColor"/><path d="M9.5 14.3h5"/><path d="M2.5 10.5v3M21.5 10.5v3"/><path d="M8.5 17v3h7v-3"/></svg>
+            <span>What a model trained on the internet thinks of this group</span>
+          </button>
+        </div>
+        <aside class="info" id="info"></aside>
+      </div>
+
+      <!-- The same group's tail as two models read it, side by side (modelView.js) -->
+      <section class="model-view" id="model-view" hidden>
+        <button class="linklike model-back" id="model-back" type="button">← Back to the human ratings</button>
+        <div class="model-title-row">
+          <svg class="robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3"/><circle cx="12" cy="2.6" r="0.9" fill="currentColor"/><rect x="4.5" y="6" width="15" height="11" rx="3"/><circle cx="9.3" cy="11.2" r="1.4" fill="currentColor"/><circle cx="14.7" cy="11.2" r="1.4" fill="currentColor"/><path d="M9.5 14.3h5"/><path d="M2.5 10.5v3M21.5 10.5v3"/><path d="M8.5 17v3h7v-3"/></svg>
+          <h2 id="model-title"></h2><span class="n" id="model-n"></span>
+        </div>
+        <p class="lede">The upvote and comment segments are the same as before. The stripes now show what each model makes of these posts, in place of the hand codes.</p>
+        <div class="model-columns" id="model-columns"></div>
+      </section>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

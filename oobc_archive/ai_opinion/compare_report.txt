@@ -1,0 +1,53 @@
+== 1. Does SigLIP see what it should? (all posts with cat traits)
+siglip_fat vs model body condition : rho=+0.20 p=0.007 n=174  95% CI [+0.08, +0.30]
+siglip_fat vs model est. weight    : rho=+0.40 p=0.000 n=180  95% CI [+0.27, +0.52]
+
+== 2. Are the SigLIP axes separate, or one 'vibe'? (Spearman between axes)
+                  dumb    cute     fat    derp   blank    loaf
+          dumb   +1.00   -0.32   +0.03   +0.54   +0.02   +0.14
+          cute   -0.32   +1.00   +0.31   -0.15   -0.11   +0.01
+           fat   +0.03   +0.31   +1.00   -0.11   -0.11   +0.21
+          derp   +0.54   -0.15   -0.11   +1.00   -0.22   +0.00
+         blank   +0.02   -0.11   -0.11   -0.22   +1.00   -0.02
+          loaf   +0.14   +0.01   +0.21   +0.00   -0.02   +1.00
+
+== 3. Against AC's hand codes (35 coded posts)
+hand Cuteness vs hand Dumb: rho=+0.25 p=0.146 n=35  95% CI [-0.05, +0.54]
+siglip_dumb                    vs Cuteness: rho=+0.17 p=0.315 n=35  95% CI [-0.20, +0.51]
+                               vs Dumb    : rho=-0.03 p=0.854 n=35  95% CI [-0.41, +0.34]
+siglip_cute                    vs Cuteness: rho=+0.03 p=0.884 n=35  95% CI [-0.39, +0.41]
+                               vs Dumb    : rho=-0.05 p=0.789 n=35  95% CI [-0.36, +0.28]
+siglip_fat                     vs Cuteness: rho=+0.20 p=0.252 n=35  95% CI [-0.18, +0.56]
+                               vs Dumb    : rho=+0.15 p=0.383 n=35  95% CI [-0.20, +0.45]
+siglip_derp                    vs Cuteness: rho=-0.01 p=0.974 n=35  95% CI [-0.33, +0.31]
+                               vs Dumb    : rho=+0.45 p=0.007 n=35  95% CI [+0.18, +0.67]
+siglip_blank                   vs Cuteness: rho=+0.09 p=0.618 n=35  95% CI [-0.24, +0.39]
+                               vs Dumb    : rho=-0.26 p=0.137 n=35  95% CI [-0.58, +0.10]
+siglip_loaf                    vs Cuteness: rho=-0.35 p=0.037 n=35  95% CI [-0.64, +0.00]
+                               vs Dumb    : rho=-0.12 p=0.498 n=35  95% CI [-0.46, +0.25]
+model_seconds                  vs Cuteness: rho=-0.22 p=0.207 n=35  95% CI [-0.57, +0.15]
+                               vs Dumb    : rho=+0.06 p=0.737 n=35  95% CI [-0.31, +0.40]
+reasoning_chars                vs Cuteness: rho=-0.54 p=0.003 n=29  95% CI [-0.78, -0.23]
+                               vs Dumb    : rho=-0.21 p=0.269 n=29  95% CI [-0.54, +0.16]
+second_guesses                 vs Cuteness: rho=-0.53 p=0.003 n=29  95% CI [-0.72, -0.27]
+                               vs Dumb    : rho=-0.18 p=0.363 n=29  95% CI [-0.55, +0.20]
+second_guesses_per_1k_chars    vs Cuteness: rho=-0.43 p=0.020 n=29  95% CI [-0.69, -0.12]
+                               vs Dumb    : rho=+0.09 p=0.624 n=29  95% CI [-0.29, +0.48]
+model_confidence               vs Cuteness: rho=+0.23 p=0.192 n=35  95% CI [-0.11, +0.51]
+                               vs Dumb    : rho=-0.05 p=0.786 n=35  95% CI [-0.26, +0.18]
+
+== 4. Means by braincell code (hand)
+siglip_dumb      Had it: +2.75 (n=3)  Has it: +3.78 (n=2)  Not applicable: +2.68 (n=5)  Seeking it: +2.09 (n=7)  What braincell?: +2.84 (n=18)
+siglip_blank     Had it: -1.48 (n=3)  Has it: -0.68 (n=2)  Not applicable: -1.00 (n=5)  Seeking it: -1.65 (n=7)  What braincell?: -1.59 (n=18)
+siglip_derp      Had it: +4.55 (n=3)  Has it: +4.88 (n=2)  Not applicable: +1.91 (n=5)  Seeking it: +1.96 (n=7)  What braincell?: +3.90 (n=18)
+siglip_cute      Had it: -0.09 (n=3)  Has it: +0.14 (n=2)  Not applicable: -0.13 (n=5)  Seeking it: +0.09 (n=7)  What braincell?: +0.67 (n=18)
+second_guesses   Had it: +15.00 (n=3)  Has it: +9.00 (n=1)  Not applicable: +14.20 (n=5)  Seeking it: +16.00 (n=5)  What braincell?: +14.33 (n=15)
+
+== 5. Extremes
+siglip_dumb    top: [('vh4j63', '5.177'), ('u0mttp', '4.845'), ('uvlxzg', '4.609')]  bottom: [('v2fn65', '-0.757'), ('vdquxi', '-1.159')]
+siglip_cute    top: [('w6b92w', '3.846'), ('ubtzd7', '3.804'), ('vqinii', '3.215')]  bottom: [('ud4szr', '-3.1'), ('wy9q9z', '-4.056')]
+siglip_fat     top: [('w78j35', '6.333'), ('u196np', '5.68'), ('v61co9', '5.491')]  bottom: [('vh4j63', '-3.238'), ('vzz95v', '-5.23')]
+siglip_derp    top: [('v1ev0p', '7.722'), ('u0mttp', '7.122'), ('uexnzh', '6.673')]  bottom: [('vdquxi', '-1.372'), ('w832eq', '-1.79')]
+siglip_blank   top: [('wipvtn', '2.757'), ('wicla4', '1.854'), ('vi6pz5', '1.795')]  bottom: [('wtoh1r', '-4.16'), ('uj4bzg', '-4.593')]
+siglip_loaf    top: [('wqtzrl', '1.211'), ('x12c4q', '-5.498'), ('upl1sg', '-5.738')]  bottom: [('uwgjr2', '-12.108'), ('vdquxi', '-12.83')]
+Bread: {'siglip_dumb': '1.858', 'siglip_cute': '0.615', 'siglip_fat': '4.414', 'siglip_derp': '0.214', 'siglip_blank': '0.443', 'siglip_loaf': '1.211'} | loaf rank: 1 of 187
