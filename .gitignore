@@ -20,6 +20,7 @@ desktop.ini
 ~$*
 *.tmp
 *.part
+*.png
 
 # ---------------------------------------------------------------- unrelated / personal
 /discussion4_full.csv
