@@ -7,7 +7,7 @@ A small private research and visualization project about [r/OneOrangeBraincell](
 
 The result is an interactive D3 page of "typical cats". Each cat's body shows what its group of cats looks like, and its tail carries the group's post data. It's a literal take on *the tails of the distribution*.
 
-> **Data policy:** the data stays private. At most, the code may go up on GitHub. Nothing is published, and the posts' images and videos are kept only as a local cache for coding.
+**Demo** available <a href="https://oneorangebraincell.web.app/">here</a>
 
 ---
 
