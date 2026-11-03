@@ -45,7 +45,7 @@ To find when the joke was strongest, each month was scored on how many titles **
 
 The word list never flagged a title the hand-coder disagreed with, but it missed about a third of the framed ones. So the levels in the chart are underestimates, and the drop is real.
 
-Two side checks: **flair** fell from about 50% dumb-or-smart flairs to about 35% by the end of 2022 and then barely moved, so people kept choosing braincell flairs but stopped writing the joke into their titles. In **top comments**, braincell talk fell from 18% to about 5%, and GIF- or image-only comments rose from 0% to 14–19%. Sexual-joke words stayed under 1% in every period, so that part of the original hypothesis didn't hold up.
+Two side checks: **flair** fell from about 50% dumb-or-smart flairs to about 35% by the end of 2022 and then barely moved, so people kept choosing braincell flairs but stopped writing the joke into their titles. In **top comments**, braincell talk fell from 18% to about 5%, and GIF- or image-only comments rose from 0% to 14–19%. 
 
 ### Choosing the sample: top 40 a month, April–August 2022
 
