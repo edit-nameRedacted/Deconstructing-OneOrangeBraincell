@@ -1,13 +1,14 @@
 # One Orange Braincell: typical cats and the tails of the distribution
 
-A small private research and visualization project about [r/OneOrangeBraincell](https://www.reddit.com/r/OneOrangeBraincell/), the subreddit built on the joke that all orange cats share a single brain cell. It asks two questions:
+A small private research and visualization project about [r/OneOrangeBraincell](https://www.reddit.com/r/OneOrangeBraincell/), the subreddit built on the joke that all orange cats share a single brain cell. It asks:
 
-1. **Did the subreddit drift away from its own joke?** As it grew, did posts stop being about a cat that is very dumb (or, now and then, very smart)? If so, when was the joke at its peak?
-2. **What does the typical "head empty, zero thoughts" cat look like?** If you code the peak-era posts by their braincell status, what does the typical cat in each group look like, and how do its posts behave?
+**What does the typical "head empty, zero thoughts" cat look like?** If you code the peak-era posts by their braincell status, what does the typical cat in each group look like, and how do its posts behave?
+
+**What drives perceptions of a cat not having a braincell?** What category memberships travel together? Is it really adherence to the missing braincell paradigmn that makes a post popular, or are we just suckers for any image of a cute cat?
 
 The result is an interactive D3 page of "typical cats". Each cat's body shows what its group of cats looks like, and its tail carries the group's post data. It's a literal take on *the tails of the distribution*.
 
-> **Data policy:** the data stays private. At most, the code may go up on GitHub. Nothing is published, and the posts' images and videos are kept only as a local cache for coding.
+**Demo** available <a href="https://oneorangebraincell.web.app/">here</a>
 
 ---
 
@@ -44,7 +45,7 @@ To find when the joke was strongest, each month was scored on how many titles **
 
 The word list never flagged a title the hand-coder disagreed with, but it missed about a third of the framed ones. So the levels in the chart are underestimates, and the drop is real.
 
-Two side checks: **flair** fell from about 50% dumb-or-smart flairs to about 35% by the end of 2022 and then barely moved, so people kept choosing braincell flairs but stopped writing the joke into their titles. In **top comments**, braincell talk fell from 18% to about 5%, and GIF- or image-only comments rose from 0% to 14–19%. Sexual-joke words stayed under 1% in every period, so that part of the original hypothesis didn't hold up.
+Two side checks: **flair** fell from about 50% dumb-or-smart flairs to about 35% by the end of 2022 and then barely moved, so people kept choosing braincell flairs but stopped writing the joke into their titles. In **top comments**, braincell talk fell from 18% to about 5%, and GIF- or image-only comments rose from 0% to 14–19%. 
 
 ### Choosing the sample: top 40 a month, April–August 2022
 
@@ -157,6 +158,7 @@ pulls (`_local/`), the sheet tools' working outputs (`SVG/sheet_tools/out/`), th
 - [ ] A way to present the three rating sources (computer, internet, human)
 - [ ] Mix segments always sum to 100%, so they add the same length to every tail; consider a fixed-width band at the tip
 - [ ] Code the 6-month sets the same way, if the decline story comes back
+
 
 ---
 
