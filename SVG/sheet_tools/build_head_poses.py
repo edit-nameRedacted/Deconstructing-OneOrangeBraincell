@@ -1,16 +1,16 @@
-"""Build the head-turn poses from AC's hand alignments: each head travels with its own chest fluff.
+"""Build the head-turn poses from hand alignments: each head travels with its own chest fluff.
 
 Usage:  python3 build_head_poses.py ALIGN_SVG OUTDIR --pose 3=attached.svg:Head_3 --pose 4=folder.svg:Head_41
                                                      --pose 1=left1.svg:Head_1 [--bib 3="fwd 1.svg"]
   ALIGN_SVG   the align_head_turn.svg make_alignment.py wrote (the starting positions)
-  --pose N=FILE:GROUP   a file in which AC placed head N by hand (on the body), and that head's group id there
+  --pose N=FILE:GROUP   a file in which head N was placed by hand (on the body), and that head's group id there
   --bib N=FILE          a file with pose N's bib and fluff placed by hand, when that isn't the head's file
 
-For each pose AC placed, the script measures, against the starting positions:
+For each hand-placed pose, the script measures, against the starting positions:
   - the head's move and scale (fitted to its ear and nose shapes, so trimmed lines don't throw it off), and
-    keeps AC's own head shapes (with any trims);
+    keeps the drawn head shapes (with any trims);
   - the bib's and the fluff lines' move and stretch (from their boxes).
-Poses AC hasn't placed get a placement from their neighbours: between two placed poses, halfway; past the last
+Poses not yet placed get a placement from their neighbours: between two placed poses, halfway; past the last
 placed pose, the same as it. Those are marked "derived" in poses.json.
 
 Writes, in V2 units (the units of the V2 outline), to OUTDIR:
@@ -166,7 +166,7 @@ def main():
                      "shapes": f'<g transform="translate({-off[0]:.2f},{-off[1]:.2f})">{frag}</g>'}
         print(f"pose {n}: head scale {s:.3f}, move ({t[0]:.1f}, {t[1]:.1f}), fit {rms:.2f}", file=sys.stderr)
 
-    # poses AC hasn't placed: halfway between placed neighbours, or the same as the nearest one past the end
+    # poses not yet placed: halfway between placed neighbours, or the same as the nearest one past the end
     poses = {}
     for n in POSES:
         if n in placed:

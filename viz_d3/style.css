@@ -13,7 +13,7 @@
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
-  /* The cat's colours are the ones AC drew the V2 kit in (SVG/V2/SVG). The coat variants in the kit
+  /* The cat's colours are the ones the V2 kit was drawn in (SVG/V2/SVG). The coat variants in the kit
      (data-coat) and the tail segments use the palette sampled from the reference sheet:
      #442511 #6B3B13 #9A662D #C37825 #DB8C3F #F1B96F #BB9063 #BE7643 #FCD9AF #F1E7DB. */
   --cat-coat: #D78E34; --cat-stripes: #9D5224; --cat-white: #F5F4F3; --cat-nose: #CF9389;

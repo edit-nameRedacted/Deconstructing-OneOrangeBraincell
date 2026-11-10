@@ -10,6 +10,7 @@ venv/
 __pycache__/
 *.py[cod]
 .remember/
+.superpowers/
 .claude/
 .vscode/
 .idea/
@@ -27,6 +28,8 @@ desktop.ini
 /discussion4_full.csv
 /_to_delete/
 /2x/
+# Local-only odds and ends: early exploratory pulls, unrelated files (see _local/README.md)
+/_local/
 
 # ---------------------------------------------------------------- media cache (558 MB of Reddit users' photos and videos)
 # The D3 page's "example post" pictures read from here; with it excluded, a fresh clone shows the
@@ -67,3 +70,11 @@ desktop.ini
 
 # ---------------------------------------------------------------- exploratory analysis: per-post table (rebuilt by build_table.py; holds Reddit usernames)
 /oobc_archive/exploratory/posts.csv
+
+# ---------------------------------------------------------------- process files (kept on this machine, not published)
+# Sheet-tool working outputs: keyframe cuts, Wan in-between runs, tracing tests and their logs. All rebuildable from
+# SVG/sheet_tools/sheets + sequences; the page itself reads the finished viz_d3/sequences/*.json.
+/SVG/sheet_tools/out/
+# Planning and handoff notes from building the project with an AI assistant
+/docs/process/
+/docs/superpowers/

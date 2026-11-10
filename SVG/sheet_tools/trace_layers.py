@@ -21,7 +21,7 @@ import cv2
 import vtracer
 from skimage.morphology import skeletonize
 
-ROLES = {   # role: reference colour (AC's V2 kit colours)
+ROLES = {   # role: reference colour (the V2 kit colours)
     "line": "#462E29", "coat": "#D78E34", "stripe": "#9D5224", "cream": "#F5DAB5",
     "ear": "#C1886A", "nose": "#CF9389", "white": "#F5F4F3",
 }

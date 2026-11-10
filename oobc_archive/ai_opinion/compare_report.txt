@@ -11,7 +11,7 @@ siglip_fat vs model est. weight    : rho=+0.40 p=0.000 n=180  95% CI [+0.27, +0.
          blank   +0.02   -0.11   -0.11   -0.22   +1.00   -0.02
           loaf   +0.14   +0.01   +0.21   +0.00   -0.02   +1.00
 
-== 3. Against AC's hand codes (35 coded posts)
+== 3. Against the human hand codes (35 coded posts)
 hand Cuteness vs hand Dumb: rho=+0.25 p=0.146 n=35  95% CI [-0.05, +0.54]
 siglip_dumb                    vs Cuteness: rho=+0.17 p=0.315 n=35  95% CI [-0.20, +0.51]
                                vs Dumb    : rho=-0.03 p=0.854 n=35  95% CI [-0.41, +0.34]

@@ -1,5 +1,5 @@
 /*
-  pounce.js — the cat chases its own tail (AC's storyboard sketch, 2026-11-02).
+  pounce.js — the cat chases its own tail (the storyboard sketch, 2026-11-02).
 
   Plays when "Chase this tail" is pressed in the tail view, as the bridge from the zoomed tail to
   the regrouped row. The stages follow the sketch (their times are POUNCE in config.js):

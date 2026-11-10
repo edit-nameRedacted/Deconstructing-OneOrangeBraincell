@@ -45,7 +45,7 @@ export const DEFAULTS = {
   stripes: ["braincell", "failure", "inferred", "anthro", "dumb", "cute"],  // hand codes drawn as tail stripes
 };
 
-// ---- The typical cat (AC's rule, 2026-10-27) ----
+// ---- The typical cat (design rule, 2026-10-27) ----
 // White zones, in the order they are switched on as a cat gets whiter.
 // white_stages.json gives the cumulative % white after each of these, per body.
 export const ZONES = ["chin", "locket", "muzzle", "bib", "blaze", "belly", "paws", "stockings", "face", "body"];
@@ -60,7 +60,7 @@ export const TYPICAL = {
   SMALL_GROUP: 10,      // groups under 10 cats are "small": their typical cat is a loose guess
 };
 
-// ---- Eyes (AC's rule) ----
+// ---- Eyes (the design rule) ----
 // The group with the highest mean Dumbness in a view gets wide, wonky eyes; the cutest of the
 // other groups gets big shiny eyes. (If one group is both the dumbest and the cutest, the dumb
 // eyes win and the shiny eyes go to the next-cutest, so both markers always show.)
@@ -101,18 +101,18 @@ export const EARS = {
 
 // ---- Drawing the cat ----
 export const TILT = 0;            // degrees clockwise. The V2 cats face the viewer and already sit upright (was 5 for the 3/4-view kit)
-export const TAIL_TYPE = "long";  // which of AC's two tail drawings to use
+export const TAIL_TYPE = "long";  // which of the two hand-drawn tails to use
 export const TAIL_SIZE = 1.6;     // tail scale against the body; larger than life so the data reads
 export const TAIL_MIN = 0.3;      // the shortest tail drawn, as a fraction of the full drawing
 export const ROW_PAD = 6;         // kit units of space around the row's shared frame
 
-// ---- Tail stripes: the other hand codes (AC, 2026-11-02) ----
+// ---- Tail stripes: the other hand codes (design decision, 2026-11-02) ----
 // One stripe per hand code (except the one the row is grouped by), overlaid on the segments and
 // evenly spaced along the tail. Each shows the group's standout value for that code; its thickness
 // is that value's share of the group: a 100% share is RING_MAX of the full tail's length.
-// Each code has its own shade of orange or white (AC, 2026-11-02), spaced out in lightness from
+// Each code has its own shade of orange or white (design decision, 2026-11-02), spaced out in lightness from
 // white to near-black brown so neighbouring stripes, and the light and rust segments under them,
-// These stay brighter than the cat palette on purpose (AC, 2026-11-03): tails may leave the body
+// These stay brighter than the cat palette on purpose (design decision, 2026-11-03): tails may leave the body
 // palette where that keeps them readable. The segments and rings do use the palette.
 // stay apart. A thin outline on every stripe keeps the palest and darkest ones readable too.
 export const STRIPE_COLORS = {

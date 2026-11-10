@@ -1,4 +1,4 @@
-"""Assemble AC's V2 cat parts (SVG/V2/SVG/*.svg) into one layered, recolourable SVG.
+"""Assemble the hand-drawn V2 cat parts (SVG/V2/SVG/*.svg) into one layered, recolourable SVG.
 
 Usage (from SVG/V2/):  python3 assemble_v2.py SVG cat_v2.svg
 
@@ -30,7 +30,7 @@ PLACE = {                                   # file: (x, y) of its origin on the 
     "stripe pattern 1.svg": (7.25, 149.5),
     "face stripe pattern 1.svg": (14.18, 28.16),
     "ear 1 shading.svg": (23.75, -0.25),
-    "fluff 1.svg": (21.6, 141),            # lowered to match AC's reference render (2026-11-04)
+    "fluff 1.svg": (21.6, 141),            # lowered to match the reference render (2026-11-04)
     "ears 1.svg": (29.75, 3.25),
     "mouth 1.svg": (51.5, 98),
     "mouth 2.svg": (51.5 - 2.9, 98),

@@ -3,9 +3,9 @@
 - tailvars: what can sit on a tail (post data, the three sources, and cross-category membership)
 - posts: one record per post
 - groups[grouping][value]: the typical cat (continuous values + distinctive traits) and its tail values
-Sources in this version: AC's hand codes and ratings, the image model's read of how each cat looks, and the
-Reddit post data. The SigLIP, language-model and comment measures sit out for now (AC, 2026-10-27).
-Typical-cat rule (AC, 2026-10-27): continuous values set amounts (median % white), and each group's most
+Sources in this version: the human hand codes and ratings, the image model's read of how each cat looks, and the
+Reddit post data. The SigLIP, language-model and comment measures sit out for now (design decision, 2026-10-27).
+Typical-cat rule (design decision, 2026-10-27): continuous values set amounts (median % white), and each group's most
 over-represented traits (lift vs all posts) pick markings and body. Eyes: big-shiny for the highest mean
 Cuteness and highest mean Dumb group in a view; other groups get a seeded random set from the other six."""
 import csv, json, math, os, random, statistics as st, collections, datetime
@@ -45,8 +45,8 @@ GROUPINGS = {
  "failure":   ("Failure mode", ["Self", "Physical", "Object", "Social", "NA"], lambda p: codes[p]["Failure Mode"]),
  "inferred":  ("Braincell status read from", ["Actions", "Expression", "Both", "Post context", "NA"], lambda p: codes[p]["Status Inferred By..."]),
  "anthro":    ("Treated as a person", ["Just a cat", "Kin", "Voiced", "Kin and voiced"], anthro),
- "dumb":      ("Dumbness (AC)", ["1", "2", "3", "4", "5"], lambda p: codes[p]["Dumb"]),
- "cute":      ("Cuteness (AC)", ["1", "2", "3", "4", "5"], lambda p: codes[p]["Cuteness"]),
+ "dumb":      ("Dumbness (human)", ["1", "2", "3", "4", "5"], lambda p: codes[p]["Dumb"]),
+ "cute":      ("Cuteness (human)", ["1", "2", "3", "4", "5"], lambda p: codes[p]["Cuteness"]),
 }
 # ---- tail variables (continuous) ----
 TAILVARS = {
@@ -57,8 +57,8 @@ TAILVARS = {
  "crossposts":  ("Crossposts", "post", lambda p: f(meta[p]["num_crossposts"]), False),
  "awards":      ("Awards", "post", lambda p: f(meta[p]["total_awards"]), False),
  "rank":        ("Rank in month", "post", lambda p: f(heyday[p]["rank_in_month"]), False),
- "ac_dumb":     ("Dumbness (AC)", "ac", lambda p: f(codes[p]["Dumb"]), False),
- "ac_cute":     ("Cuteness (AC)", "ac", lambda p: f(codes[p]["Cuteness"]), False),
+ "ac_dumb":     ("Dumbness (human)", "ac", lambda p: f(codes[p]["Dumb"]), False),
+ "ac_cute":     ("Cuteness (human)", "ac", lambda p: f(codes[p]["Cuteness"]), False),
  "look_white":  ("Share of white fur", "look", lambda p: traits(p)["pct_white"], False),
  "look_kg":     ("Estimated weight", "look", lambda p: traits(p)["kg"], False),
 }

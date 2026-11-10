@@ -1,4 +1,4 @@
-"""Join SigLIP scores + reasoning measures, check them against model traits and AC's hand codes.
+"""Join SigLIP scores + reasoning measures, check them against model traits and the human hand codes.
 Writes ai_opinion.csv (one row per post) and compare_report.txt."""
 import csv, os, numpy as np
 from scipy.stats import spearmanr
@@ -45,7 +45,7 @@ P("\n== 2. Are the SigLIP axes separate, or one 'vibe'? (Spearman between axes)"
 P(" " * 14 + "".join(f"{a[7:]:>8}" for a in AX))
 for a in AX:
     P(f"{a[7:]:>14}" + "".join(f"{spearmanr([num(r[a]) for r in rows], [num(r[b]) for r in rows], nan_policy='omit')[0]:+8.2f}" for b in AX))
-P("\n== 3. Against AC's hand codes (35 coded posts)")
+P("\n== 3. Against the human hand codes (35 coded posts)")
 P("hand Cuteness vs hand Dumb:", rho("_cute", "_dumb"))
 for a in AX + RM:
     P(f"{a:30s} vs Cuteness: {rho(a, '_cute')}")

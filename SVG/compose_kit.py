@@ -1,7 +1,7 @@
 """Assemble the cat kit: smoothed coat and stripes, smooth white-marking zones, outline, nose, and eye sets,
 for each body type.
 
-Usage: python3 compose_kit.py smooth_parts.json outline.svg eyes_original.svg cat_eyes.svg cat_kit.svg [bodies_kit.json]
+Usage: python3 compose_kit.py smooth_parts.json source_drawings/cat_v1_outline.svg source_drawings/cat_v1_eyes.svg cat_eyes.svg cat_kit.svg [bodies_kit.json]
 
 Layers in each body, bottom to top: coat, stripes, white zones (clipped to that body), outline and nose, eyes.
 Colours are CSS variables: --cat-coat, --cat-stripes, --cat-white, --cat-nose, --cat-outline, --cat-eye-white.

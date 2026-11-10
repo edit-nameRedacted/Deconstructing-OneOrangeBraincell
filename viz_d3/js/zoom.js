@@ -77,7 +77,10 @@ export function frameForTail(svg, stage) {
   const stageHeight = svg.clientHeight;
   const stageWidth = stage.clientWidth;
   let frame = null;
+  // Each pass places the labels for the current label size (fanning them if they crowd), frames
+  // them, and sets the size for that frame; a last pass places them at the final size.
   for (let pass = 0; pass < 3; pass++) {
+    svg._layoutTailLabels?.();
     const box = boxOf(svg, tailParts());
     const pad = Math.max(box[2], box[3]) * 0.05;
     frame = [box[0] - pad, box[1] - pad, box[2] + 2 * pad, box[3] + 2 * pad];
@@ -86,6 +89,12 @@ export function frameForTail(svg, stage) {
     const pixelsPerUnit = Math.min(width / frame[2], stageHeight / frame[3]);
     svg.style.width = Math.round(width) + "px";
     svg.style.setProperty("--lab", (ZOOM_LABEL_PX / pixelsPerUnit).toFixed(2) + "px");
+  }
+  if (svg._layoutTailLabels) {
+    svg._layoutTailLabels();
+    const box = boxOf(svg, tailParts());
+    const pad = Math.max(box[2], box[3]) * 0.05;
+    frame = [box[0] - pad, box[1] - pad, box[2] + 2 * pad, box[3] + 2 * pad];
   }
   return frame;
 }

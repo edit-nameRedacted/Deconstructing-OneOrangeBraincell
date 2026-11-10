@@ -1,5 +1,5 @@
 /*
-  kit.js — loading AC's cat kit (SVG/cat_kit.svg) and making one drawable cat from it.
+  kit.js — loading the cat kit (SVG/cat_kit.svg) and making one drawable cat from it.
 
   The kit is one SVG holding four bodies, ten white zones and seven eye sets. Which ones show is
   switched by CSS, from data attributes on the kit's root: data-body, data-white, data-eyes,

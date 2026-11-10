@@ -3,7 +3,7 @@
   "built": "2026-10-27",
   "n_posts": 182,
   "set": "heyday top 40 per month, Apr-Aug 2022; memorial posts excluded",
-  "typical_cat_rule": "(AC, 2026-10-27): continuous values set amounts (median % white), and each group's most\nover-represented traits (lift vs all posts) pick markings and body. Eyes: big-shiny for the highest mean\nCuteness and highest mean Dumb group in a view; other groups get a seeded random set from the other six."
+  "typical_cat_rule": "(design decision, 2026-10-27): continuous values set amounts (median % white), and each group's most\nover-represented traits (lift vs all posts) pick markings and body. Eyes: big-shiny for the highest mean\nCuteness and highest mean Dumb group in a view; other groups get a seeded random set from the other six."
  },
  "groupings": {
   "braincell": {
@@ -46,7 +46,7 @@
    ]
   },
   "dumb": {
-   "label": "Dumbness (AC)",
+   "label": "Dumbness (human)",
    "values": [
     "1",
     "2",
@@ -56,7 +56,7 @@
    ]
   },
   "cute": {
-   "label": "Cuteness (AC)",
+   "label": "Cuteness (human)",
    "values": [
     "1",
     "2",
@@ -167,7 +167,7 @@
    }
   },
   "ac_dumb": {
-   "label": "Dumbness (AC)",
+   "label": "Dumbness (human)",
    "source": "ac",
    "dist": {
     "n": 182,
@@ -180,7 +180,7 @@
    }
   },
   "ac_cute": {
-   "label": "Cuteness (AC)",
+   "label": "Cuteness (human)",
    "source": "ac",
    "dist": {
     "n": 182,

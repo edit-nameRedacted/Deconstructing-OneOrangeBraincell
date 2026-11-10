@@ -2,9 +2,9 @@
 
 Usage:  python3 make_alignment.py HEADS_DIR V2_PARTS_DIR OUTDIR [--cut 128]
   HEADS_DIR     sheet_frames.py output for the head-turn sheet (run with --open-bottom), with cues.json
-  V2_PARTS_DIR  SVG/V2/SVG (AC's V2 parts); assemble_v2.py and build_kit_v2.py must sit in its parent folder
+  V2_PARTS_DIR  SVG/V2/SVG (the hand-drawn V2 parts); assemble_v2.py and build_kit_v2.py must sit in its parent folder
 
-Writes, all in V2 units (the units of AC's V2 outline):
+Writes, all in V2 units (the units of the V2 outline):
   body_headless.svg     the V2 body with its head taken off: coat, body stripes, cream bib, fluff and outline,
                         inside a clipping mask whose top edge is the cut (--cut, just under the chin). Move the
                         mask's top edge in Illustrator to change the cut.

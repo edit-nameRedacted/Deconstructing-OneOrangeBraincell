@@ -1,0 +1,12 @@
+{
+  "name": "paw_wan",
+  "keys": "out/paw_keys",
+  "fps": 12,
+  "seconds": 0.33,
+  "gen_seconds": 1.0,
+  "seed": 42,
+  "loop": true,
+  "front": 1,
+  "order": [1, 2, 3, 1, 4, 5, 1],
+  "default_prompt": "the cat sits facing the viewer and kneads the ground with one front paw, body and head still, eyes open"
+}

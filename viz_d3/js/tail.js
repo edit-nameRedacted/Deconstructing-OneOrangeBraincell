@@ -1,7 +1,7 @@
 /*
   tail.js — drawing a data tail on a cat.
 
-  The tail is AC's own drawing (SVG/tails/tail_geometry.json), not a generated shape. The file
+  The tail is a hand drawing (SVG/tails/tail_geometry.json), not a generated shape. The file
   stores, per tail type ("long", "short"):
     - stroke:   the tail's outline as one run of points, from one side of the base, around the
                 tip, and back down to the other side of the base;
@@ -45,6 +45,10 @@ const ATTACH = {
   slender: { up: [214.0, 419.3], low: [200.1, 455.5], size: 0.95 },
   chunky: { up: [264.3, 423.7], low: [243.3, 457.4], size: 1.1 },
 };
+const LEAD = 14;               // length of a label's leader line, in drawing units
+// Fanned labels (a short tail, labels crowded): each leader turns FAN.step radians from the one
+// before, and is long enough that neighbouring labels start FAN.gap label-heights apart.
+const FAN = { step: 0.38, gap: 1.25 };
 const SCALE = 0.62;            // tail-drawing units -> kit units at size 1
 const INSET = 7;               // how far the base tucks in behind the body (grows with size)
 const BODY_CENTRE = [115, 380];// a point inside every body; "outward" means away from it (checked by build_kit_v2.py)
@@ -321,7 +325,8 @@ function addTailStylesOnce() {
     onSelect   called with the segment or ring when it is clicked or chosen with Enter / Space
 
   controller: update(newOptions) redraws with changed options; select(key) marks a segment or
-  ring as chosen; remove() takes the tail away.
+  ring as chosen; layoutLabels() places the labels again (after their size changes; they fan out at
+  an angle where they would overlap); remove() takes the tail away.
 
   The tail never decides by itself what is selected: a click calls onSelect, the page updates its
   state, and the page calls select(key). So the selection has one source of truth: state.sel.
@@ -333,6 +338,7 @@ export function drawTail(svg, options) {
   let tailG = null;       // d3 selection: the tail, inside the body group, behind the body
   let labelsG = null;     // d3 selection: the labels, above everything
   let items = [];         // drawn segments and rings: { key, kind, hit, label, shapes?, ring? }
+  let labelSpots = [];    // each label's anchor on the tail: { side, q, edge, n, lead, label } (layoutLabels)
   let hoverOverlay = null, selectOverlay = null;
   let hoveredSegment = null;  // key of the segment under the pointer (its rings puff out too)
 
@@ -340,6 +346,7 @@ export function drawTail(svg, options) {
     tailG?.remove();
     labelsG?.remove();
     items = [];
+    labelSpots = [];
     hoveredSegment = null;
 
     const bodyName = svg.dataset.body || "typical";
@@ -473,6 +480,10 @@ export function drawTail(svg, options) {
     }
 
     if (selectedKey) select(selectedKey);
+    if (opts.labels) {
+      layoutLabels();
+      svg._layoutTailLabels = layoutLabels;     // zoom.js reruns it after changing the label size
+    }
   }
 
   // A tooltip on hover, and (in the zoomed view) a keyboard button with a spoken label.
@@ -482,7 +493,8 @@ export function drawTail(svg, options) {
   }
 
   // A label beside the tail at fraction q, with a short leader line. Segments are labelled on the
-  // outer edge (away from the body), rings on the inner edge, so the two never collide.
+  // outer edge (away from the body), rings on the inner edge, so the two never collide. Where the
+  // label goes is worked out by layoutLabels, below; this only records where its leader starts.
   function addLabel(tools, place, q, side, text) {
     const [ea, eb] = tools.station(q);
     const pa = place.apply(tools.pointAt(ea));
@@ -494,15 +506,70 @@ export function drawTail(svg, options) {
     const other = side === "outer" ? inner : outer;
     let dx = edge[0] - other[0], dy = edge[1] - other[1];
     const dl = Math.hypot(dx, dy) || 1;
-    dx /= dl; dy /= dl;
-    const lx = edge[0] + dx * 14, ly = edge[1] + dy * 14;
-    labelsG.append("line").attr("class", "t-lead")
-      .attr("x1", round2(edge[0] + dx * 2)).attr("y1", round2(edge[1] + dy * 2))
+    const lead = labelsG.append("line").attr("class", "t-lead");
+    const label = labelsG.append("text").attr("class", "t-label").text(text);
+    labelSpots.push({ side, q, edge, n: [dx / dl, dy / dl], lead, label });
+    return label;
+  }
+
+  // Place every label. Normally each sits straight out from its edge of the tail, level, at the end
+  // of a short leader. When a tail is short, the labels on one side crowd onto the same few units of
+  // edge and run over each other; then that side's labels fan out instead: each leader turns a
+  // little further along the tail than the one before, and its label is written along the leader
+  // (turned so it never reads upside down). Run again whenever the label size changes (zoom.js).
+  function layoutLabels() {
+    for (const side of ["outer", "inner"]) {
+      const spots = labelSpots.filter((l) => l.side === side).sort((a, b) => a.q - b.q);
+      spots.forEach(placeLevel);
+      if (crowded(spots)) fan(spots);
+    }
+  }
+
+  function placeLevel({ edge, n: [dx, dy], lead, label }) {
+    const lx = edge[0] + dx * LEAD, ly = edge[1] + dy * LEAD;
+    lead.attr("x1", round2(edge[0] + dx * 2)).attr("y1", round2(edge[1] + dy * 2))
       .attr("x2", round2(lx - dx * 2)).attr("y2", round2(ly - dy * 2));
-    return labelsG.append("text").attr("class", "t-label")
+    label.attr("transform", null).attr("dy", null)
       .attr("x", round2(lx + (dx >= 0 ? 1.5 : -1.5))).attr("y", round2(ly + 4))
-      .attr("text-anchor", dx >= 0 ? "start" : "end")
-      .text(text);
+      .attr("text-anchor", dx >= 0 ? "start" : "end");
+  }
+
+  // Whether any two labels on a side overlap (boxes, with a little air).
+  function crowded(spots) {
+    const boxes = spots.map((l) => l.label.node().getBBox());
+    for (let i = 0; i < boxes.length; i++) {
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i], b = boxes[j];
+        if (a.x < b.x + b.width + 1 && b.x < a.x + a.width + 1 && a.y < b.y + b.height + 1 && b.y < a.y + a.height + 1) return true;
+      }
+    }
+    return false;
+  }
+
+  function fan(spots) {
+    const k = spots.length;
+    const size = parseFloat(getComputedStyle(spots[0].label.node()).fontSize) || 13;
+    // The fan points the way the labels point on average; it turns base to tip the way the tail runs.
+    let mx = d3.sum(spots, (l) => l.n[0]), my = d3.sum(spots, (l) => l.n[1]);
+    const ml = Math.hypot(mx, my) || 1;
+    mx /= ml; my /= ml;
+    const first = spots[0].edge, last = spots[k - 1].edge;
+    const turn = Math.sign(mx * (last[1] - first[1]) - my * (last[0] - first[0])) || 1;
+    // Leaders long enough that neighbouring labels start a line's height and a bit apart.
+    const length = Math.max(LEAD, (FAN.gap * size) / FAN.step);
+    spots.forEach(({ edge, lead, label }, i) => {
+      const a = turn * (i - (k - 1) / 2) * FAN.step;
+      const dx = mx * Math.cos(a) - my * Math.sin(a), dy = mx * Math.sin(a) + my * Math.cos(a);
+      const lx = edge[0] + dx * length, ly = edge[1] + dy * length;
+      lead.attr("x1", round2(edge[0] + dx * 2)).attr("y1", round2(edge[1] + dy * 2))
+        .attr("x2", round2(lx - dx * 2)).attr("y2", round2(ly - dy * 2));
+      const tx = lx + dx * 1.5, ty = ly + dy * 1.5;
+      const leftward = dx < 0;                                  // turn half round so it reads left to right
+      const angle = (Math.atan2(dy, dx) * 180) / Math.PI + (leftward ? 180 : 0);
+      label.attr("x", round2(tx)).attr("y", round2(ty)).attr("dy", "0.35em")
+        .attr("text-anchor", leftward ? "end" : "start")
+        .attr("transform", `rotate(${angle.toFixed(1)} ${round2(tx)} ${round2(ty)})`);
+    });
   }
 
   // Hover / focus: a segment bristles (its overlay morphs from smooth to spiky); a ring thickens.
@@ -564,6 +631,7 @@ export function drawTail(svg, options) {
   return {
     update(newOptions) { opts = { ...opts, ...newOptions }; render(); },
     select,
+    layoutLabels,
     remove() { tailG?.remove(); labelsG?.remove(); },
   };
 }

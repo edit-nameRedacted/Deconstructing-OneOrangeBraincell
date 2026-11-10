@@ -1,7 +1,7 @@
 /*
   typicalCat.js — what the "typical cat" of a group of posts looks like.
 
-  AC's rule (2026-10-27), applied to the cat traits the vision model coded for each post:
+  the design rule (2026-10-27), applied to the cat traits the vision model coded for each post:
     - White: the group's median % white fur. White zones are switched on in a fixed order
       (chin, locket, muzzle, …) until the cat's total white is as close as possible to that median.
     - Extra zones: a white zone that is at least 1.3x as common in the group as across all posts,

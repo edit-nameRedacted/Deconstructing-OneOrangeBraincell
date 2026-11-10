@@ -27,7 +27,7 @@ Look settings live in `js/config.js`: `TAIL_RANGE` (which part of the white-to-b
 
 **Bread (the loaf button in the heading):** a popup about one post, `wqtzrl`, titled "Bread": the only post the vision model said had no cat ("This is a capybara"). It shows how long the model struggled (three dot charts of time, reasoning length and second-guesses against every other post, from `oobc_archive/ai_opinion/reasoning_measures.csv`), the start of its reasoning, the rerun told "a human coder has confirmed there is a cat", what the commenters said (bread, mostly), and what the two internet-trained models make of it. Its words are in `index.html`; `js/bread.js` fills in the numbers and draws the charts from the data.
 
-**The pointer is a neuron** (`js/neuronCursor.js`): the cell body is AC's neuron icon with its axon removed (`neuron_soma.svg`), centred on the pointer. A short axon grows from the gap and trails behind, ending in a branching arbor of terminals, pulled along by a d3-force simulation (linked nodes, a little repulsion to splay the terminals, a little droop), with a cap on how far it can stretch. The body turns so its gap faces the axon. Clicking sends a pulse down the axon; the cell body swells over anything clickable. It switches itself off on touch screens and when the system asks for reduced motion, and the settings panel has a toggle (remembered in this browser). Its shape and feel are the constants at the top of the file.
+**The pointer is a neuron** (`js/neuronCursor.js`): the cell body is a hand-drawn neuron icon with its axon removed (`neuron_soma.svg`), centred on the pointer. A short axon grows from the gap and trails behind, ending in a branching arbor of terminals, pulled along by a d3-force simulation (linked nodes, a little repulsion to splay the terminals, a little droop), with a cap on how far it can stretch. The body turns so its gap faces the axon. Clicking sends a pulse down the axon; the cell body swells over anything clickable. It switches itself off on touch screens and when the system asks for reduced motion, and the settings panel has a toggle (remembered in this browser). Its shape and feel are the constants at the top of the file.
 
 The page opens on an introduction to the subreddit and the project (the ⓘ button brings it back). Click a cat to zoom to its tail; the panel on the right describes the cat and lists its tail. Click a segment or stripe for details and **Chase this tail**, which regroups the posts by it.
 
@@ -48,7 +48,7 @@ The page opens on an introduction to the subreddit and the project (the ⓘ butt
 | `js/typicalCat.js` | The typical-cat rule |
 | `js/color.js` | The white-to-brown OKLab ramp |
 | `js/kit.js` | Loads `SVG/cat_kit.svg` and makes one cat from it, including its ears: the inside tinted pinker or darker and each ear's tuft scaled (per cat, from `earsFor` in `js/data.js`; ranges in `EARS`, `js/config.js`) |
-| `js/tail.js` | Draws a tail: segments, stripes, bristles, labels |
+| `js/tail.js` | Draws a tail: segments, stripes, bristles, labels (on a short tail, crowded labels fan out at an angle; `FAN` at the top of the file) |
 | `js/blink.js` | Eyelids for every eye set: each cat blinks every 10–30 s at random, quick or slow at random, never two at once; a slow blink when the pointer rests on one (times in `BLINK`, `js/config.js`; off under reduced motion) |
 | `js/gaze.js` | The "Seeking it" cat's pupils follow the pointer (the braincell): they drift from where they are drawn part of the way toward looking straight at it, so it keeps its half-lidded expression (`GAZE` in `js/config.js`, `who` says which cats; mouse only, off under reduced motion). Uses `SVG/eye_parts.json` to move the pupil without the lid line |
 | `js/sequence.js` | Idle animations: now and then one cat in the row grooms or turns its head (one cat at a time, never during a blink, only cats on screen; `IDLE` in `js/config.js`). The traced frames play in the cat's coat colours, white bib and white muzzle, with its own eye set drawn on each frame from the sequence's eye track (position, size, tilt, gaze, lids). Hand fixes per sequence are in `SEQUENCES`, `js/config.js` |
@@ -82,11 +82,11 @@ Every control calls `store.set({...})`. `main.js` hears which keys changed and r
 | File | Holds |
 | --- | --- |
 | `oobc_archive/viz/oobc_viz_data.json` | Posts, hand-code groupings, tail variables (built by `build_viz_data.py`) |
-| `SVG/cat_kit.svg` | The V2 kit (built by `SVG/V2/build_kit_v2.py`): bodies, white zones, eye sets, plus `data-coat`, `data-ears`, `data-cream`, `data-fluff`, `data-mouth`, `data-fur` (defaults: AC's V2 drawing as drawn). If it is rebuilt, copy the tail points it prints into `ATTACH` in `js/tail.js` |
+| `SVG/cat_kit.svg` | The V2 kit (built by `SVG/V2/build_kit_v2.py`): bodies, white zones, eye sets, plus `data-coat`, `data-ears`, `data-cream`, `data-fluff`, `data-mouth`, `data-fur` (defaults: the hand-drawn V2 as drawn). If it is rebuilt, copy the tail points it prints into `ATTACH` in `js/tail.js` |
 | `SVG/white_stages.json` | % white after each white zone, per body |
 | `SVG/eye_parts.json` | Each eye set's opening and pupil, so pupils can look around in sequences and follow the pointer (built by `SVG/V2/eye_parts.py`; rerun it after rebuilding the kit) |
 | `sequences/<key>.json` | The packed sequences (built by `build_sequences.py` from `SVG/sheet_tools/out/<sequence>/svg/`) |
-| `SVG/tails/tail_geometry.json` | AC's two tail drawings, as outlines and stations |
+| `SVG/tails/tail_geometry.json` | the two hand-drawn tails, as outlines and stations |
 
 ## Deploy
 

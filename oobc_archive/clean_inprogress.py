@@ -1,5 +1,5 @@
 """Rebuild the InProgress coding sheet: one row per heyday post (200), in heyday order.
-Coded rows keep AC's values; everything else comes from the heyday + cats source files.
+Coded rows keep the human coder's values; everything else comes from the heyday + cats source files.
 Multi-cat posts keep cat 1. Failure Mode = NA where braincell is Not applicable."""
 import csv, collections, sys
 SHEET = "Orange Braincell Data - InProgress.csv"

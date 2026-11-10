@@ -15,7 +15,7 @@ The result is an interactive D3 page of "typical cats". Each cat's body shows wh
 
 ### Getting the posts
 
-Reddit's own API was closed to this kind of use, so every post comes from **[Arctic Shift](https://arctic-shift.photon-reddit.com/)**, an archive of public Reddit data. The first pulls were exploratory: the top posts of the last 30 days (`oobc_top_30days.csv`), the top 40 of the last six months (`oobc_6mo_top40.csv`), and a rank 50–80 test set. They were enough to set up the image model, but recent posts can't show whether anything changed. So the full history was downloaded: **192,113 posts, from the subreddit's first post in February 2022 to October 2026**.
+Reddit's own API was closed to this kind of use, so every post comes from **[Arctic Shift](https://arctic-shift.photon-reddit.com/)**, an archive of public Reddit data. The first pulls were exploratory: the top posts of the last 30 days (`oobc_top_30days.csv`), the top 40 of the last six months (`oobc_6mo_top40.csv`), and a rank 50–80 test set (kept locally, not in this repo). They were enough to set up the image model, but recent posts can't show whether anything changed. So the full history was downloaded: **192,113 posts, from the subreddit's first post in February 2022 to October 2026**.
 
 ![Posts per month, Feb 2022 to Oct 2026](docs/readme/posts_per_month.png)
 
@@ -132,23 +132,24 @@ The earlier single-file prototype is `viz/oobc_cat_viz.html` (rebuild with `pyth
 
 ## Folder map
 
+Each folder has its own README with the detail.
+
 | Path | What it is |
 | --- | --- |
 | `oobc_heyday_2022-04_08_top40.csv` | The 200 heyday posts with media links and media status |
 | `oobc_heyday_2022-04_08_top40_cats.csv` / `_raw.jsonl` | Qwen cat traits per cat, and its raw replies |
 | `Orange Braincell Data - InProgress.csv` | Local copy of the hand codes, synced to Sheet5 (182 rows) |
 | `oobc_cat_traits.py` | Cat-trait extraction with a local vision model (Ollama) |
-| `oobc_archive/final_codes/` | Frozen codes, the stage 2 test script and results |
-| `oobc_archive/ai_opinion/` | SigLIP scores, Qwen token probabilities, reasoning measures, the saved predictions |
-| `oobc_archive/comment_analysis/` | Comment word lists and per-post rates |
-| `oobc_archive/comments/` | All saved comments, one JSON file per post |
-| `oobc_archive/heyday_post_meta.csv` | 30 archive metadata columns per post (timing, percentiles, author, top comments) |
-| `SVG/` | The cat kit (`cat_kit.svg`): 4 bodies, 10 white zones, 7 eye sets, coats, ears, mouths, fur edges. Built from AC's V2 drawing by `SVG/V2/build_kit_v2.py` (parts in `SVG/V2/SVG`, preview `SVG/V2/kit_v2_preview.png`). Also the tails. `bodies/`, `coats/` and `compose_kit.py` built the first, 3/4-view kit |
-| `viz/` | Single-file prototype |
-| `viz_d3/` | The D3 visualization |
-| `docs/` | Current-state, D3 handoff and build-plan notes |
-| `docs/readme/` | This README's charts, the script that draws them, and their input data |
+| `oobc_archive/` | Data pulls, comments, hand codes, model readings and analysis; also builds the visualization's data file |
+| `SVG/` | The cat kit (`cat_kit.svg`), the hand drawings it's built from (`source_drawings/`), the tails, and the sheet tools that turn drawing sheets into animated sequences |
+| `viz_d3/` | **The visualization** (D3). `build_site.py` copies it into `site/` for Firebase Hosting |
+| `viz/` | The first single-file prototype, superseded |
+| `docs/` | This README's charts and the D3 page's architecture diagram |
+| `firebase.json`, `.firebaserc` | Firebase Hosting setup for the published page |
 
+**Kept on the working machine only** (listed in `.gitignore`): the media cache (`oobc_media/`), the early exploratory
+pulls (`_local/`), the sheet tools' working outputs (`SVG/sheet_tools/out/`), the Blender pounce animation
+(`blender/`), planning notes (`docs/process/`), rebuildable merges and review pages, and the built `site/`.
 
 ## Open items
 

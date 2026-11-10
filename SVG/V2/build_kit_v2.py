@@ -1,4 +1,4 @@
-"""Build the cat kit (SVG/cat_kit.svg) from AC's V2 parts: four bodies, white zones, eye sets, coats, ears.
+"""Build the cat kit (SVG/cat_kit.svg) from the hand-drawn V2 parts: four bodies, white zones, eye sets, coats, ears.
 
 Usage (from SVG/V2/):  python3 build_kit_v2.py SVG ../cat_kit.svg ../cat_kit.svg
   arg 1: the folder of V2 parts       arg 2: the kit to take the eye sets from       arg 3: where to write
@@ -19,13 +19,13 @@ and the <svg> attributes that pick what shows:
   data-white    white zones by name, e.g. "chin locket paws"
   data-eyes     one eye set: original | almond | squint | big-shiny | slit | half-lidded | round
   data-stripes  on | off
-  data-coat     classic | high-contrast | soft                  (classic = the colours AC drew V2 in)
-  data-ears     tufted | plain                                  (tufted = AC's ear shading and lines)
+  data-coat     classic | high-contrast | soft                  (classic = the colours V2 was drawn in)
+  data-ears     tufted | plain                                  (tufted = the drawn ear shading and lines)
   data-cream    on | off       the cream chest bib and muzzle
   data-fluff    on | off       the fluff lines on the chest
-  data-mouth    1 | 2          AC's two mouths
+  data-mouth    1 | 2          the two drawn mouths
   data-fur      off | on       fur-textured edges on the white zones
-The eye sets are lifted unchanged from the previous kit and placed on the V2 face where AC's reference render
+The eye sets are lifted unchanged from the previous kit and placed on the V2 face where the reference render
 puts the eyes. Kit units are V2 units x KIT_SCALE (the old kit's size, so the tail and the row keep their scale).
 """
 import os, re, sys
@@ -51,14 +51,14 @@ BODIES = {                 # head scale, body scale across, body scale up
 BODY_CENTRE = (115, 380)   # tail.js needs one point inside every body (kit units); checked on each build
 LABELS = {"typical": "Typical", "kitten": "Kitten", "slender": "Slender", "chunky": "Chunky"}
 
-# Eyes: where AC's reference render puts them on V2 (the midpoint between the eyes), and how the old eye sets
+# Eyes: where the reference render puts them on V2 (the midpoint between the eyes), and how the old eye sets
 # (drawn around OLD_EYE_ANCHOR, about 65 old units apart) scale to the reference's 47 V2 units apart, then
 # 12% larger, which matches the size of the reference's eyes.
 EYE_ANCHOR_V2 = (60.6, 83.1)
 OLD_EYE_ANCHOR = (93.7, 97.7)
 EYE_SCALE_V2 = 47 / 65 * 1.12
 
-# Colours AC drew V2 in (classic), and the coat variants, from the palette sampled from the reference sheet.
+# Colours V2 was drawn in (classic), and the coat variants, from the palette sampled from the reference sheet.
 CLASSIC = {"coat": "#D78E34", "stripes": "#9D5224", "outline": "#462E29", "white": "#F5F4F3", "cream": "#F5DAB5",
            "ear": "#C1886A", "nose": "#CF9389", "eye-white": "#FFFFFF", "glow": "#FCD9AF"}
 COATS = {
@@ -231,7 +231,7 @@ def nose_fill(page, mouth_d):
 
 def bib_fill(page, fluff_ds):
     """The cream chest bib: the area the fluff lines enclose (their hull), with a ragged top running between
-    the two top spikes and dipping in the middle, as in AC's reference render."""
+    the two top spikes and dipping in the middle, as in the reference render."""
     m = raster(page, fluff_ds)
     ys, xs = np.nonzero(m)
     pts = np.stack([X0 + xs / R, Y0 + ys / R], 1)
@@ -408,7 +408,7 @@ def main():
                 '<stop class="k-glow-stop" offset="0" stop-opacity=".95"/><stop class="k-glow-stop" offset=".55" stop-opacity=".6"/>'
                 '<stop class="k-glow-stop" offset="1" stop-opacity="0"/></radialGradient>')
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" id="cat" data-body="typical" data-white="" data-eyes="original" data-stripes="on" data-coat="classic" data-ears="tufted" data-cream="on" data-fluff="on" data-mouth="1" data-fur="off">
-  <!-- Cat kit V2: built by SVG/V2/build_kit_v2.py from AC's V2 parts in SVG/V2/SVG. -->
+  <!-- Cat kit V2: built by SVG/V2/build_kit_v2.py from the hand-drawn V2 parts in SVG/V2/SVG. -->
   <defs>
 {clip_block}
 {glow_def}

@@ -1,6 +1,6 @@
 """Turn the two single-stroke tail drawings into a centreline and a width profile.
 
-Usage: python3 tail_geometry.py "Asset 4.svg" "Asset 5.svg" tail_geometry.json
+Usage: python3 tail_geometry.py ../source_drawings/tail_long.svg ../source_drawings/tail_short.svg tail_geometry.json
 
 Each drawing is one open stroke: up one edge from the base, round the tip, down the other edge. The stroke is
 closed across the base and filled; the centreline is the fill's medial axis from the middle of the base to the

@@ -3,7 +3,7 @@
 
     CATEGORY_TEXT  for each hand-code category: a sentence for the row view, and a line per value
                    (shown when a cat is zoomed). Taken from the coding rules in the data-handling
-                   handoff; the "Has it" and "Seeking it" lines are drafts for AC to check.
+                   handoff; the "Has it" and "Seeking it" lines are drafts still to check.
     TAILVAR_TEXT   for each tail variable: what the number is (shown in the details panel).
     TAILS_OF_TEXT  the row sentence for a "Tails of …" view.
 
@@ -13,7 +13,7 @@
   The opening screen's text is in index.html (the <section id="intro">).
 */
 
-// Names shown on the page in place of the data file's labels (which say "Dumbness (AC)" etc.).
+// Names shown on the page in place of the data file's labels (which say "Dumbness (human)" etc.).
 export const DISPLAY_LABELS = {
   groupings: { dumb: "Dumbness", cute: "Cuteness" },
   tailvars: { ac_dumb: "Dumbness", ac_cute: "Cuteness" },

@@ -45,7 +45,7 @@ python render_turn.py ../V2/head_turn/poses_fixed
 ## In-betweens with Wan 2.2
 
 Wan 2.2 draws the frames between two keyframes (first/last-frame video). The sheet tools then trace and preview them.
-Wan runs in its own container, `comfyui-wan`, in `C:\Users\Watcher\Documents\pysandbox\comfyui_wan` (image
+Wan runs in its own container, `comfyui-wan`, in the `comfyui_wan` folder that sits next to this project folder (image
 `comfyui-wan:local`, port 8189). The sheet tools run with `.venv\Scripts\python.exe` in this folder (Python 3.13;
 Playwright's Chromium is inside it). Below, `PY` means that file, and commands run from this folder.
 
@@ -54,7 +54,7 @@ Playwright's Chromium is inside it). Below, `PY` means that file, and commands r
 
 ```
 docker stop comfyui-3d
-cd C:\Users\Watcher\Documents\pysandbox\comfyui_wan
+cd ..\..\..\comfyui_wan
 docker compose up -d
 ```
 

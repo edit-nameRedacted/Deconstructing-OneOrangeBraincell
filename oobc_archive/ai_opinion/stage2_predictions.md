@@ -1,4 +1,4 @@
-# Stage 2 predictions: model measures vs AC's hand codes
+# Stage 2 predictions: model measures vs the human hand codes
 
 Saved 2026-10-26, before any of the posts below were hand-coded. Do not edit; add a dated addendum instead.
 

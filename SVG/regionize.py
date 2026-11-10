@@ -1,6 +1,6 @@
 """Turn the Image Trace export into a cat with named colour regions.
 
-Usage: python3 regionize.py "Asset 3.svg" paths.json cat_regions.svg
+Usage: python3 regionize.py source_drawings/cat_v1_colour_regions.svg paths.json cat_regions.svg
 
 Every traced shape keeps its original drawing order. Each gets class="r-<region>", and each region's fill
 is a CSS variable (--cat-<region>), so a page or a script can recolour the cat by setting those variables.

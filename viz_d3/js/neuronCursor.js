@@ -1,7 +1,7 @@
 /*
   neuronCursor.js — the mouse pointer as a neuron (the one orange braincell, following you around).
 
-  The cell body is AC's neuron icon with its axon removed (neuron_soma.svg), centred on the
+  The cell body is a hand-drawn neuron icon with its axon removed (neuron_soma.svg), centred on the
   pointer. Out of the gap where the axon was grows a new, physical axon that trails behind, and at
   its end a small arbor of branching terminals with a bulb (bouton) on each tip.
   The trailing is real physics from d3-force:
@@ -136,7 +136,7 @@ function createNeuron() {
     .attr("class", "neuron-bouton").attr("r", 1.8);                           // terminal bulbs
   const pulse = layer.append("circle").attr("class", "neuron-pulse").attr("r", 2.6).style("display", "none");
 
-  // The cell body: a pale nucleus behind AC's icon. A plain circle stands in until the icon loads
+  // The cell body: a pale nucleus behind the icon. A plain circle stands in until the icon loads
   // (or if it can't be loaded).
   const somaG = layer.append("g").attr("class", "neuron-soma");
   const somaInner = somaG.append("g").attr("transform", `translate(${-SOMA_CENTRE[0]},${-SOMA_CENTRE[1]})`);
