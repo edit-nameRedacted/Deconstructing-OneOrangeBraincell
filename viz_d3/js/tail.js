@@ -35,18 +35,19 @@ import { TAIL_MIN, RING_MAX, RING_EMPTY_DASH, OUTLINE_WIDTH } from "./config.js"
 // Constants of the drawing (kit units unless noted)
 // ---------------------------------------------------------------------------
 
-// Where the tail enters each body: the two ends of the gap in the haunch outline, upper first,
-// and how big the tail is on that body. The chunky outline has no gap, so its tail starts just
-// behind the line.
+// Where the tail enters each body: two points on the outer edge of the haunch, on the cat's left
+// (the viewer's right), upper first, and how big the tail is on that body. The V2 cats face the
+// viewer, so the tail comes out from behind the bum there; the body is drawn over its base.
+// The points come from SVG/V2/build_kit_v2.py, which prints them on every build.
 const ATTACH = {
-  typical: { up: [278, 421], low: [267, 447], size: 1 },
-  kitten: { up: [226, 455], low: [215, 469], size: 0.7 },
-  slender: { up: [280, 421], low: [281, 438], size: 0.95 },
-  chunky: { up: [301, 422], low: [293, 446], size: 1.1 },
+  typical: { up: [232.7, 421.2], low: [216.0, 456.3], size: 1 },
+  kitten: { up: [190.7, 446.0], low: [180.2, 467.1], size: 0.7 },
+  slender: { up: [214.0, 419.3], low: [200.1, 455.5], size: 0.95 },
+  chunky: { up: [264.3, 423.7], low: [243.3, 457.4], size: 1.1 },
 };
 const SCALE = 0.62;            // tail-drawing units -> kit units at size 1
 const INSET = 7;               // how far the base tucks in behind the body (grows with size)
-const BODY_CENTRE = [140, 330];// a point inside every body; "outward" means away from it
+const BODY_CENTRE = [115, 380];// a point inside every body; "outward" means away from it (checked by build_kit_v2.py)
 const LINE = OUTLINE_WIDTH;    // outline width, matching the (slimmed) body outline
 const SPIKE = 8;               // bristle length
 const SPIKE_GAP = 3.2;         // space between bristles

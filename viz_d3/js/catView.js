@@ -24,6 +24,9 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import { TAIL_TYPE, TAIL_SIZE, ROW_PAD } from "./config.js";
 import { cloneCat, tilt, boxOf, bodyOf } from "./kit.js";
 import { drawTail, tailLength } from "./tail.js";
+import { watchBlinks } from "./blink.js";
+import { watchGaze } from "./gaze.js";
+import { watchSequences, stopSequences } from "./sequence.js";
 
 const FADE_MS = 300;
 
@@ -44,6 +47,7 @@ export function tailOptions(cat, view, geometry, extra = {}) {
 export function renderRow(rowElement, view, kit, geometry, onOpen) {
   const row = d3.select(rowElement);
   rowElement.hidden = false;   // the row must be visible to be measured
+  stopSequences();             // a cat mid-sequence goes back to sitting before the row is measured
 
   row.selectAll("button.cat")
     .data(view.cats, (cat) => cat.id)
@@ -61,6 +65,9 @@ export function renderRow(rowElement, view, kit, geometry, onOpen) {
           d3.select(this).append("span").attr("class", "lab").text(cat.group.label);
           d3.select(this).append("span").attr("class", "count").text(`${cat.group.posts.length} posts`);
           tilt(svg);
+          watchBlinks(svg, this);               // blinks now and then; a slow blink when the pointer rests on it
+          if (cat.followsPointer) watchGaze(svg);   // the seeking cat's pupils follow the pointer (GAZE.who, config.js)
+          watchSequences(svg, kit);             // grooms or turns its head now and then (one cat at a time)
         })
         .call((enter) => enter.transition().duration(FADE_MS).style("opacity", 1)),
       (update) => update,
@@ -77,6 +84,7 @@ export function renderRow(rowElement, view, kit, geometry, onOpen) {
     })
     // Clicking the cat (anywhere but a segment or ring) opens its tail with nothing selected.
     .on("click", (event, cat) => {
+      stopSequences();
       if (event.target.closest(".t-seg, .t-ring-hit")) return;
       onOpen(view.cats.indexOf(cat), null);
     });

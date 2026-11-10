@@ -143,7 +143,7 @@ The earlier single-file prototype is `viz/oobc_cat_viz.html` (rebuild with `pyth
 | `oobc_archive/comment_analysis/` | Comment word lists and per-post rates |
 | `oobc_archive/comments/` | All saved comments, one JSON file per post |
 | `oobc_archive/heyday_post_meta.csv` | 30 archive metadata columns per post (timing, percentiles, author, top comments) |
-| `SVG/` | The cat kit: 4 bodies, 10 white zones, 7 eye sets, tails |
+| `SVG/` | The cat kit (`cat_kit.svg`): 4 bodies, 10 white zones, 7 eye sets, coats, ears, mouths, fur edges. Built from AC's V2 drawing by `SVG/V2/build_kit_v2.py` (parts in `SVG/V2/SVG`, preview `SVG/V2/kit_v2_preview.png`). Also the tails. `bodies/`, `coats/` and `compose_kit.py` built the first, 3/4-view kit |
 | `viz/` | Single-file prototype |
 | `viz_d3/` | The D3 visualization |
 | `docs/` | Current-state, D3 handoff and build-plan notes |

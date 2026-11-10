@@ -1,0 +1,2180 @@
+{
+ "sequence": "head_turn_wan",
+ "units": "kit (cat_kit.svg; V2 units x 1.35)",
+ "to_kit": [
+  0.69851,
+  -48.049,
+  -28.706
+ ],
+ "fit": {
+  "frame_body_width_px": 335,
+  "kit_body_width": 234.0,
+  "kit_measured_centre_x": 117.62,
+  "kit_measured_floor_y": 486.0
+ },
+ "notes": "left = the viewer's left, followed frame to frame. w, h: the eye's size when open; opening_h: the white as read; lid: 0 open .. 1 shut. Use 'smooth' for cx, cy, w, h, angle.",
+ "unsure_which_eye": [],
+ "flags": [],
+ "frames": [
+  {
+   "frame": 1,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 57.78,
+    "cy": 99.82,
+    "w": 29.34,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.19,
+    "gaze_y": -0.079,
+    "source": "detected",
+    "smooth": {
+     "cx": 57.78,
+     "cy": 99.82,
+     "w": 29.34,
+     "h": 30.04,
+     "angle": 0.0
+    }
+   },
+   "right": {
+    "cx": 123.09,
+    "cy": 99.82,
+    "w": 30.04,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.167,
+    "gaze_y": -0.056,
+    "source": "detected",
+    "smooth": {
+     "cx": 123.09,
+     "cy": 99.82,
+     "w": 30.04,
+     "h": 30.04,
+     "angle": 0.0
+    }
+   }
+  },
+  {
+   "frame": 2,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 59.17,
+    "cy": 104.36,
+    "w": 30.73,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.191,
+    "gaze_y": -0.014,
+    "source": "detected",
+    "smooth": {
+     "cx": 57.08,
+     "cy": 103.4,
+     "w": 30.38,
+     "h": 30.56,
+     "angle": -0.08
+    }
+   },
+   "right": {
+    "cx": 123.78,
+    "cy": 104.36,
+    "w": 30.04,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.023,
+    "gaze_y": -0.045,
+    "source": "detected",
+    "smooth": {
+     "cx": 122.3,
+     "cy": 103.31,
+     "w": 30.21,
+     "h": 30.56,
+     "angle": -0.08
+    }
+   }
+  },
+  {
+   "frame": 3,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 54.98,
+    "cy": 105.06,
+    "w": 30.73,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.059,
+    "gaze_y": -0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 52.71,
+     "cy": 104.89,
+     "w": 30.03,
+     "h": 30.56,
+     "angle": -0.23
+    }
+   },
+   "right": {
+    "cx": 119.94,
+    "cy": 104.71,
+    "w": 30.73,
+    "h": 31.43,
+    "opening_h": 31.43,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.159,
+    "gaze_y": 0.009,
+    "source": "detected",
+    "smooth": {
+     "cx": 117.59,
+     "cy": 104.71,
+     "w": 31.26,
+     "h": 30.73,
+     "angle": -0.23
+    }
+   }
+  },
+  {
+   "frame": 4,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 43.11,
+    "cy": 105.41,
+    "w": 27.94,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.14,
+    "gaze_y": -0.033,
+    "source": "detected",
+    "smooth": {
+     "cx": 44.5,
+     "cy": 104.97,
+     "w": 28.29,
+     "h": 30.21,
+     "angle": -0.15
+    }
+   },
+   "right": {
+    "cx": 107.37,
+    "cy": 105.06,
+    "w": 33.53,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.208,
+    "gaze_y": -0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 108.5,
+     "cy": 104.97,
+     "w": 32.83,
+     "h": 30.73,
+     "angle": -0.15
+    }
+   }
+  },
+  {
+   "frame": 5,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 36.82,
+    "cy": 104.71,
+    "w": 26.54,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.32,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.158,
+    "gaze_y": -0.047,
+    "source": "detected",
+    "smooth": {
+     "cx": 36.03,
+     "cy": 104.36,
+     "w": 25.67,
+     "h": 29.87,
+     "angle": 0.77
+    }
+   },
+   "right": {
+    "cx": 99.34,
+    "cy": 105.06,
+    "w": 34.23,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.32,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.224,
+    "gaze_y": -0.009,
+    "source": "detected",
+    "smooth": {
+     "cx": 98.12,
+     "cy": 105.23,
+     "w": 33.53,
+     "h": 30.56,
+     "angle": 0.77
+    }
+   }
+  },
+  {
+   "frame": 6,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 27.39,
+    "cy": 102.96,
+    "w": 21.65,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": 3.05,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.129,
+    "gaze_y": -0.052,
+    "source": "detected",
+    "smooth": {
+     "cx": 29.57,
+     "cy": 103.4,
+     "w": 22.53,
+     "h": 29.16,
+     "angle": 2.16
+    }
+   },
+   "right": {
+    "cx": 86.41,
+    "cy": 106.11,
+    "w": 33.53,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 3.05,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.171,
+    "gaze_y": -0.014,
+    "source": "detected",
+    "smooth": {
+     "cx": 89.38,
+     "cy": 105.59,
+     "w": 33.53,
+     "h": 30.04,
+     "angle": 2.16
+    }
+   }
+  },
+  {
+   "frame": 7,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 26.69,
+    "cy": 102.96,
+    "w": 20.26,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.73,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.145,
+    "gaze_y": -0.095,
+    "source": "detected",
+    "smooth": {
+     "cx": 26.69,
+     "cy": 102.96,
+     "w": 20.26,
+     "h": 27.94,
+     "angle": 2.73
+    }
+   },
+   "right": {
+    "cx": 85.37,
+    "cy": 105.76,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": 2.73,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.285,
+    "gaze_y": -0.076,
+    "source": "detected",
+    "smooth": {
+     "cx": 85.37,
+     "cy": 105.76,
+     "w": 32.83,
+     "h": 29.34,
+     "angle": 2.73
+    }
+   }
+  },
+  {
+   "frame": 8,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 26.34,
+    "cy": 102.26,
+    "w": 15.37,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.86,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.409,
+    "gaze_y": -0.105,
+    "source": "detected",
+    "smooth": {
+     "cx": 25.91,
+     "cy": 102.35,
+     "w": 16.59,
+     "h": 27.94,
+     "angle": 2.72
+    }
+   },
+   "right": {
+    "cx": 82.22,
+    "cy": 105.06,
+    "w": 33.53,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.86,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.263,
+    "gaze_y": -0.07,
+    "source": "detected",
+    "smooth": {
+     "cx": 82.57,
+     "cy": 105.06,
+     "w": 33.0,
+     "h": 28.29,
+     "angle": 2.72
+    }
+   }
+  },
+  {
+   "frame": 9,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 24.25,
+    "cy": 101.92,
+    "w": 15.37,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.55,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.418,
+    "gaze_y": -0.132,
+    "source": "detected",
+    "smooth": {
+     "cx": 24.34,
+     "cy": 102.01,
+     "w": 15.2,
+     "h": 27.94,
+     "angle": 2.59
+    }
+   },
+   "right": {
+    "cx": 79.08,
+    "cy": 104.36,
+    "w": 32.83,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.55,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.243,
+    "gaze_y": -0.04,
+    "source": "detected",
+    "smooth": {
+     "cx": 80.56,
+     "cy": 104.53,
+     "w": 32.66,
+     "h": 27.94,
+     "angle": 2.59
+    }
+   }
+  },
+  {
+   "frame": 10,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 22.5,
+    "cy": 101.92,
+    "w": 14.67,
+    "h": 27.24,
+    "opening_h": 27.24,
+    "angle": 2.41,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.41,
+    "gaze_y": -0.103,
+    "source": "detected",
+    "smooth": {
+     "cx": 22.33,
+     "cy": 102.0,
+     "w": 14.67,
+     "h": 27.94,
+     "angle": 2.51
+    }
+   },
+   "right": {
+    "cx": 80.48,
+    "cy": 104.36,
+    "w": 24.45,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.41,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.469,
+    "gaze_y": -0.09,
+    "source": "detected",
+    "smooth": {
+     "cx": 78.12,
+     "cy": 104.45,
+     "w": 32.3,
+     "h": 28.12,
+     "angle": 2.51
+    }
+   }
+  },
+  {
+   "frame": 11,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 20.06,
+    "cy": 102.26,
+    "w": 13.97,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.6,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.48,
+    "gaze_y": -0.125,
+    "source": "detected",
+    "smooth": {
+     "cx": 20.49,
+     "cy": 102.17,
+     "w": 14.14,
+     "h": 27.94,
+     "angle": 2.49
+    }
+   },
+   "right": {
+    "cx": 73.84,
+    "cy": 104.71,
+    "w": 32.13,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.6,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.261,
+    "gaze_y": -0.073,
+    "source": "detected",
+    "smooth": {
+     "cx": 74.97,
+     "cy": 104.62,
+     "w": 32.13,
+     "h": 28.46,
+     "angle": 2.49
+    }
+   }
+  },
+  {
+   "frame": 12,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 19.36,
+    "cy": 102.61,
+    "w": 13.97,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.23,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.46,
+    "gaze_y": -0.122,
+    "source": "detected",
+    "smooth": {
+     "cx": 19.54,
+     "cy": 102.35,
+     "w": 13.97,
+     "h": 28.12,
+     "angle": 2.46
+    }
+   },
+   "right": {
+    "cx": 73.14,
+    "cy": 104.71,
+    "w": 32.13,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.23,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.296,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 73.31,
+     "cy": 104.71,
+     "w": 32.13,
+     "h": 28.64,
+     "angle": 2.46
+    }
+   }
+  },
+  {
+   "frame": 13,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 19.01,
+    "cy": 102.26,
+    "w": 13.27,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.99,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.526,
+    "gaze_y": -0.135,
+    "source": "detected",
+    "smooth": {
+     "cx": 19.01,
+     "cy": 102.26,
+     "w": 13.27,
+     "h": 27.94,
+     "angle": 2.99
+    }
+   },
+   "right": {
+    "cx": 72.44,
+    "cy": 105.06,
+    "w": 32.13,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.99,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.291,
+    "gaze_y": -0.02,
+    "source": "detected",
+    "smooth": {
+     "cx": 72.44,
+     "cy": 105.06,
+     "w": 32.13,
+     "h": 27.94,
+     "angle": 2.99
+    }
+   }
+  },
+  {
+   "frame": 14,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 19.36,
+    "cy": 102.61,
+    "w": 13.97,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.23,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.46,
+    "gaze_y": -0.122,
+    "source": "detected",
+    "smooth": {
+     "cx": 19.54,
+     "cy": 102.35,
+     "w": 13.97,
+     "h": 28.12,
+     "angle": 2.46
+    }
+   },
+   "right": {
+    "cx": 73.14,
+    "cy": 104.71,
+    "w": 32.13,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.23,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.296,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 73.31,
+     "cy": 104.71,
+     "w": 32.13,
+     "h": 28.64,
+     "angle": 2.46
+    }
+   }
+  },
+  {
+   "frame": 15,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 20.06,
+    "cy": 102.26,
+    "w": 13.97,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.6,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.48,
+    "gaze_y": -0.125,
+    "source": "detected",
+    "smooth": {
+     "cx": 20.49,
+     "cy": 102.18,
+     "w": 14.15,
+     "h": 27.94,
+     "angle": 2.49
+    }
+   },
+   "right": {
+    "cx": 73.84,
+    "cy": 104.71,
+    "w": 32.13,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.6,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.261,
+    "gaze_y": -0.073,
+    "source": "detected",
+    "smooth": {
+     "cx": 74.97,
+     "cy": 104.62,
+     "w": 32.13,
+     "h": 28.46,
+     "angle": 2.49
+    }
+   }
+  },
+  {
+   "frame": 16,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 22.5,
+    "cy": 101.92,
+    "w": 14.67,
+    "h": 27.24,
+    "opening_h": 27.24,
+    "angle": 2.41,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.41,
+    "gaze_y": -0.103,
+    "source": "detected",
+    "smooth": {
+     "cx": 22.33,
+     "cy": 102.01,
+     "w": 14.67,
+     "h": 27.94,
+     "angle": 2.51
+    }
+   },
+   "right": {
+    "cx": 80.48,
+    "cy": 104.36,
+    "w": 24.45,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.41,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.469,
+    "gaze_y": -0.09,
+    "source": "detected",
+    "smooth": {
+     "cx": 78.12,
+     "cy": 104.45,
+     "w": 32.31,
+     "h": 28.12,
+     "angle": 2.51
+    }
+   }
+  },
+  {
+   "frame": 17,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 24.25,
+    "cy": 101.92,
+    "w": 15.37,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": 2.55,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.418,
+    "gaze_y": -0.132,
+    "source": "detected",
+    "smooth": {
+     "cx": 24.34,
+     "cy": 102.0,
+     "w": 15.19,
+     "h": 27.94,
+     "angle": 2.59
+    }
+   },
+   "right": {
+    "cx": 79.08,
+    "cy": 104.36,
+    "w": 32.83,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.55,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.243,
+    "gaze_y": -0.04,
+    "source": "detected",
+    "smooth": {
+     "cx": 80.56,
+     "cy": 104.53,
+     "w": 32.66,
+     "h": 27.94,
+     "angle": 2.59
+    }
+   }
+  },
+  {
+   "frame": 18,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 26.34,
+    "cy": 102.26,
+    "w": 15.37,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.86,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.409,
+    "gaze_y": -0.105,
+    "source": "detected",
+    "smooth": {
+     "cx": 25.91,
+     "cy": 102.35,
+     "w": 16.59,
+     "h": 27.94,
+     "angle": 2.72
+    }
+   },
+   "right": {
+    "cx": 82.22,
+    "cy": 105.06,
+    "w": 33.53,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.86,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.263,
+    "gaze_y": -0.07,
+    "source": "detected",
+    "smooth": {
+     "cx": 82.57,
+     "cy": 105.06,
+     "w": 33.0,
+     "h": 28.29,
+     "angle": 2.72
+    }
+   }
+  },
+  {
+   "frame": 19,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 26.69,
+    "cy": 102.96,
+    "w": 20.26,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": 2.73,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.145,
+    "gaze_y": -0.095,
+    "source": "detected",
+    "smooth": {
+     "cx": 26.69,
+     "cy": 102.96,
+     "w": 20.26,
+     "h": 27.94,
+     "angle": 2.73
+    }
+   },
+   "right": {
+    "cx": 85.37,
+    "cy": 105.76,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": 2.73,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.285,
+    "gaze_y": -0.076,
+    "source": "detected",
+    "smooth": {
+     "cx": 85.37,
+     "cy": 105.76,
+     "w": 32.83,
+     "h": 29.34,
+     "angle": 2.73
+    }
+   }
+  },
+  {
+   "frame": 20,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 27.39,
+    "cy": 102.96,
+    "w": 21.65,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": 3.05,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.129,
+    "gaze_y": -0.052,
+    "source": "detected",
+    "smooth": {
+     "cx": 29.57,
+     "cy": 103.4,
+     "w": 22.52,
+     "h": 29.16,
+     "angle": 2.16
+    }
+   },
+   "right": {
+    "cx": 86.41,
+    "cy": 106.11,
+    "w": 33.53,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 3.05,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.171,
+    "gaze_y": -0.014,
+    "source": "detected",
+    "smooth": {
+     "cx": 89.38,
+     "cy": 105.59,
+     "w": 33.53,
+     "h": 30.04,
+     "angle": 2.16
+    }
+   }
+  },
+  {
+   "frame": 21,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 36.82,
+    "cy": 104.71,
+    "w": 26.54,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.32,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.158,
+    "gaze_y": -0.047,
+    "source": "detected",
+    "smooth": {
+     "cx": 36.03,
+     "cy": 104.36,
+     "w": 25.67,
+     "h": 29.87,
+     "angle": 0.77
+    }
+   },
+   "right": {
+    "cx": 99.34,
+    "cy": 105.06,
+    "w": 34.23,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.32,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.224,
+    "gaze_y": -0.009,
+    "source": "detected",
+    "smooth": {
+     "cx": 98.12,
+     "cy": 105.23,
+     "w": 33.53,
+     "h": 30.56,
+     "angle": 0.77
+    }
+   }
+  },
+  {
+   "frame": 22,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 43.11,
+    "cy": 105.41,
+    "w": 27.94,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.14,
+    "gaze_y": -0.033,
+    "source": "detected",
+    "smooth": {
+     "cx": 44.5,
+     "cy": 104.97,
+     "w": 28.29,
+     "h": 30.21,
+     "angle": -0.15
+    }
+   },
+   "right": {
+    "cx": 107.37,
+    "cy": 105.06,
+    "w": 33.53,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.208,
+    "gaze_y": -0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 108.51,
+     "cy": 104.97,
+     "w": 32.83,
+     "h": 30.73,
+     "angle": -0.15
+    }
+   }
+  },
+  {
+   "frame": 23,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 54.98,
+    "cy": 105.06,
+    "w": 30.73,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.059,
+    "gaze_y": -0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 52.71,
+     "cy": 104.89,
+     "w": 30.03,
+     "h": 30.56,
+     "angle": -0.23
+    }
+   },
+   "right": {
+    "cx": 119.94,
+    "cy": 104.71,
+    "w": 30.73,
+    "h": 31.43,
+    "opening_h": 31.43,
+    "angle": -0.31,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.159,
+    "gaze_y": 0.009,
+    "source": "detected",
+    "smooth": {
+     "cx": 117.59,
+     "cy": 104.71,
+     "w": 31.26,
+     "h": 30.73,
+     "angle": -0.23
+    }
+   }
+  },
+  {
+   "frame": 24,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 59.17,
+    "cy": 104.36,
+    "w": 30.73,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.191,
+    "gaze_y": -0.014,
+    "source": "detected",
+    "smooth": {
+     "cx": 57.43,
+     "cy": 103.92,
+     "w": 30.73,
+     "h": 30.56,
+     "angle": -0.08
+    }
+   },
+   "right": {
+    "cx": 123.78,
+    "cy": 104.36,
+    "w": 30.04,
+    "h": 30.73,
+    "opening_h": 30.73,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.023,
+    "gaze_y": -0.045,
+    "source": "detected",
+    "smooth": {
+     "cx": 122.47,
+     "cy": 103.66,
+     "w": 30.21,
+     "h": 30.56,
+     "angle": -0.08
+    }
+   }
+  },
+  {
+   "frame": 25,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 57.78,
+    "cy": 99.82,
+    "w": 29.34,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.19,
+    "gaze_y": -0.079,
+    "source": "detected",
+    "smooth": {
+     "cx": 57.78,
+     "cy": 99.82,
+     "w": 29.34,
+     "h": 30.04,
+     "angle": 0.0
+    }
+   },
+   "right": {
+    "cx": 123.09,
+    "cy": 99.82,
+    "w": 30.04,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": 0.0,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": -0.167,
+    "gaze_y": -0.056,
+    "source": "detected",
+    "smooth": {
+     "cx": 123.09,
+     "cy": 99.82,
+     "w": 30.04,
+     "h": 30.04,
+     "angle": 0.0
+    }
+   }
+  },
+  {
+   "frame": 26,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 64.41,
+    "cy": 101.92,
+    "w": 31.43,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.62,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.236,
+    "gaze_y": 0.028,
+    "source": "detected",
+    "smooth": {
+     "cx": 65.98,
+     "cy": 102.62,
+     "w": 29.34,
+     "h": 30.04,
+     "angle": -0.54
+    }
+   },
+   "right": {
+    "cx": 129.02,
+    "cy": 101.22,
+    "w": 29.34,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -0.62,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.057,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 130.94,
+     "cy": 101.83,
+     "w": 28.99,
+     "h": 29.34,
+     "angle": -0.54
+    }
+   }
+  },
+  {
+   "frame": 27,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 75.94,
+    "cy": 104.71,
+    "w": 27.94,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.91,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.495,
+    "gaze_y": 0.051,
+    "source": "detected",
+    "smooth": {
+     "cx": 76.9,
+     "cy": 104.19,
+     "w": 28.29,
+     "h": 30.04,
+     "angle": -0.99
+    }
+   },
+   "right": {
+    "cx": 141.95,
+    "cy": 103.66,
+    "w": 27.24,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -0.91,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.169,
+    "gaze_y": -0.019,
+    "source": "detected",
+    "smooth": {
+     "cx": 142.3,
+     "cy": 103.05,
+     "w": 26.89,
+     "h": 28.82,
+     "angle": -0.99
+    }
+   }
+  },
+  {
+   "frame": 28,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 91.3,
+    "cy": 105.76,
+    "w": 26.54,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -1.54,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.437,
+    "gaze_y": 0.029,
+    "source": "detected",
+    "smooth": {
+     "cx": 91.13,
+     "cy": 105.23,
+     "w": 28.99,
+     "h": 29.87,
+     "angle": -1.5
+    }
+   },
+   "right": {
+    "cx": 156.27,
+    "cy": 104.01,
+    "w": 23.75,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -1.54,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.153,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 154.96,
+     "cy": 103.57,
+     "w": 24.27,
+     "h": 28.64,
+     "angle": -1.5
+    }
+   }
+  },
+  {
+   "frame": 29,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 105.97,
+    "cy": 105.41,
+    "w": 32.13,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.02,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.387,
+    "gaze_y": 0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 103.09,
+     "cy": 105.32,
+     "w": 31.26,
+     "h": 29.52,
+     "angle": -2.08
+    }
+   },
+   "right": {
+    "cx": 165.35,
+    "cy": 103.31,
+    "w": 22.35,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.02,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.131,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 163.52,
+     "cy": 103.13,
+     "w": 22.35,
+     "h": 28.46,
+     "angle": -2.08
+    }
+   }
+  },
+  {
+   "frame": 30,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 109.81,
+    "cy": 105.06,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.74,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.396,
+    "gaze_y": -0.029,
+    "source": "detected",
+    "smooth": {
+     "cx": 108.51,
+     "cy": 105.15,
+     "w": 32.66,
+     "h": 29.16,
+     "angle": -2.56
+    }
+   },
+   "right": {
+    "cx": 168.14,
+    "cy": 102.26,
+    "w": 20.96,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.74,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.173,
+    "gaze_y": -0.08,
+    "source": "detected",
+    "smooth": {
+     "cx": 166.92,
+     "cy": 102.52,
+     "w": 20.78,
+     "h": 28.12,
+     "angle": -2.56
+    }
+   }
+  },
+  {
+   "frame": 31,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 109.12,
+    "cy": 105.06,
+    "w": 32.83,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.76,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.319,
+    "gaze_y": -0.045,
+    "source": "detected",
+    "smooth": {
+     "cx": 109.12,
+     "cy": 105.06,
+     "w": 32.83,
+     "h": 27.94,
+     "angle": -2.76
+    }
+   },
+   "right": {
+    "cx": 167.09,
+    "cy": 102.26,
+    "w": 18.86,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.76,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.237,
+    "gaze_y": -0.1,
+    "source": "detected",
+    "smooth": {
+     "cx": 167.09,
+     "cy": 102.26,
+     "w": 18.86,
+     "h": 27.94,
+     "angle": -2.76
+    }
+   }
+  },
+  {
+   "frame": 32,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 111.91,
+    "cy": 104.01,
+    "w": 32.83,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.47,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.34,
+    "gaze_y": -0.078,
+    "source": "detected",
+    "smooth": {
+     "cx": 112.26,
+     "cy": 104.19,
+     "w": 32.83,
+     "h": 28.82,
+     "angle": -2.79
+    }
+   },
+   "right": {
+    "cx": 168.49,
+    "cy": 101.57,
+    "w": 16.07,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.47,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.383,
+    "gaze_y": -0.08,
+    "source": "detected",
+    "smooth": {
+     "cx": 169.01,
+     "cy": 101.57,
+     "w": 16.59,
+     "h": 27.94,
+     "angle": -2.79
+    }
+   }
+  },
+  {
+   "frame": 33,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 115.4,
+    "cy": 103.66,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.88,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.298,
+    "gaze_y": -0.071,
+    "source": "detected",
+    "smooth": {
+     "cx": 115.75,
+     "cy": 103.57,
+     "w": 32.83,
+     "h": 29.16,
+     "angle": -2.86
+    }
+   },
+   "right": {
+    "cx": 170.93,
+    "cy": 100.87,
+    "w": 15.37,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.88,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.373,
+    "gaze_y": -0.07,
+    "source": "detected",
+    "smooth": {
+     "cx": 171.28,
+     "cy": 100.87,
+     "w": 15.37,
+     "h": 27.94,
+     "angle": -2.86
+    }
+   }
+  },
+  {
+   "frame": 34,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 120.29,
+    "cy": 102.96,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.94,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.272,
+    "gaze_y": -0.057,
+    "source": "detected",
+    "smooth": {
+     "cx": 119.94,
+     "cy": 102.88,
+     "w": 32.83,
+     "h": 29.52,
+     "angle": -2.93
+    }
+   },
+   "right": {
+    "cx": 174.78,
+    "cy": 100.17,
+    "w": 14.67,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.94,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.362,
+    "gaze_y": -0.055,
+    "source": "detected",
+    "smooth": {
+     "cx": 174.51,
+     "cy": 100.08,
+     "w": 14.85,
+     "h": 28.12,
+     "angle": -2.93
+    }
+   }
+  },
+  {
+   "frame": 35,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 123.78,
+    "cy": 101.92,
+    "w": 32.83,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.97,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.251,
+    "gaze_y": -0.033,
+    "source": "detected",
+    "smooth": {
+     "cx": 123.26,
+     "cy": 102.18,
+     "w": 32.83,
+     "h": 29.87,
+     "angle": -2.95
+    }
+   },
+   "right": {
+    "cx": 177.57,
+    "cy": 99.12,
+    "w": 14.67,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.97,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.381,
+    "gaze_y": -0.059,
+    "source": "detected",
+    "smooth": {
+     "cx": 177.13,
+     "cy": 99.38,
+     "w": 14.67,
+     "h": 28.46,
+     "angle": -2.95
+    }
+   }
+  },
+  {
+   "frame": 36,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 125.18,
+    "cy": 101.92,
+    "w": 32.83,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.95,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.268,
+    "gaze_y": -0.037,
+    "source": "detected",
+    "smooth": {
+     "cx": 124.83,
+     "cy": 101.92,
+     "w": 32.83,
+     "h": 30.04,
+     "angle": -2.96
+    }
+   },
+   "right": {
+    "cx": 179.32,
+    "cy": 99.12,
+    "w": 15.37,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.95,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.327,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 178.53,
+     "cy": 99.12,
+     "w": 14.84,
+     "h": 28.64,
+     "angle": -2.96
+    }
+   }
+  },
+  {
+   "frame": 37,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 125.53,
+    "cy": 101.92,
+    "w": 30.73,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -3.39,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.364,
+    "gaze_y": -0.068,
+    "source": "detected",
+    "smooth": {
+     "cx": 125.53,
+     "cy": 101.92,
+     "w": 30.73,
+     "h": 28.64,
+     "angle": -3.39
+    }
+   },
+   "right": {
+    "cx": 178.62,
+    "cy": 98.77,
+    "w": 12.57,
+    "h": 26.54,
+    "opening_h": 26.54,
+    "angle": -3.39,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.644,
+    "gaze_y": 0.016,
+    "source": "detected",
+    "smooth": {
+     "cx": 178.62,
+     "cy": 98.77,
+     "w": 12.57,
+     "h": 26.54,
+     "angle": -3.39
+    }
+   }
+  },
+  {
+   "frame": 38,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 125.18,
+    "cy": 101.92,
+    "w": 32.83,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.95,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.268,
+    "gaze_y": -0.037,
+    "source": "detected",
+    "smooth": {
+     "cx": 124.83,
+     "cy": 101.92,
+     "w": 32.83,
+     "h": 30.04,
+     "angle": -2.96
+    }
+   },
+   "right": {
+    "cx": 179.32,
+    "cy": 99.12,
+    "w": 15.37,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.95,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.327,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 178.53,
+     "cy": 99.12,
+     "w": 14.85,
+     "h": 28.64,
+     "angle": -2.96
+    }
+   }
+  },
+  {
+   "frame": 39,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 123.78,
+    "cy": 101.92,
+    "w": 32.83,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.97,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.251,
+    "gaze_y": -0.033,
+    "source": "detected",
+    "smooth": {
+     "cx": 123.26,
+     "cy": 102.18,
+     "w": 32.83,
+     "h": 29.87,
+     "angle": -2.95
+    }
+   },
+   "right": {
+    "cx": 177.57,
+    "cy": 99.12,
+    "w": 14.67,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.97,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.381,
+    "gaze_y": -0.059,
+    "source": "detected",
+    "smooth": {
+     "cx": 177.13,
+     "cy": 99.38,
+     "w": 14.67,
+     "h": 28.46,
+     "angle": -2.95
+    }
+   }
+  },
+  {
+   "frame": 40,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 120.29,
+    "cy": 102.96,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.94,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.272,
+    "gaze_y": -0.057,
+    "source": "detected",
+    "smooth": {
+     "cx": 119.94,
+     "cy": 102.88,
+     "w": 32.83,
+     "h": 29.52,
+     "angle": -2.93
+    }
+   },
+   "right": {
+    "cx": 174.78,
+    "cy": 100.17,
+    "w": 14.67,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.94,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.362,
+    "gaze_y": -0.055,
+    "source": "detected",
+    "smooth": {
+     "cx": 174.51,
+     "cy": 100.08,
+     "w": 14.84,
+     "h": 28.12,
+     "angle": -2.93
+    }
+   }
+  },
+  {
+   "frame": 41,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 115.4,
+    "cy": 103.66,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.88,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.298,
+    "gaze_y": -0.071,
+    "source": "detected",
+    "smooth": {
+     "cx": 115.75,
+     "cy": 103.57,
+     "w": 32.83,
+     "h": 29.16,
+     "angle": -2.86
+    }
+   },
+   "right": {
+    "cx": 170.93,
+    "cy": 100.87,
+    "w": 15.37,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.88,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.373,
+    "gaze_y": -0.07,
+    "source": "detected",
+    "smooth": {
+     "cx": 171.28,
+     "cy": 100.87,
+     "w": 15.37,
+     "h": 27.94,
+     "angle": -2.86
+    }
+   }
+  },
+  {
+   "frame": 42,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 111.91,
+    "cy": 104.01,
+    "w": 32.83,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.47,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.34,
+    "gaze_y": -0.078,
+    "source": "detected",
+    "smooth": {
+     "cx": 112.26,
+     "cy": 104.19,
+     "w": 32.83,
+     "h": 28.82,
+     "angle": -2.78
+    }
+   },
+   "right": {
+    "cx": 168.49,
+    "cy": 101.57,
+    "w": 16.07,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.47,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.383,
+    "gaze_y": -0.08,
+    "source": "detected",
+    "smooth": {
+     "cx": 169.01,
+     "cy": 101.57,
+     "w": 16.59,
+     "h": 27.94,
+     "angle": -2.78
+    }
+   }
+  },
+  {
+   "frame": 43,
+   "keyframe": true,
+   "state": "open",
+   "left": {
+    "cx": 109.12,
+    "cy": 105.06,
+    "w": 32.83,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.76,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.319,
+    "gaze_y": -0.045,
+    "source": "detected",
+    "smooth": {
+     "cx": 109.12,
+     "cy": 105.06,
+     "w": 32.83,
+     "h": 27.94,
+     "angle": -2.76
+    }
+   },
+   "right": {
+    "cx": 167.09,
+    "cy": 102.26,
+    "w": 18.86,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.76,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.237,
+    "gaze_y": -0.1,
+    "source": "detected",
+    "smooth": {
+     "cx": 167.09,
+     "cy": 102.26,
+     "w": 18.86,
+     "h": 27.94,
+     "angle": -2.76
+    }
+   }
+  },
+  {
+   "frame": 44,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 109.81,
+    "cy": 105.06,
+    "w": 32.83,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -2.74,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.396,
+    "gaze_y": -0.029,
+    "source": "detected",
+    "smooth": {
+     "cx": 108.5,
+     "cy": 105.15,
+     "w": 32.66,
+     "h": 29.16,
+     "angle": -2.56
+    }
+   },
+   "right": {
+    "cx": 168.14,
+    "cy": 102.26,
+    "w": 20.96,
+    "h": 27.94,
+    "opening_h": 27.94,
+    "angle": -2.74,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.173,
+    "gaze_y": -0.08,
+    "source": "detected",
+    "smooth": {
+     "cx": 166.92,
+     "cy": 102.52,
+     "w": 20.78,
+     "h": 28.12,
+     "angle": -2.56
+    }
+   }
+  },
+  {
+   "frame": 45,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 105.97,
+    "cy": 105.41,
+    "w": 32.13,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -2.02,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.387,
+    "gaze_y": 0.005,
+    "source": "detected",
+    "smooth": {
+     "cx": 103.09,
+     "cy": 105.32,
+     "w": 31.26,
+     "h": 29.52,
+     "angle": -2.08
+    }
+   },
+   "right": {
+    "cx": 165.35,
+    "cy": 103.31,
+    "w": 22.35,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -2.02,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.131,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 163.51,
+     "cy": 103.13,
+     "w": 22.35,
+     "h": 28.46,
+     "angle": -2.08
+    }
+   }
+  },
+  {
+   "frame": 46,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 91.3,
+    "cy": 105.76,
+    "w": 26.54,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -1.54,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.437,
+    "gaze_y": 0.029,
+    "source": "detected",
+    "smooth": {
+     "cx": 91.13,
+     "cy": 105.23,
+     "w": 28.99,
+     "h": 29.87,
+     "angle": -1.5
+    }
+   },
+   "right": {
+    "cx": 156.27,
+    "cy": 104.01,
+    "w": 23.75,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -1.54,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.153,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 154.96,
+     "cy": 103.57,
+     "w": 24.27,
+     "h": 28.64,
+     "angle": -1.5
+    }
+   }
+  },
+  {
+   "frame": 47,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 75.94,
+    "cy": 104.71,
+    "w": 27.94,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.91,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.495,
+    "gaze_y": 0.051,
+    "source": "detected",
+    "smooth": {
+     "cx": 76.9,
+     "cy": 104.19,
+     "w": 28.81,
+     "h": 30.04,
+     "angle": -1.0
+    }
+   },
+   "right": {
+    "cx": 141.95,
+    "cy": 103.66,
+    "w": 27.24,
+    "h": 29.34,
+    "opening_h": 29.34,
+    "angle": -0.91,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.169,
+    "gaze_y": -0.019,
+    "source": "detected",
+    "smooth": {
+     "cx": 142.3,
+     "cy": 103.05,
+     "w": 26.89,
+     "h": 28.64,
+     "angle": -1.0
+    }
+   }
+  },
+  {
+   "frame": 48,
+   "keyframe": false,
+   "state": "open",
+   "left": {
+    "cx": 64.41,
+    "cy": 101.92,
+    "w": 31.43,
+    "h": 30.04,
+    "opening_h": 30.04,
+    "angle": -0.62,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.236,
+    "gaze_y": 0.028,
+    "source": "detected",
+    "smooth": {
+     "cx": 67.29,
+     "cy": 102.62,
+     "w": 30.56,
+     "h": 30.04,
+     "angle": -0.69
+    }
+   },
+   "right": {
+    "cx": 129.02,
+    "cy": 101.22,
+    "w": 29.34,
+    "h": 28.64,
+    "opening_h": 28.64,
+    "angle": -0.62,
+    "visible": true,
+    "lid": 0.0,
+    "gaze_x": 0.057,
+    "gaze_y": -0.044,
+    "source": "detected",
+    "smooth": {
+     "cx": 132.25,
+     "cy": 101.83,
+     "w": 28.82,
+     "h": 28.64,
+     "angle": -0.69
+    }
+   }
+  }
+ ]
+}

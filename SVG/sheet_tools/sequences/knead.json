@@ -1,0 +1,19 @@
+{
+  "name": "knead_wan",
+  "keys": "out/knead_keys",
+  "fps": 12,
+  "seconds": 0.5,
+  "gen_seconds": 1.0,
+  "seed": 42,
+  "loop": true,
+  "front": 1,
+  "order": [1, 4, 3, 2, 3, 4, 1],
+  "default_prompt": "the cat kneads with its front paw, body still",
+  "steps": {
+    "1-4": {"prompt": "the cat shifts on the spot from sitting facing the viewer to sitting turned three-quarters to its left side, keeping its face toward the viewer, eyes open",
+            "seconds": 1.0, "gen_seconds": 2.0},
+    "4-1": {"seconds": 1.0},
+    "4-3": {"prompt": "the cat lifts one front paw off the ground and curls it, eyes open, body still"},
+    "3-2": {"prompt": "the cat stretches the lifted front paw forward and presses it down with claws out, kneading, eyes open"}
+  }
+}

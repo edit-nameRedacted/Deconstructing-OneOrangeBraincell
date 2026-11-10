@@ -13,7 +13,7 @@
   Replaces: arrangement(), describe() and the small statistics helpers in the prototype.
 */
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
-import { INVERT, UNIT, EYES_DUMB, EYES_CUTE, EYES_OTHER, STRIPE_COLORS, TYPICAL, labelFor, formatValue, ordinal } from "./config.js";
+import { INVERT, UNIT, EYES_DUMB, EYES_CUTE, EYES_OTHER, EYES_FIXED, GAZE, STRIPE_COLORS, TYPICAL, EARS, labelFor, formatValue, ordinal } from "./config.js";
 import { typicalCat, hasTraits } from "./typicalCat.js";
 import { palette } from "./color.js";
 import { DISPLAY_LABELS } from "./text.js";
@@ -118,6 +118,17 @@ export function stableHash(text) {
   return h >>> 0;
 }
 
+// A cat's ears: how pink or dark the insides are, and how big each ear's tuft is (EARS in config.js).
+// Hashing the cat's key makes them "random" but the same every time.
+export function earsFor(key) {
+  const r = (salt) => (stableHash(key + ":" + salt) % 10007) / 10006;     // 0..1
+  const lerp = ([a, b], t) => a + (b - a) * t;
+  const tone = lerp(EARS.tone, r("ear-tone"));
+  const tuft = lerp(EARS.tuft, r("tuft"));
+  const differ = lerp([-EARS.tuftDiffer, EARS.tuftDiffer], r("tuft-differ"));
+  return { tone: +tone.toFixed(3), tuftLeft: +(tuft * (1 + differ)).toFixed(3), tuftRight: +(tuft * (1 - differ)).toFixed(3) };
+}
+
 // One tail segment for one tail variable: its length is the percentile of the group's median
 // among all posts (inverted for rank, where lower is better).
 function variableSegment(data, group, varKey, fill) {
@@ -207,12 +218,20 @@ export function describeView(data, arr, state) {
   // the others (so if one group is both, the dumb eyes win and the next-cutest gets the shine).
   // A tie on the mean goes to the first group. Every other cat gets one of the remaining sets,
   // chosen by hashing the view and group value.
-  const dumbest = d3.greatest(cats, (c) => c.meanDumb);
-  const cutest = d3.greatest(cats.filter((c) => c !== dumbest), (c) => c.meanCute);
+  // A group named in EYES_FIXED (config.js) always gets its set; the dumb and cute eyes go to the others,
+  // and the hashed sets leave out any set fixed in this view.
+  const fixed = EYES_FIXED[arr.key] || {};
+  const free = cats.filter((c) => !(c.group.value in fixed));
+  const dumbest = d3.greatest(free, (c) => c.meanDumb);
+  const cutest = d3.greatest(free.filter((c) => c !== dumbest), (c) => c.meanCute);
+  const others = EYES_OTHER.filter((s) => !Object.values(fixed).includes(s));
   for (const cat of cats) {
-    if (cat === dumbest) cat.eyes = EYES_DUMB;
+    if (cat.group.value in fixed) cat.eyes = fixed[cat.group.value];
+    else if (cat === dumbest) cat.eyes = EYES_DUMB;
     else if (cat === cutest) cat.eyes = EYES_CUTE;
-    else cat.eyes = EYES_OTHER[stableHash(arr.key + ":" + cat.group.value) % EYES_OTHER.length];
+    else cat.eyes = others[stableHash(arr.key + ":" + cat.group.value) % others.length];
+    cat.look.ears = earsFor(arr.key + ":" + cat.group.value);
+    cat.followsPointer = (GAZE.who[arr.key] || []).includes(cat.group.value);   // gaze.js; who is in config.js
   }
 
   return {

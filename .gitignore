@@ -64,3 +64,6 @@ desktop.ini
 # ---------------------------------------------------------------- Firebase Hosting (built by viz_d3/build_site.py)
 /site/
 /.firebase/
+
+# ---------------------------------------------------------------- exploratory analysis: per-post table (rebuilt by build_table.py; holds Reddit usernames)
+/oobc_archive/exploratory/posts.csv

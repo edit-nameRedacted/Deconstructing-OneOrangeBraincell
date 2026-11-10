@@ -19,6 +19,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import { ZOOM_MS, ZOOM_LABEL_PX } from "./config.js";
 import { cloneCat, tilt, boxOf, bodyOf } from "./kit.js";
+import { watchGaze } from "./gaze.js";
 import { drawTail } from "./tail.js";
 import { tailOptions } from "./catView.js";
 
@@ -42,6 +43,7 @@ export function openZoom({ view, index, selectedKey, animate, rowViewBox, kit, g
   svg.setAttribute("viewBox", rowViewBox.join(" "));
   stage.append(svg);
   tilt(svg);
+  if (cat.followsPointer) watchGaze(svg);  // the seeking cat keeps following the pointer when zoomed
   const tail = drawTail(svg, tailOptions(cat, view, geometry, { labels: true, interactive: true, onSelect }));
   if (selectedKey) tail.select(selectedKey);
 

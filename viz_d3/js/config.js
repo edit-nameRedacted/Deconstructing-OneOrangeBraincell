@@ -17,6 +17,10 @@ export const PATHS = {
   kit: "../SVG/cat_kit.svg",
   whiteStages: "../SVG/white_stages.json",
   tailGeometry: "../SVG/tails/tail_geometry.json",
+  // Each eye set's opening and pupil (built by SVG/V2/eye_parts.py), so sequence eyes can look around.
+  eyeParts: "../SVG/eye_parts.json",
+  // The animated sequences, one file each (built by build_sequences.py from SVG/sheet_tools).
+  sequences: "sequences/",
   // Each post's photo or video, for the example pictures (built by build_media_index.py).
   // Optional: without it the page just shows no examples.
   mediaIndex: "media_index.json",
@@ -64,9 +68,39 @@ export const TYPICAL = {
 export const EYES_DUMB = "round";
 export const EYES_CUTE = "big-shiny";
 export const EYES_OTHER = ["original", "almond", "slit", "half-lidded", "squint"];
+// Eye sets that always go to one group, whatever its scores: { view (row) key: { group value: eye set } }.
+// These win over the dumb and cute eyes (those then go to the next-dumbest / next-cutest group), and no
+// other cat in that view is given the same set.
+export const EYES_FIXED = {
+  braincell: { "Seeking it": "half-lidded" },     // the unimpressed, still-looking eyes
+};
+
+// ---- Eyes follow the pointer (gaze.js) ----
+// Only the cats named in GAZE.who follow it: { view (row) key: [group values] }. The pointer is the
+// braincell, and only the cat still seeking it watches where it goes.
+// Its pupils drift from where they are drawn toward the pointer, part of the way, so it keeps its
+// own expression. Mouse only (no pointer to follow on touch); off under prefers-reduced-motion.
+export const GAZE = {
+  who: { braincell: ["Seeking it"] },
+  amount: 0.45,     // how far toward "looking straight at the pointer" a pupil goes (0 never moves, 1 all the way)
+  reach: 280,       // pixels: a pointer this far from an eye or further gets the full look; nearer, less
+  ease: 140,        // milliseconds for a pupil to cover most of the way to where it should look
+  vertical: 0.7,    // up-down travel as a share of side-to-side (lids sit close above and below)
+};
+
+// ---- Ears ----
+// Each cat's ear insides and tufts vary a little, picked by hashing the cat, so the same cat always has the same
+// ears (in the row, zoomed in and pouncing). The inside of the ear is the coat scheme's ear colour mixed
+// toward pinker or darker; each ear's tuft is scaled from its root and kept inside the ear.
+export const EARS = {
+  pinker: "#EFA3A6", darker: "#7A4B33",
+  tone: [-0.45, 0.6],     // -0.45 = 45% of the way to darker … 0.6 = 60% of the way to pinker
+  tuft: [0.7, 1.35],      // tuft size against the drawing
+  tuftDiffer: 0.08,       // how much a cat's two tufts may differ from each other
+};
 
 // ---- Drawing the cat ----
-export const TILT = 5;            // degrees clockwise: stands each drawn cat up a little straighter
+export const TILT = 0;            // degrees clockwise. The V2 cats face the viewer and already sit upright (was 5 for the 3/4-view kit)
 export const TAIL_TYPE = "long";  // which of AC's two tail drawings to use
 export const TAIL_SIZE = 1.6;     // tail scale against the body; larger than life so the data reads
 export const TAIL_MIN = 0.3;      // the shortest tail drawn, as a fraction of the full drawing
@@ -78,6 +112,8 @@ export const ROW_PAD = 6;         // kit units of space around the row's shared 
 // is that value's share of the group: a 100% share is RING_MAX of the full tail's length.
 // Each code has its own shade of orange or white (AC, 2026-11-02), spaced out in lightness from
 // white to near-black brown so neighbouring stripes, and the light and rust segments under them,
+// These stay brighter than the cat palette on purpose (AC, 2026-11-03): tails may leave the body
+// palette where that keeps them readable. The segments and rings do use the palette.
 // stay apart. A thin outline on every stripe keeps the palest and darkest ones readable too.
 export const STRIPE_COLORS = {
   braincell: "#FFFFFF",   // white
@@ -99,16 +135,17 @@ export const ZOOM_LABEL_PX = 14;  // tail labels are drawn at this many screen p
 
 // ---- The tail's colours: white -> orange -> brown, one shade per segment ----
 // Interpolated in OKLab (see color.js), as in the prototype.
-export const TAIL_STOPS = ["#FFF7EE", "#F8D2A2", "#EDA35A", "#D9782C", "#A7531D", "#5E2C0E"];
+// The stops are swatches from the cat palette (2026-11-03), light to dark.
+export const TAIL_STOPS = ["#F1E7DB", "#FCD9AF", "#F1B96F", "#DB8C3F", "#C37825", "#9A662D", "#6B3B13"];
 // Which part of that ramp the segments use (0 = the white end, 1 = the brown end). Keeping off both
 // ends puts more orange in the tails: two segments get a light orange and a rust instead of
 // near-white and dark brown. The rings are dark brown (--tail-ring in style.css) to stand out.
 export const TAIL_RANGE = [0.22, 0.8];
 
 // ---- Line weight ----
-// The kit's body outline is drawn as filled shapes about 3.8 units thick. The page slims it to
+// The kit's body outline is drawn as filled shapes about 3.4 units thick. The page slims it to
 // OUTLINE_WIDTH with an SVG "erode" filter (kit.js), and draws the tail's outline at the same width.
-const KIT_OUTLINE = 3.8;
+const KIT_OUTLINE = 3.4;   // the V2 kit's median line width (SVG/V2/build_kit_v2.py)
 export const OUTLINE_WIDTH = 2.6;
 export const OUTLINE_ERODE = (KIT_OUTLINE - OUTLINE_WIDTH) / 2;   // taken off each side of the line
 
@@ -150,3 +187,49 @@ export function ordinal(n) {
   if (n % 100 >= 11 && n % 100 <= 13) return n + "th";
   return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
 }
+
+// ---- Blinking (blink.js) ----
+// Times in ms. The lid sizes are shares of the eye's height.
+export const BLINK = {
+  every: [10000, 30000],          // each cat blinks once in this many ms, picked at random each time
+  slowShare: 0.5,                 // share of blinks that are slow; the rest are quick
+  gap: 300,                       // ms between one cat's blink ending and another's starting (never two at once)
+  quick: { close: 70, hold: 40, open: 120 },
+  slow: { close: 450, hold: 650, open: 700 },   // the slow "I trust you" blink
+  slowOnHover: true,              // a slow blink when the pointer rests on a cat (skipped if another cat is mid-blink)
+  pad: 0.18,                      // how far the lids' oval reaches past the eye white
+  curve: 0.28,                    // how much the shut eye's line curves
+  shut: 0.25,                     // where the shut line sits: 0 = middle of the eye, 1 = its bottom
+  line: 0.13, lineMin: 1.2,       // lid line width
+};
+
+// ---- Animated sequences (sequence.js) ----
+// Frames drawn by Wan 2.2 between hand-drawn keyframes, traced without eyes (SVG/sheet_tools), packed by
+// build_sequences.py; the cat's own eye set is drawn on top from the sequence's eye track. `fix` corrects
+// the track by hand:
+//   hide:  frames where an eye is covered (by a paw), per side ("left" = the viewer's left)
+//   lid:   frames whose lid value to replace (0 open .. 1 shut)
+//   drawnShut: [first, last] frames that show the drawing's own shut eyes instead of kit eyes. For long
+//          shut runs, where the eye track can only guess (it's interpolated, so eyes would slide around)
+// `weight`: how often this sequence is picked when a cat plays one idly.
+export const SEQUENCES = {
+  grooming: {
+    weight: 1,
+    fix: {
+      drawnShut: [38, 50],            // eyes shut while licking the paw (the paw also covers one eye here)
+      lid: { 59: 0, 66: 0 },          // blinks Wan made up between keyframes (not in the drawings)
+    },
+  },
+  headTurn: {
+    weight: 1,
+    fix: {},
+  },
+};
+
+// Cats in the row play a sequence now and then, by themselves: one cat at a time, never while a cat is
+// blinking, only cats on screen, and not at all under prefers-reduced-motion. Times in ms.
+export const IDLE = {
+  first: [6000, 12000],           // the first sequence starts this long after the row is drawn
+  every: [20000, 40000],          // then one every this long, picked at random each time (counted from the last one's end)
+  repeats: 1,                     // times a cat plays its sequence through before going back to sitting
+};

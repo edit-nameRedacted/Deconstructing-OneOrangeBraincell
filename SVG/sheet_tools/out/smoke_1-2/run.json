@@ -1,0 +1,54 @@
+{
+  "args": {
+    "start": "out/grooming_keys/frame_01.png",
+    "end": "out/grooming_keys/frame_02.png",
+    "name": "smoke_1-2",
+    "seconds": 0.5,
+    "fps": 12,
+    "seed": 42,
+    "prompt": "the cat lifts its paw",
+    "budget": 400000,
+    "no_exact_endpoints": false,
+    "url": "http://127.0.0.1:8189"
+  },
+  "seed": 42,
+  "style_tail": "Flat-colour 2D cartoon with clean dark brown outlines on a plain white background, static camera, no shading.",
+  "steps": [
+    {
+      "pair": "1-2",
+      "seconds": 0.5,
+      "fps": 12,
+      "L": 9,
+      "D": 0.5,
+      "N": 7,
+      "wall_seconds": 213.6,
+      "endpoint_diff": {
+        "start": 2.2941588445026557,
+        "end": 35.513328603652766
+      }
+    }
+  ],
+  "models": {
+    "unet_high": "Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf",
+    "unet_low": "Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf",
+    "lora_high": "wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "lora_low": "wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "vae": "wan_2.1_vae.safetensors",
+    "clip": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  },
+  "comfyui_version": "0.8.2",
+  "peak_vram_mb": 11960.0,
+  "peak_ram_mb": 19271.68,
+  "exact_endpoints": true,
+  "geometry": {
+    "W": 360,
+    "H": 509,
+    "scale": 1.4774740239264543,
+    "w": 532,
+    "h": 752,
+    "pw": 544,
+    "ph": 752,
+    "ox": 6,
+    "oy": 0
+  }
+}

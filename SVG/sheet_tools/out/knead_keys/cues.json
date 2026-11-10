@@ -1,0 +1,281 @@
+{
+ "joined": true,
+ "canvas": [
+  632,
+  650
+ ],
+ "frames": [
+  {
+   "frame": 1,
+   "file": "frame_01.svg",
+   "from": "out/head_turn_keys:3",
+   "scale": 0.8298,
+   "eyes": [
+    {
+     "x": 229.5,
+     "y": 173.5,
+     "w": 36,
+     "h": 36,
+     "pupil": [
+      232.8,
+      171.6
+     ]
+    },
+    {
+     "x": 307.5,
+     "y": 174.0,
+     "w": 36,
+     "h": 37,
+     "pupil": [
+      305.1,
+      171.8
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 268.4,
+    "y": 206.9,
+    "w": 24
+   }
+  },
+  {
+   "frame": 2,
+   "file": "frame_02.svg",
+   "from": "out/knead_sheet_keys:1",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 205.5,
+     "y": 200.5,
+     "w": 34,
+     "h": 40,
+     "pupil": [
+      209.0,
+      201.2
+     ]
+    },
+    {
+     "x": 291.5,
+     "y": 201.0,
+     "w": 44,
+     "h": 41,
+     "pupil": [
+      289.8,
+      202.7
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 240.5,
+    "y": 239.0,
+    "w": 26
+   }
+  },
+  {
+   "frame": 3,
+   "file": "frame_03.svg",
+   "from": "out/knead_sheet_keys:2",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 124.5,
+     "y": 189.5,
+     "w": 34,
+     "h": 40,
+     "pupil": [
+      128.2,
+      190.8
+     ]
+    },
+    {
+     "x": 210.5,
+     "y": 190.0,
+     "w": 44,
+     "h": 41,
+     "pupil": [
+      208.7,
+      191.7
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 159.9,
+    "y": 228.1,
+    "w": 22
+   }
+  },
+  {
+   "frame": 4,
+   "file": "frame_04.svg",
+   "from": "out/knead_sheet_keys:3",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 156.5,
+     "y": 195.5,
+     "w": 34,
+     "h": 40,
+     "pupil": [
+      160.1,
+      197.0
+     ]
+    },
+    {
+     "x": 242.0,
+     "y": 196.0,
+     "w": 43,
+     "h": 41,
+     "pupil": [
+      239.8,
+      198.3
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 190.8,
+    "y": 234.2,
+    "w": 25
+   }
+  },
+  {
+   "frame": 5,
+   "file": "frame_05.svg",
+   "from": "out/knead_sheet_keys:4",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 264.5,
+     "y": 170.5,
+     "w": 36,
+     "h": 40,
+     "pupil": [
+      267.5,
+      171.3
+     ]
+    },
+    {
+     "x": 348.5,
+     "y": 171.5,
+     "w": 44,
+     "h": 40,
+     "pupil": [
+      348.4,
+      172.0
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 301.5,
+    "y": 207.9,
+    "w": 25
+   }
+  },
+  {
+   "frame": 6,
+   "file": "frame_06.svg",
+   "from": "out/knead_sheet_keys:5",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 158.5,
+     "y": 158.5,
+     "w": 36,
+     "h": 40,
+     "pupil": [
+      161.0,
+      158.8
+     ]
+    },
+    {
+     "x": 243.0,
+     "y": 160.5,
+     "w": 43,
+     "h": 40,
+     "pupil": [
+      242.7,
+      161.8
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 194.7,
+    "y": 196.9,
+    "w": 19
+   }
+  },
+  {
+   "frame": 7,
+   "file": "frame_07.svg",
+   "from": "out/knead_sheet_keys:6",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 184.0,
+     "y": 165.0,
+     "w": 37,
+     "h": 39,
+     "pupil": [
+      187.6,
+      164.7
+     ]
+    },
+    {
+     "x": 267.5,
+     "y": 166.5,
+     "w": 42,
+     "h": 40,
+     "pupil": [
+      267.5,
+      166.2
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 220.9,
+    "y": 202.1,
+    "w": 25
+   }
+  },
+  {
+   "frame": 8,
+   "file": "frame_08.svg",
+   "from": "sheets/drafts/knead_near_paw_lift.png:0",
+   "scale": 1.0,
+   "eyes": [
+    {
+     "x": 163.5,
+     "y": 189.5,
+     "w": 34,
+     "h": 40,
+     "pupil": [
+      166.8,
+      189.9
+     ]
+    },
+    {
+     "x": 249.5,
+     "y": 193.0,
+     "w": 44,
+     "h": 41,
+     "pupil": [
+      248.2,
+      194.3
+     ]
+    }
+   ],
+   "eyes_closed": false,
+   "nose": {
+    "x": 196.9,
+    "y": 229.4,
+    "w": 26
+   }
+  }
+ ]
+}

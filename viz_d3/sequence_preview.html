@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequence preview</title>
+<!--
+  A working page (not part of the viz) for checking the animated sequences with live kit eyes:
+  pick a sequence, eye set, body, coat and white patches, then play or step through the frames.
+  Sequences come from viz_d3/sequences/ (python viz_d3/build_sequences.py).
+  Open it through serve.py like index.html, at /viz_d3/sequence_preview.html.
+-->
+<style>
+  body { margin: 0; font: 14px/1.4 system-ui, sans-serif; background: #F6F2EC; color: #2E211C; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; padding: 16px; max-width: 1100px; margin: 0 auto; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  #stage { background: #fff; border: 1px solid #E2D8CC; border-radius: 8px; display: grid; place-items: center; min-height: 70vh; }
+  #stage svg { width: min(100%, 520px); height: auto; }
+  aside { display: grid; gap: 12px; align-content: start; }
+  label { display: grid; gap: 4px; font-size: 13px; color: #7A6A60; }
+  select, button, input[type=range] { font: inherit; }
+  button { padding: 6px 12px; border-radius: 6px; border: 1px solid #C9BBAE; background: #fff; cursor: pointer; }
+  #info { font: 12px ui-monospace, monospace; white-space: pre-wrap; color: #5B4A40; }
+</style>
+</head>
+<body>
+<main>
+  <div id="stage"></div>
+  <aside>
+    <label>Sequence <select id="seq"><option value="grooming">Grooming</option><option value="headTurn">Head turn</option></select></label>
+    <label>Eyes <select id="eyes"></select></label>
+    <label>Body <select id="body"><option>typical</option><option>kitten</option><option>slender</option><option>chunky</option></select></label>
+    <label>Coat <select id="coat"><option>classic</option><option>high-contrast</option><option>soft</option></select></label>
+    <label><span><input type="checkbox" id="stripes" checked> Stripes</span></label>
+    <label>Ears (any text: each gives a different cat's ears) <input id="ears" value="cat 1"></label>
+    <label>White patches (Ctrl-click for several)
+      <select id="white" multiple size="6">
+        <option>chin</option><option>locket</option><option>muzzle</option><option>bib</option><option>blaze</option>
+        <option>belly</option><option>paws</option><option>stockings</option><option>face</option><option>body</option>
+      </select></label>
+    <div><button id="play">Pause</button> <button id="prev">◀</button> <button id="next">▶</button></div>
+    <label>Frame <input type="range" id="frame" min="0" max="0" value="0"></label>
+    <div id="info"></div>
+  </aside>
+</main>
+<script type="module">
+  import { PATHS } from "./js/config.js";
+  import { loadKit, cloneCat } from "./js/kit.js";
+  import { loadSequence, playSequence } from "./js/sequence.js";
+  import { earsFor } from "./js/data.js";
+  const $ = (id) => document.getElementById(id);
+  const kit = await loadKit(PATHS.kit);
+  const sets = [...new Set([...kit.querySelectorAll(".eyes")].map((g) => g.dataset.set))];
+  $("eyes").innerHTML = sets.map((s) => `<option>${s}</option>`).join("");
+  $("eyes").value = "round";
+  let ctl = null;
+
+  async function build() {
+    ctl?.stop();
+    const look = { body: $("body").value, zones: [...$("white").selectedOptions].map((o) => o.value), stripes: $("stripes").checked, ears: earsFor($("ears").value) };
+    const svg = cloneCat(kit, look, $("eyes").value);
+    svg.dataset.coat = $("coat").value;
+    svg.setAttribute("viewBox", "-20 -10 290 520");
+    $("stage").replaceChildren(svg);
+    const seq = await loadSequence($("seq").value);
+    ctl = playSequence(svg, seq, kit, { onFrame: (i) => {
+      $("frame").value = i;
+      const f = seq.track[i];
+      $("info").textContent = `frame ${i + 1} / ${seq.nodes.length}${f.keyframe ? "  (keyframe)" : ""}\n` +
+        ["left", "right"].map((s) => `${s.padEnd(5)} ${f[s].visible ? "" : "hidden "}lid ${f[s].lid.toFixed(2)}  gaze ${f[s].gx.toFixed(2)}, ${f[s].gy.toFixed(2)}`).join("\n");
+    } });
+    $("frame").max = ctl.frames - 1;
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) ctl.play();
+    $("play").textContent = ctl.playing ? "Pause" : "Play";
+    window.__ctl = ctl;
+  }
+  for (const id of ["seq", "eyes", "body", "coat", "stripes", "white", "ears"]) $(id).addEventListener("change", build);
+  $("play").addEventListener("click", () => { ctl.playing ? ctl.pause() : ctl.play(); $("play").textContent = ctl.playing ? "Pause" : "Play"; });
+  $("prev").addEventListener("click", () => { ctl.pause(); ctl.seek(ctl.frame - 1); $("play").textContent = "Play"; });
+  $("next").addEventListener("click", () => { ctl.pause(); ctl.seek(ctl.frame + 1); $("play").textContent = "Play"; });
+  $("frame").addEventListener("input", (e) => { ctl.pause(); ctl.seek(+e.target.value); $("play").textContent = "Play"; });
+  build();
+</script>
+</body>
+</html>

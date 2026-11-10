@@ -47,8 +47,13 @@ The page opens on an introduction to the subreddit and the project (the ⓘ butt
 | `js/data.js` | Groups the posts, ranks values, describes each cat in a view |
 | `js/typicalCat.js` | The typical-cat rule |
 | `js/color.js` | The white-to-brown OKLab ramp |
-| `js/kit.js` | Loads `SVG/cat_kit.svg` and makes one cat from it |
+| `js/kit.js` | Loads `SVG/cat_kit.svg` and makes one cat from it, including its ears: the inside tinted pinker or darker and each ear's tuft scaled (per cat, from `earsFor` in `js/data.js`; ranges in `EARS`, `js/config.js`) |
 | `js/tail.js` | Draws a tail: segments, stripes, bristles, labels |
+| `js/blink.js` | Eyelids for every eye set: each cat blinks every 10–30 s at random, quick or slow at random, never two at once; a slow blink when the pointer rests on one (times in `BLINK`, `js/config.js`; off under reduced motion) |
+| `js/gaze.js` | The "Seeking it" cat's pupils follow the pointer (the braincell): they drift from where they are drawn part of the way toward looking straight at it, so it keeps its half-lidded expression (`GAZE` in `js/config.js`, `who` says which cats; mouse only, off under reduced motion). Uses `SVG/eye_parts.json` to move the pupil without the lid line |
+| `js/sequence.js` | Idle animations: now and then one cat in the row grooms or turns its head (one cat at a time, never during a blink, only cats on screen; `IDLE` in `js/config.js`). The traced frames play in the cat's coat colours, white bib and white muzzle, with its own eye set drawn on each frame from the sequence's eye track (position, size, tilt, gaze, lids). Hand fixes per sequence are in `SEQUENCES`, `js/config.js` |
+| `sequence_preview.html` | Working page for checking the sequences: pick sequence, eye set, body, coat, white patches and ears; play or step through frames |
+| `build_sequences.py` | Packs each sequence from `SVG/sheet_tools` into `sequences/<key>.json` (one file, ~1 MB gzipped); rerun after the frames or `eyes.json` change |
 | `js/controls.js` | Category switcher and settings panel |
 | `js/catView.js` | The row of cats (a D3 join) |
 | `js/intro.js` | The opening screen (its text is in `index.html`) |
@@ -77,8 +82,10 @@ Every control calls `store.set({...})`. `main.js` hears which keys changed and r
 | File | Holds |
 | --- | --- |
 | `oobc_archive/viz/oobc_viz_data.json` | Posts, hand-code groupings, tail variables (built by `build_viz_data.py`) |
-| `SVG/cat_kit.svg` | Bodies, white zones, eye sets |
+| `SVG/cat_kit.svg` | The V2 kit (built by `SVG/V2/build_kit_v2.py`): bodies, white zones, eye sets, plus `data-coat`, `data-ears`, `data-cream`, `data-fluff`, `data-mouth`, `data-fur` (defaults: AC's V2 drawing as drawn). If it is rebuilt, copy the tail points it prints into `ATTACH` in `js/tail.js` |
 | `SVG/white_stages.json` | % white after each white zone, per body |
+| `SVG/eye_parts.json` | Each eye set's opening and pupil, so pupils can look around in sequences and follow the pointer (built by `SVG/V2/eye_parts.py`; rerun it after rebuilding the kit) |
+| `sequences/<key>.json` | The packed sequences (built by `build_sequences.py` from `SVG/sheet_tools/out/<sequence>/svg/`) |
 | `SVG/tails/tail_geometry.json` | AC's two tail drawings, as outlines and stations |
 
 ## Deploy

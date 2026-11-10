@@ -1,0 +1,346 @@
+<title>Head-Turn Pose Editor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: a drawing stage (the cat, chest up) beside a narrow control rail; stacks on phones. */
+:root {
+  --bg: #F6F2EC; --panel: #FFFDF9; --ink: #2E211C; --muted: #7A6A60; --line: #E2D8CC;
+  --accent: #B5561C; --accent-ink: #FFFFFF; --stage: #FBF8F3; --grid: #EDE5DA; --sel: #1E7FD6; --ok: #3C7A3F;
+  --f-display: "Fraunces", Georgia, serif; --f-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1D1714; --panel: #27201C; --ink: #F1E7DD; --muted: #B3A396; --line: #3C322C;
+  --accent: #E58A4B; --accent-ink: #1D1714; --stage: #E9E2D8; --grid: #D9CFC2; --sel: #4BA3F0; --ok: #7CC07F; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1D1714; --panel: #27201C; --ink: #F1E7DD; --muted: #B3A396; --line: #3C322C;
+  --accent: #E58A4B; --accent-ink: #1D1714; --stage: #E9E2D8; --grid: #D9CFC2; --sel: #4BA3F0; --ok: #7CC07F; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 18px 32px; }
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 14px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+h1 { font-family: var(--f-display); font-size: 1.55rem; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; max-width: 62ch; }
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
+@media (max-width: 820px) { .main { grid-template-columns: minmax(0, 1fr); } }
+.stagebox { background: var(--stage); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; position: relative; }
+#stage { display: block; width: 100%; height: auto; max-height: 78vh; touch-action: none; cursor: grab; user-select: none; }
+#stage.dragging { cursor: grabbing; }
+.stagebar { position: absolute; left: 10px; top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font: 600 11px var(--f-mono); letter-spacing: .04em; text-transform: uppercase; background: rgba(255,253,249,.9);
+  color: #5B4A40; border: 1px solid #E2D8CC; border-radius: 99px; padding: 3px 9px; }
+.rail { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 16px; min-width: 0; }
+.group { display: grid; gap: 8px; }
+.label { font: 600 11px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 8px; padding: 6px 11px;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--sel); outline-offset: 2px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: .9; }
+.chip small { font: 10px var(--f-mono); opacity: .8; }
+.row { display: grid; grid-template-columns: 64px minmax(0, 1fr) 70px; align-items: center; gap: 8px; }
+.row span { color: var(--muted); font-size: 13px; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+input[type=number] { width: 100%; font: 13px var(--f-mono); font-variant-numeric: tabular-nums; padding: 4px 6px; border: 1px solid var(--line);
+  border-radius: 6px; background: var(--bg); color: var(--ink); }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+button.act { font: inherit; border-radius: 8px; padding: 7px 12px; cursor: pointer; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+select { font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+#status { font-size: 13px; color: var(--muted); min-height: 1.4em; }
+#status.ok { color: var(--ok); }
+.help { color: var(--muted); font-size: 13px; margin: 0; }
+kbd { font: 11px var(--f-mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; }
+.order { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.order li { display: grid; grid-template-columns: 22px minmax(0,1fr) auto auto; align-items: center; gap: 6px; padding: 4px 6px 4px 8px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.order li.cur { border-color: var(--accent); }
+.order .pos { font: 600 11px var(--f-mono); color: var(--muted); }
+.order button { font: 13px var(--f-mono); width: 28px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+.order button:disabled { opacity: .35; cursor: default; }
+.hide-cues [id^="head_cues"] { display: none; }
+.part.selected { filter: drop-shadow(0 0 1.2px var(--sel)) drop-shadow(0 0 1.2px var(--sel)); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Head-turn pose editor</h1>
+      <p class="sub">Drag the head, bib or chest fluff of each pose into place, then save. Claude reads the saved
+        placement and rebuilds the pose files. Redrawing shapes, such as narrowing the front ruff, is done in Illustrator in <code>all_poses.svg</code>.</p>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="stagebox">
+      <svg id="stage" class="hide-cues" xmlns="http://www.w3.org/2000/svg" viewBox="-6 -4 186 262" aria-label="The cat in the selected pose">
+        <defs id="defs"></defs>
+        <g id="layer-body"></g>
+        <g id="layer-pose"></g>
+        <g id="layer-ghost" opacity="0.32" pointer-events="none"></g>
+      </svg>
+      <div class="stagebar"><span class="tag" id="tag-pose">Pose 3</span><span class="tag" id="tag-src">placed by hand</span></div>
+    </div>
+
+    <div class="rail">
+      <div class="group">
+        <div class="label">Pose</div>
+        <div class="chips" id="pose-chips"></div>
+      </div>
+      <div class="group">
+        <div class="label">Part to move</div>
+        <div class="chips" id="part-chips"></div>
+        <label class="check"><input type="checkbox" id="linked"> Bib and fluff follow the head</label>
+      </div>
+      <div class="group">
+        <div class="label">Layer order, top first</div>
+        <ol class="order" id="order"></ol>
+        <div class="btns"><button class="act" id="order-all">Use this order on every pose</button></div>
+      </div>
+      <div class="group" id="fields">
+        <div class="row"><span>Across</span><input type="range" id="r-dx" min="-30" max="30" step="0.1"><input type="number" id="n-dx" step="0.1"></div>
+        <div class="row"><span>Up/down</span><input type="range" id="r-dy" min="-30" max="30" step="0.1"><input type="number" id="n-dy" step="0.1"></div>
+        <div class="row"><span>Width</span><input type="range" id="r-sx" min="0.6" max="1.4" step="0.005"><input type="number" id="n-sx" step="0.005"></div>
+        <div class="row"><span>Height</span><input type="range" id="r-sy" min="0.6" max="1.4" step="0.005"><input type="number" id="n-sy" step="0.005"></div>
+        <label class="check"><input type="checkbox" id="keep"> Keep proportions</label>
+        <p class="help">Moves are in V2 units, the units of the outline drawing. <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> nudge 0.25, with <kbd>Shift</kbd> 2.</p>
+      </div>
+      <div class="group">
+        <div class="label">View</div>
+        <div class="row" style="grid-template-columns: 64px minmax(0,1fr)"><span>Ghost</span>
+          <select id="ghost"><option value="off">Off</option><option value="prev">Previous pose</option><option value="next">Next pose</option><option value="3">Front (pose 3)</option></select></div>
+        <label class="check"><input type="checkbox" id="cues"> Show eye and nose marks</label>
+        <div class="btns"><button class="act" id="play">Play turn</button><button class="act" id="reset-part">Reset part</button><button class="act" id="reset-pose">Reset pose</button></div>
+      </div>
+      <div class="group">
+        <div class="btns"><button class="act primary" id="save">Save for Claude</button><button class="act" id="copy">Copy edits</button></div>
+        <div id="status" role="status">Not saved yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*DATA*/
+const PARTS = [["head", "Head"], ["bib", "Bib"], ["fluff", "Fluff"]];
+const ORDER = [3, 2, 1, 2, 3, 4, 5, 4];
+const ident = () => ({ dx: 0, dy: 0, sx: 1, sy: 1 });
+const SVGNS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+
+let edits = {};          // pose -> part -> {dx, dy, sx, sy}
+for (const n of [1, 2, 3, 4, 5]) edits[n] = { head: ident(), bib: ident(), fluff: ident() };
+const DEFAULT_ORDER = ["bib", "fluff", "head"];   // bottom to top
+let order = {};          // pose -> parts, bottom to top
+for (const n of [1, 2, 3, 4, 5]) order[n] = [...(DATA.order?.[n] || DEFAULT_ORDER)];
+let pose = 3, part = "head", playing = null, dirty = false;
+const pivots = {};       // pose -> part -> [cx, cy] (centre of the part as built)
+const keepDefault = { head: true, fluff: true, bib: false };
+let keep = { ...keepDefault };
+
+try { const d = JSON.parse(localStorage.getItem("pose-edits-draft") || "null"); if (d && d.edits) { edits = d.edits; if (d.order) order = d.order; } } catch (e) {}
+
+// ---------------------------------------------------------------- drawing
+$("defs").innerHTML = DATA.defs;
+$("layer-body").innerHTML = DATA.body;
+const poseLayer = $("layer-pose"), ghostLayer = $("layer-ghost");
+
+function partMarkup(n, p) {
+  return `<g class="part part-${p}" data-part="${p}"><g class="piece">${DATA.poses[n][p]}</g></g>`;
+}
+function measurePivots(n) {
+  if (pivots[n]) return;
+  const tmp = document.createElementNS(SVGNS, "g");
+  tmp.innerHTML = ["bib", "fluff", "head"].map(p => partMarkup(n, p)).join("");
+  tmp.setAttribute("opacity", "0");
+  $("stage").appendChild(tmp);
+  pivots[n] = {};
+  tmp.querySelectorAll(".part").forEach(g => {
+    const b = g.querySelector(".piece").getBBox();
+    pivots[n][g.dataset.part] = [b.x + b.width / 2, b.y + b.height / 2];
+  });
+  tmp.remove();
+}
+function matrix(n, p) {
+  const e = edits[n][p], [cx, cy] = pivots[n][p];
+  return [e.sx, 0, 0, e.sy, e.dx + cx - e.sx * cx, e.dy + cy - e.sy * cy];
+}
+const mstr = m => `matrix(${m.map(v => +v.toFixed(5)).join(" ")})`;
+
+function drawPose(layer, n) {
+  measurePivots(n);
+  layer.innerHTML = order[n].map(p => partMarkup(n, p)).join("");
+  layer.querySelectorAll(".part").forEach(g => g.setAttribute("transform", mstr(matrix(n, g.dataset.part))));
+}
+function applyTransforms() {
+  poseLayer.querySelectorAll(".part").forEach(g => {
+    g.setAttribute("transform", mstr(matrix(pose, g.dataset.part)));
+    g.classList.toggle("selected", !playing && g.dataset.part === part);
+  });
+}
+function drawGhost() {
+  const v = $("ghost").value;
+  let g = v === "prev" ? pose - 1 : v === "next" ? pose + 1 : v === "3" ? 3 : null;
+  if (g === pose || g < 1 || g > 5 || playing) g = null;
+  if (g) drawPose(ghostLayer, g); else ghostLayer.innerHTML = "";
+}
+function isMoved(n) { return Object.values(edits[n]).some(e => e.dx || e.dy || e.sx !== 1 || e.sy !== 1); }
+function isReordered(n) { return order[n].join() !== (DATA.order?.[n] || DEFAULT_ORDER).join(); }
+function isEdited(n) { return isMoved(n) || isReordered(n); }
+const NAMES = { head: "Head", bib: "Bib", fluff: "Fluff" };
+function renderOrder() {
+  const top = [...order[pose]].reverse();
+  $("order").innerHTML = top.map((p, i) => `<li class="${p === part ? "cur" : ""}"><span class="pos">${i + 1}</span><span>${NAMES[p]}</span>` +
+    `<button data-move="${p}" data-dir="1" aria-label="Move ${NAMES[p]} up a layer" ${i === 0 ? "disabled" : ""}>↑</button>` +
+    `<button data-move="${p}" data-dir="-1" aria-label="Move ${NAMES[p]} down a layer" ${i === top.length - 1 ? "disabled" : ""}>↓</button></li>`).join("");
+}
+function moveLayer(p, dir) {           // dir 1 = up (towards the top), -1 = down
+  const o = order[pose], i = o.indexOf(p), j = i + dir;
+  if (j < 0 || j >= o.length) return;
+  [o[i], o[j]] = [o[j], o[i]];
+  changed(); refresh(true);
+}
+
+// ---------------------------------------------------------------- controls
+function renderChips() {
+  $("pose-chips").innerHTML = [1, 2, 3, 4, 5].map(n =>
+    `<button class="chip" aria-pressed="${n === pose}" data-pose="${n}">${n}${isEdited(n) ? '<span class="dot" title="edited"></span>' : ""}${DATA.derived[n] ? "<small>guess</small>" : ""}</button>`).join("");
+  $("part-chips").innerHTML = PARTS.map(([p, l]) =>
+    `<button class="chip" aria-pressed="${p === part}" data-part="${p}">${l}</button>`).join("");
+  $("tag-pose").textContent = `Pose ${pose}`;
+  $("tag-src").textContent = DATA.derived[pose] ? "in-between guess" : "placed by hand";
+}
+function renderFields() {
+  const e = edits[pose][part];
+  for (const k of ["dx", "dy", "sx", "sy"]) {
+    const v = k[0] === "d" ? +e[k].toFixed(2) : +e[k].toFixed(3);
+    $("r-" + k).value = v; if (document.activeElement !== $("n-" + k)) $("n-" + k).value = v;
+  }
+  $("keep").checked = keep[part];
+}
+function refresh(full) {
+  if (full) { drawPose(poseLayer, pose); drawGhost(); }
+  applyTransforms(); renderChips(); renderFields(); renderOrder();
+}
+function changed() {
+  dirty = true;
+  $("status").textContent = "Unsaved changes."; $("status").className = "";
+  try { localStorage.setItem("pose-edits-draft", JSON.stringify({ edits, order })); } catch (e) {}
+}
+function setField(k, v) {
+  if (!isFinite(v)) return;
+  const e = edits[pose][part];
+  if (k === "dx" || k === "dy") {
+    const d = v - e[k];
+    e[k] = v;
+    if (part === "head" && $("linked").checked) for (const p of ["bib", "fluff"]) edits[pose][p][k] += d;
+  } else {
+    if (keep[part]) { const r = v / e[k]; e.sx *= r; e.sy *= r; } else e[k] = v;
+  }
+  changed(); refresh(false);
+}
+for (const k of ["dx", "dy", "sx", "sy"]) {
+  $("r-" + k).addEventListener("input", ev => setField(k, parseFloat(ev.target.value)));
+  $("n-" + k).addEventListener("change", ev => setField(k, parseFloat(ev.target.value)));
+}
+$("keep").addEventListener("change", ev => { keep[part] = ev.target.checked; });
+$("pose-chips").addEventListener("click", ev => { const b = ev.target.closest("[data-pose]"); if (b) { stop(); pose = +b.dataset.pose; refresh(true); } });
+$("part-chips").addEventListener("click", ev => { const b = ev.target.closest("[data-part]"); if (b) { part = b.dataset.part; refresh(false); } });
+$("ghost").addEventListener("change", drawGhost);
+$("order").addEventListener("click", ev => { const b = ev.target.closest("[data-move]"); if (b) moveLayer(b.dataset.move, +b.dataset.dir); });
+$("order-all").addEventListener("click", () => { for (const n of [1, 2, 3, 4, 5]) order[n] = [...order[pose]]; changed(); refresh(true);
+  $("status").textContent = "Layer order copied to every pose. Unsaved."; });
+$("cues").addEventListener("change", ev => $("stage").classList.toggle("hide-cues", !ev.target.checked));
+$("reset-part").addEventListener("click", () => { edits[pose][part] = ident(); changed(); refresh(false); });
+$("reset-pose").addEventListener("click", () => { for (const p of ["head", "bib", "fluff"]) edits[pose][p] = ident();
+  order[pose] = [...(DATA.order?.[pose] || DEFAULT_ORDER)]; changed(); refresh(true); });
+
+// dragging on the stage moves the selected part; clicking a part first selects it
+let drag = null;
+const stage = $("stage");
+function svgPoint(ev) { const pt = stage.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY; return pt.matrixTransform(stage.getScreenCTM().inverse()); }
+stage.addEventListener("pointerdown", ev => {
+  if (playing) return;
+  const hit = ev.target.closest(".part");
+  if (hit && ev.detail >= 2) { part = hit.dataset.part; refresh(false); }   // double-click picks the part under the pointer
+  const p = svgPoint(ev), e = edits[pose][part];
+  drag = { x: p.x, y: p.y, dx: e.dx, dy: e.dy, linked: ["bib", "fluff"].map(k => [k, edits[pose][k].dx, edits[pose][k].dy]) };
+  stage.setPointerCapture(ev.pointerId); stage.classList.add("dragging");
+});
+stage.addEventListener("pointermove", ev => {
+  if (!drag) return;
+  const p = svgPoint(ev), ddx = p.x - drag.x, ddy = p.y - drag.y, e = edits[pose][part];
+  e.dx = drag.dx + ddx; e.dy = drag.dy + ddy;
+  if (part === "head" && $("linked").checked) for (const [k, x, y] of drag.linked) { edits[pose][k].dx = x + ddx; edits[pose][k].dy = y + ddy; }
+  applyTransforms(); renderFields();
+});
+const endDrag = () => { if (drag) { drag = null; stage.classList.remove("dragging"); changed(); renderChips(); } };
+stage.addEventListener("pointerup", endDrag); stage.addEventListener("pointercancel", endDrag);
+stage.addEventListener("wheel", ev => {
+  if (playing) return;
+  ev.preventDefault();
+  const e = edits[pose][part], f = ev.deltaY < 0 ? 1.005 : 1 / 1.005;
+  if (keep[part]) { e.sx *= f; e.sy *= f; } else if (ev.shiftKey) e.sy *= f; else e.sx *= f;
+  changed(); applyTransforms(); renderFields();
+}, { passive: false });
+document.addEventListener("keydown", ev => {
+  if (playing || /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  const step = ev.shiftKey ? 2 : 0.25, e = edits[pose][part];
+  const mv = { ArrowLeft: ["dx", -step], ArrowRight: ["dx", step], ArrowUp: ["dy", -step], ArrowDown: ["dy", step] }[ev.key];
+  if (mv) { ev.preventDefault(); setField(mv[0], e[mv[0]] + mv[1]); }
+  else if (ev.key.length === 1 && "123".includes(ev.key)) { part = PARTS[+ev.key - 1][0]; refresh(false); }
+});
+
+// play the turn with the current edits
+function stop() { if (!playing) return; const back = playing.back; clearTimeout(playing.t); playing = null; $("play").textContent = "Play turn"; pose = back; }
+$("play").addEventListener("click", () => {
+  if (playing) { stop(); refresh(true); return; }
+  playing = { i: 0, back: pose }; $("play").textContent = "Stop";
+  const tick = () => { pose = ORDER[playing.i % ORDER.length]; refresh(true); playing.t = setTimeout(tick, pose === 3 ? 500 : 170); playing.i++; };
+  tick();
+});
+
+// ---------------------------------------------------------------- saving
+function payload() {
+  const poses = {};
+  for (const n of [1, 2, 3, 4, 5]) {
+    measurePivots(n);
+    if (!isEdited(n)) continue;
+    poses[n] = { order: order[n] };
+    for (const p of ["head", "bib", "fluff"]) poses[n][p] = matrix(n, p).map(v => +v.toFixed(5));
+  }
+  return { units: "V2 outline units", matrices: "SVG matrix(a b c d e f), applied on top of the current poses",
+           order: "parts bottom to top", poses, raw: edits, rawOrder: order };
+}
+$("copy").addEventListener("click", async () => {
+  const text = JSON.stringify(payload(), null, 1);
+  try { await navigator.clipboard.writeText(text); $("status").textContent = "Edits copied. Paste them into the chat."; }
+  catch (e) { $("status").textContent = "Copying was blocked here. Use Save for Claude instead."; }
+});
+let db = null;
+$("save").addEventListener("click", async () => {
+  if (!db) { $("status").textContent = "Saving needs you signed in to Claude. Copy edits works anywhere."; return; }
+  $("status").textContent = "Saving…";
+  try {
+    await db.doc("edits/current").set({ ...payload(), savedAt: new Date().toISOString() });
+    dirty = false; $("status").textContent = "Saved. Tell Claude to apply the edits."; $("status").className = "ok";
+  } catch (e) { $("status").textContent = "Couldn't save (" + (e.code || e.message) + "). Copy edits still works."; }
+});
+(async () => {
+  try {
+    db = await window.claude?.use?.("db");
+    if (!db) return;
+    const snap = await db.doc("edits/current").get();
+    if (snap.exists && !dirty) {
+      const d = snap.data();
+      if (d.raw) { edits = d.raw; if (d.rawOrder) order = d.rawOrder; refresh(true); $("status").textContent = "Loaded the edits saved " + new Date(d.savedAt).toLocaleString() + "."; }
+    }
+  } catch (e) {}
+})();
+
+refresh(true);
+</script>

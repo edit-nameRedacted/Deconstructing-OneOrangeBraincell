@@ -1,0 +1,512 @@
+{
+  "args": {
+    "sequence": "sequences/grooming.json",
+    "name": "grooming_wan",
+    "keys": "out/grooming_keys",
+    "fps": 12,
+    "seconds": 0.5,
+    "gen_seconds": 1.0,
+    "seed": 42,
+    "loop": false,
+    "front": 1,
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "default_prompt": "the cat moves smoothly from the first pose to the second",
+    "steps": {
+      "1-2": {
+        "prompt": "the cat tilts its head to its left and looks down, its right paw lifts slightly"
+      },
+      "2-3": {
+        "prompt": "the cat raises its right paw out to the side, elbow bent, and keeps looking down at it"
+      },
+      "3-4": {
+        "prompt": "the cat brings its raised paw in to its mouth and starts licking it"
+      },
+      "4-5": {
+        "prompt": "the cat tilts its head to its left while licking its paw, the paw stays at its mouth"
+      },
+      "5-6": {
+        "prompt": "the cat licks its paw, head tilted further, paw held at its mouth"
+      },
+      "6-7": {
+        "prompt": "the cat licks its paw, head turning slightly and looking down"
+      },
+      "7-8": {
+        "prompt": "the cat closes its eyes and presses its paw against its cheek while its head tilts back"
+      },
+      "8-9": {
+        "prompt": "the cat keeps its eyes closed and sweeps its paw up over its ear and forehead, head tilting upright"
+      },
+      "9-10": {
+        "prompt": "the cat lowers its paw, opens its eyes wide, and turns its head to face forward"
+      },
+      "10-11": {
+        "prompt": "the cat lowers its paw to rest beside its body and looks straight ahead"
+      },
+      "11-12": {
+        "prompt": "the cat turns its head slightly to its left and looks off to the side"
+      }
+    }
+  },
+  "seed": 42,
+  "style_tail": "Flat-colour 2D cartoon with clean dark brown outlines on a plain white background, static camera, no shading.",
+  "steps": [
+    {
+      "pair": "1-2",
+      "a": 1,
+      "b": 2,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        3,
+        6,
+        8,
+        11,
+        13,
+        16
+      ],
+      "prompt": "the cat tilts its head to its left and looks down, its right paw lifts slightly",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.3627337553663685,
+        "end": 6.778929273084479
+      },
+      "generated": null
+    },
+    {
+      "pair": "2-3",
+      "a": 2,
+      "b": 3,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        12,
+        16
+      ],
+      "prompt": "the cat raises its right paw out to the side, elbow bent, and keeps looking down at it",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.5160354362220767,
+        "end": 6.293789565597031
+      },
+      "generated": null
+    },
+    {
+      "pair": "3-4",
+      "a": 3,
+      "b": 4,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        2,
+        4,
+        7,
+        10,
+        12,
+        16
+      ],
+      "prompt": "the cat brings its raised paw in to its mouth and starts licking it",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.7856927162919303,
+        "end": 6.5333260569016955
+      },
+      "generated": null
+    },
+    {
+      "pair": "4-5",
+      "a": 4,
+      "b": 5,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        2,
+        4,
+        7,
+        11,
+        14,
+        16
+      ],
+      "prompt": "the cat tilts its head to its left while licking its paw, the paw stays at its mouth",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.4085388925271047,
+        "end": 6.734710398020812
+      },
+      "generated": null
+    },
+    {
+      "pair": "5-6",
+      "a": 5,
+      "b": 6,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        4,
+        7,
+        11,
+        14,
+        16
+      ],
+      "prompt": "the cat licks its paw, head tilted further, paw held at its mouth",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.516350141890417,
+        "end": 6.941220985228843
+      },
+      "generated": null
+    },
+    {
+      "pair": "6-7",
+      "a": 6,
+      "b": 7,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        3,
+        6,
+        10,
+        14,
+        16
+      ],
+      "prompt": "the cat licks its paw, head turning slightly and looking down",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.5817725387469985,
+        "end": 6.675436585898275
+      },
+      "generated": null
+    },
+    {
+      "pair": "7-8",
+      "a": 7,
+      "b": 8,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        4,
+        6,
+        9,
+        12,
+        16
+      ],
+      "prompt": "the cat closes its eyes and presses its paw against its cheek while its head tilts back",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.7766954085716367,
+        "end": 6.394560867350651
+      },
+      "generated": null
+    },
+    {
+      "pair": "8-9",
+      "a": 8,
+      "b": 9,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        2,
+        4,
+        7,
+        10,
+        13,
+        16
+      ],
+      "prompt": "the cat keeps its eyes closed and sweeps its paw up over its ear and forehead, head tilting upright",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.432996798370079,
+        "end": 6.69765153168886
+      },
+      "generated": null
+    },
+    {
+      "pair": "9-10",
+      "a": 9,
+      "b": 10,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        12,
+        16
+      ],
+      "prompt": "the cat lowers its paw, opens its eyes wide, and turns its head to face forward",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.542370661427636,
+        "end": 6.70255766572073
+      },
+      "generated": null
+    },
+    {
+      "pair": "10-11",
+      "a": 10,
+      "b": 11,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        3,
+        7,
+        10,
+        13,
+        16
+      ],
+      "prompt": "the cat lowers its paw to rest beside its body and looks straight ahead",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.5507312813796115,
+        "end": 6.354857018118314
+      },
+      "generated": null
+    },
+    {
+      "pair": "11-12",
+      "a": 11,
+      "b": 12,
+      "mode": "cached",
+      "seconds": 0.5,
+      "gen_seconds": 1.0,
+      "fps": 12,
+      "L": 17,
+      "D": 1.0,
+      "N": 7,
+      "picks": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10,
+        16
+      ],
+      "prompt": "the cat turns its head slightly to its left and looks off to the side",
+      "wall_seconds": 0.0,
+      "endpoint_diff": {
+        "start": 2.4556919886487667,
+        "end": 6.7812522738848875
+      },
+      "generated": null
+    }
+  ],
+  "models": {
+    "unet_high": "Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf",
+    "unet_low": "Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf",
+    "lora_high": "wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "lora_low": "wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "vae": "wan_2.1_vae.safetensors",
+    "clip": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  },
+  "comfyui_version": "0.8.2",
+  "peak_vram_mb": 6450.0,
+  "peak_ram_mb": 29777.92,
+  "exact_endpoints": true,
+  "geometry": {
+    "W": 360,
+    "H": 509,
+    "scale": 1.4774740239264543,
+    "w": 532,
+    "h": 752,
+    "pw": 544,
+    "ph": 752,
+    "ox": 6,
+    "oy": 0
+  },
+  "blink_warnings": [
+    "step 7\u21928: eyes open\u2192closed while the pose changes \u2014 a blink and a head turn should not share a step",
+    "step 9\u219210: eyes closed\u2192open while the pose changes \u2014 a blink and a head turn should not share a step"
+  ],
+  "order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "loop": false,
+  "gen_seconds": 1.0,
+  "retime": "motion",
+  "keyframe_frames": [
+    1,
+    7,
+    13,
+    19,
+    25,
+    31,
+    37,
+    43,
+    49,
+    55,
+    61,
+    67
+  ],
+  "total_frames": 67,
+  "front_frame": 1,
+  "eyes": {
+    "states": [
+      "open",
+      "open",
+      "filled",
+      "filled",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "filled",
+      "filled",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "closed",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "filled",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "open",
+      "filled",
+      "open"
+    ],
+    "isolated_flips": []
+  },
+  "to_kit": [
+    1.05882,
+    -109.429,
+    -20.7
+  ]
+}

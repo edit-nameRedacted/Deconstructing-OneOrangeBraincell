@@ -1,0 +1,18 @@
+{
+  "name": "knead_near_wan",
+  "keys": "out/knead_keys",
+  "fps": 12,
+  "seconds": 0.33,
+  "gen_seconds": 1.0,
+  "seed": 42,
+  "loop": true,
+  "front": 1,
+  "order": [1, 4, 8, 4, 8, 4, 8, 4, 1],
+  "default_prompt": "the cat kneads, body still, eyes open",
+  "steps": {
+    "1-4": {"prompt": "the cat shifts on the spot from sitting facing the viewer to sitting turned three-quarters to its left side, keeping its face toward the viewer, eyes open",
+            "seconds": 1.0, "gen_seconds": 2.0},
+    "4-1": {"seconds": 1.0},
+    "4-8": {"prompt": "the cat's nearest front paw rises just slightly off the ground and its toes curl, the paw stays low and close to where it was, a small gentle movement, the other paws stay planted, body and head still, eyes open"}
+  }
+}

@@ -1,0 +1,222 @@
+{
+ "units": "V2 outline units",
+ "bib/fluff": "matrix(sx 0 0 sy tx ty) applied to the body's bib/fluff",
+ "head": "x' = head_scale * x + head_t, from the align file's first placement",
+ "poses": {
+  "1": {
+   "source": "head left1.svg:Head_1, bib and fluff left1.svg",
+   "derived": false,
+   "head_scale": 0.9468,
+   "head_t": [
+    4.4744,
+    -2.2623
+   ],
+   "bib": [
+    0.8446,
+    1.0,
+    14.5837,
+    -4.78
+   ],
+   "fluff": [
+    0.8997,
+    0.8997,
+    9.6914,
+    13.6975
+   ],
+   "eyes": [
+    {
+     "centre": [
+      22.27,
+      77.19
+     ],
+     "w": 11.64,
+     "h": 19.4
+    },
+    {
+     "centre": [
+      59.65,
+      79.13
+     ],
+     "w": 22.77,
+     "h": 20.7
+    }
+   ],
+   "nose": [
+    28.19,
+    97.37
+   ]
+  },
+  "2": {
+   "source": "between poses 1 and 3",
+   "derived": true,
+   "head_scale": 0.953,
+   "head_t": [
+    8.4771,
+    -0.5407
+   ],
+   "bib": [
+    0.8446,
+    1.0,
+    18.1787,
+    -4.68
+   ],
+   "fluff": [
+    0.8997,
+    0.8997,
+    13.4246,
+    12.8625
+   ],
+   "eyes": [
+    {
+     "centre": [
+      26.52,
+      79.7
+     ],
+     "w": 14.58,
+     "h": 20.05
+    },
+    {
+     "centre": [
+      66.88,
+      81.26
+     ],
+     "w": 22.92,
+     "h": 21.09
+    }
+   ],
+   "nose": [
+    36.05,
+    99.88
+   ]
+  },
+  "3": {
+   "source": "head attached_align.svg:Head_3, bib and fluff fwd1.svg",
+   "derived": false,
+   "head_scale": 0.9592,
+   "head_t": [
+    12.4798,
+    1.1809
+   ],
+   "bib": [
+    0.8446,
+    1.0,
+    21.7737,
+    -4.58
+   ],
+   "fluff": [
+    0.8998,
+    0.8997,
+    17.1578,
+    12.0275
+   ],
+   "eyes": [
+    {
+     "centre": [
+      48.07,
+      80.76
+     ],
+     "w": 21.76,
+     "h": 21.49
+    },
+    {
+     "centre": [
+      93.15,
+      81.02
+     ],
+     "w": 21.23,
+     "h": 21.49
+    }
+   ],
+   "nose": [
+    70.61,
+    99.9
+   ]
+  },
+  "4": {
+   "source": "head folder_align.svg:Head_41, bib and fluff folder_align.svg",
+   "derived": false,
+   "head_scale": 0.9255,
+   "head_t": [
+    28.0819,
+    3.1
+   ],
+   "bib": [
+    0.8435,
+    1.0,
+    36.336,
+    -4.7
+   ],
+   "fluff": [
+    0.9003,
+    0.8989,
+    32.4958,
+    18.3386
+   ],
+   "eyes": [
+    {
+     "centre": [
+      83.41,
+      82.42
+     ],
+     "w": 22.51,
+     "h": 20.23
+    },
+    {
+     "centre": [
+      122.74,
+      80.9
+     ],
+     "w": 14.16,
+     "h": 19.73
+    }
+   ],
+   "nose": [
+    113.38,
+    100.42
+   ]
+  },
+  "5": {
+   "source": "same as pose 4",
+   "derived": true,
+   "head_scale": 0.9255,
+   "head_t": [
+    28.0819,
+    3.1
+   ],
+   "bib": [
+    0.8435,
+    1.0,
+    36.336,
+    -4.7
+   ],
+   "fluff": [
+    0.9003,
+    0.8989,
+    32.4958,
+    18.3386
+   ],
+   "eyes": [
+    {
+     "centre": [
+      86.07,
+      82.67
+     ],
+     "w": 22.26,
+     "h": 20.23
+    },
+    {
+     "centre": [
+      122.36,
+      80.77
+     ],
+     "w": 11.38,
+     "h": 18.97
+    }
+   ],
+   "nose": [
+    116.9,
+    100.52
+   ]
+  }
+ }
+}

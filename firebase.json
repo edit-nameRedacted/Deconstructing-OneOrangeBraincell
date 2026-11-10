@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "site",
+    "redirects": [
+      { "source": "/", "destination": "/viz_d3/", "type": 301 }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ]
+  }
+}

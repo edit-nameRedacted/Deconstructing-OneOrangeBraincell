@@ -1,0 +1,25 @@
+{
+  "name": "grooming_wan",
+  "keys": "out/grooming_keys",
+  "fps": 12,
+  "seconds": 0.5,
+  "gen_seconds": 1.0,
+  "seed": 42,
+  "loop": false,
+  "front": 1,
+  "order": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "default_prompt": "the cat moves smoothly from the first pose to the second",
+  "steps": {
+    "1-2": {"prompt": "the cat tilts its head to its left and looks down, its right paw lifts slightly"},
+    "2-3": {"prompt": "the cat raises its right paw out to the side, elbow bent, and keeps looking down at it"},
+    "3-4": {"prompt": "the cat brings its raised paw in to its mouth and starts licking it"},
+    "4-5": {"prompt": "the cat tilts its head to its left while licking its paw, the paw stays at its mouth"},
+    "5-6": {"prompt": "the cat licks its paw, head tilted further, paw held at its mouth"},
+    "6-7": {"prompt": "the cat licks its paw, head turning slightly and looking down"},
+    "7-8": {"prompt": "the cat closes its eyes and presses its paw against its cheek while its head tilts back"},
+    "8-9": {"prompt": "the cat keeps its eyes closed and sweeps its paw up over its ear and forehead, head tilting upright"},
+    "9-10": {"prompt": "the cat lowers its paw, opens its eyes wide, and turns its head to face forward"},
+    "10-11": {"prompt": "the cat lowers its paw to rest beside its body and looks straight ahead"},
+    "11-12": {"prompt": "the cat turns its head slightly to its left and looks off to the side"}
+  }
+}
