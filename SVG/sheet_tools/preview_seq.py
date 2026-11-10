@@ -9,6 +9,38 @@ import argparse, io, json, os
 from PIL import Image, ImageDraw, ImageFont
 from playwright.sync_api import sync_playwright
 
+# Draws the lids the viz will draw for a frame's data-lid (blink.js closeEyes): same geometry as blink.js lidsFor and
+# setLid, with config.js BLINK's pad/curve/shut/line. Keep in step with those if they change.
+LIDS_JS = """() => {
+  const g = document.querySelector('#eyes[data-lid]'); if (!g) return;
+  const amount = +g.dataset.lid, NS = 'http://www.w3.org/2000/svg', B = {pad: .18, curve: .28, shut: .25, line: .13, lineMin: 1.2};
+  const coat = document.querySelector('.r-coat path');
+  const fur = coat ? getComputedStyle(coat).fill : '#D78E34';
+  const mk = (n, at, par) => { const e = document.createElementNS(NS, n); for (const k in at) e.setAttribute(k, at[k]); par.append(e); return e; };
+  const inv = g.getCTM().inverse(); let n = 0;
+  for (const eye of g.querySelectorAll('.kit-eye')) {
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    for (const el of eye.querySelectorAll('.k-eye-white')) {
+      const b = el.getBBox(), m = inv.multiply(el.getCTM());
+      for (const [x, y] of [[b.x, b.y], [b.x + b.width, b.y], [b.x, b.y + b.height], [b.x + b.width, b.y + b.height]]) {
+        const p = new DOMPoint(x, y).matrixTransform(m);
+        x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); y0 = Math.min(y0, p.y); y1 = Math.max(y1, p.y); } }
+    if (x1 < x0) continue;
+    const w = x1 - x0, h = y1 - y0, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, pad = B.pad * h;
+    const rx = w / 2 + pad, ry = h / 2 + pad, sag = B.curve * h, lw = Math.max(B.lineMin, B.line * h);
+    const L = cx - rx - lw, R = cx + rx + lw, id = 'lidclip' + (++n);
+    mk('ellipse', {cx, cy, rx, ry}, mk('clipPath', {id}, mk('defs', {}, g)));
+    const clip = mk('g', {'clip-path': `url(#${id})`}, g);
+    const edge = `M${L},0 Q${cx},${2 * sag} ${R},0`, shutAt = cy + B.shut * ry - sag;
+    const upOpen = cy - ry - sag - lw, lowOpen = cy + ry + lw;
+    mk('path', {d: `${edge} L${R},${3 * h} L${L},${3 * h} Z`, fill: fur,
+                transform: `translate(0 ${lowOpen + amount * (shutAt - lowOpen)})`}, clip);
+    const up = mk('g', {transform: `translate(0 ${upOpen + amount * (shutAt - upOpen)})`}, clip);
+    mk('path', {d: `M${L},${-3 * h} L${R},${-3 * h} L${R},0 Q${cx},${2 * sag} ${L},0 Z`, fill: fur}, up);
+    mk('path', {d: edge, fill: 'none', stroke: 'var(--cat-outline, #462E29)', 'stroke-width': lw, 'stroke-linecap': 'round'}, up);
+  }
+}"""
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -37,6 +69,7 @@ def main():
             pg.evaluate(f"""() => {{ const s = document.querySelector('svg');
                 if (!s.getAttribute('viewBox')) s.setAttribute('viewBox', '0 0 {cw} {ch}');
                 s.setAttribute('width', {W}); s.setAttribute('height', {H}); }}""")
+            pg.evaluate(LIDS_JS)
             frames.append((f["frame"], Image.open(io.BytesIO(pg.locator("svg").screenshot())).convert("RGB")))
         b.close()
     gif = [im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE) for _, im in frames]

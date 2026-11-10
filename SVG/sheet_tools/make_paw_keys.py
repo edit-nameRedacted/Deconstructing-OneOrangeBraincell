@@ -2,10 +2,12 @@
 
 The sheet only presses the cat's right paw (viewer-left). The other side is made by copying that arm
 across without flipping (cats show no thumb, so a copied paw reads as the other paw):
-  1 both paws down  = sheet frame 7 with its tucked paw painted out
+  1 both paws down  = sheet frame 7 with its tucked paw painted out and its resting foreleg copied +FORE_DX
   2 left tuck       = sheet frame 4      3 left press = sheet frame 5
   4 right tuck      = sheet frame 7      5 right press = frame 1 + sheet frame 5's arm moved +DX
 Polygons are hand-placed in canvas px for this sheet (259x401 canvas).
+Cleaned-up versions (e.g. a Gemini pass over a copied limb) go in CLEANUP_DIR as frame_NN.png/.jpg at any
+scale of the canvas; only CLEANUP_BOX is taken from them, so the rest stays AC's drawing.
 usage: make_paw_keys.py [SRC=out/paw_sheet_keys] [OUT=out/paw_keys]
 """
 import json, os, sys
@@ -15,6 +17,10 @@ from PIL import Image, ImageDraw, ImageFilter
 TUCK = [(112, 256), (153, 256), (151, 280), (147, 300), (149, 330), (143, 348), (112, 348), (103, 330), (103, 300), (108, 275)]
 ARM = [(80, 270), (117, 270), (111, 290), (104, 304), (118, 316), (127, 328), (130, 345), (126, 357), (100, 359), (82, 357), (76, 345), (78, 325), (80, 300)]
 DX = 30           # left arm -> right arm (mirror of the arm about the body centre lands here too)
+FORELEG = [(73, 282), (99, 282), (99, 345), (95, 352), (95, 376), (52, 376), (52, 352), (70, 345)]
+FORE_DX = 36      # lands the resting foot between the left front foot and the hind foot
+CLEANUP_DIR = "sheets/paw_cleanup"
+CLEANUP_BOX = (95, 245, 180, 380)
 STRIPES_FROM = 127  # right of this x, the painted patch takes sheet frame 5's pixels (its right side is planted)
 
 
@@ -45,6 +51,20 @@ def copy_arm(src, base, poly, dx):
     return out
 
 
+def apply_cleanup(k, img):
+    for ext in ("png", "jpg", "webp"):
+        path = os.path.join(CLEANUP_DIR, f"frame_{k:02d}.{ext}")
+        if os.path.exists(path):
+            clean = Image.open(path).convert("RGBA").resize(img.size, Image.LANCZOS)
+            m = Image.new("L", img.size, 0)
+            ImageDraw.Draw(m).rectangle(CLEANUP_BOX, fill=255)
+            out = img.copy()
+            out.paste(clean, (0, 0), m.filter(ImageFilter.GaussianBlur(4)))
+            print(f"frame {k}: cleanup from {path}")
+            return out
+    return img
+
+
 def main():
     src = sys.argv[1] if len(sys.argv) > 1 else "out/paw_sheet_keys"
     out_dir = sys.argv[2] if len(sys.argv) > 2 else "out/paw_keys"
@@ -53,12 +73,13 @@ def main():
         cues = json.load(f)
     by = {e["frame"]: e for e in cues["frames"]}
     im = {k: Image.open(os.path.join(src, f"frame_{k:02d}.png")).convert("RGBA") for k in (1, 2, 4)}
-    down = paint_out_tuck(im[4], im[2])
-    made = {1: (down, 4), 2: (im[1], 1), 3: (im[2], 2), 4: (im[4], 4), 5: (copy_arm(im[2], down, ARM, DX), 4)}
+    bare = paint_out_tuck(im[4], im[2])
+    down = copy_arm(bare, bare, FORELEG, FORE_DX)
+    made = {1: (down, 4), 2: (im[1], 1), 3: (im[2], 2), 4: (im[4], 4), 5: (copy_arm(im[2], bare, ARM, DX), 4)}
     frames = []
     for k, (img, eyes_from) in made.items():
         name = f"frame_{k:02d}"
-        img.save(os.path.join(out_dir, name + ".png"))
+        apply_cleanup(k, img).save(os.path.join(out_dir, name + ".png"))
         e = dict(by[eyes_from], frame=k, file=name + ".svg")   # face untouched -> eyes of the frame it was built on
         frames.append(e)
     with open(os.path.join(out_dir, "cues.json"), "w", encoding="utf-8") as f:

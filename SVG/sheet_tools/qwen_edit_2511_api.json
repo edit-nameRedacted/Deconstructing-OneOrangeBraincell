@@ -1,0 +1,17 @@
+{
+  "1": {"class_type": "UnetLoaderGGUF", "_meta": {"title": "unet"}, "inputs": {"unet_name": "qwen-image-edit-2511-Q4_K_M.gguf"}},
+  "2": {"class_type": "LoraLoaderModelOnly", "_meta": {"title": "lora"}, "inputs": {"model": ["1", 0], "lora_name": "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors", "strength_model": 1.0}},
+  "3": {"class_type": "ModelSamplingAuraFlow", "_meta": {"title": "shift"}, "inputs": {"model": ["2", 0], "shift": 3.1}},
+  "4": {"class_type": "CLIPLoader", "_meta": {"title": "clip"}, "inputs": {"clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors", "type": "qwen_image"}},
+  "5": {"class_type": "VAELoader", "_meta": {"title": "vae"}, "inputs": {"vae_name": "qwen_image_vae.safetensors"}},
+  "6": {"class_type": "LoadImage", "_meta": {"title": "image"}, "inputs": {"image": "input.png"}},
+  "7": {"class_type": "ImageScaleToTotalPixels", "_meta": {"title": "scale"}, "inputs": {"image": ["6", 0], "upscale_method": "lanczos", "megapixels": 1.0, "resolution_steps": 16}},
+  "8": {"class_type": "TextEncodeQwenImageEditPlus", "_meta": {"title": "positive"}, "inputs": {"clip": ["4", 0], "prompt": "", "vae": ["5", 0], "image1": ["7", 0]}},
+  "9": {"class_type": "TextEncodeQwenImageEditPlus", "_meta": {"title": "negative"}, "inputs": {"clip": ["4", 0], "prompt": "", "vae": ["5", 0], "image1": ["7", 0]}},
+  "10": {"class_type": "FluxKontextMultiReferenceLatentMethod", "_meta": {"title": "ref_pos"}, "inputs": {"conditioning": ["8", 0], "reference_latents_method": "index_timestep_zero"}},
+  "11": {"class_type": "FluxKontextMultiReferenceLatentMethod", "_meta": {"title": "ref_neg"}, "inputs": {"conditioning": ["9", 0], "reference_latents_method": "index_timestep_zero"}},
+  "12": {"class_type": "VAEEncode", "_meta": {"title": "encode"}, "inputs": {"pixels": ["7", 0], "vae": ["5", 0]}},
+  "13": {"class_type": "KSampler", "_meta": {"title": "sampler"}, "inputs": {"model": ["3", 0], "positive": ["10", 0], "negative": ["11", 0], "latent_image": ["12", 0], "seed": 42, "steps": 4, "cfg": 1.0, "sampler_name": "euler", "scheduler": "simple", "denoise": 1.0}},
+  "14": {"class_type": "VAEDecode", "_meta": {"title": "decode"}, "inputs": {"samples": ["13", 0], "vae": ["5", 0]}},
+  "15": {"class_type": "SaveImage", "_meta": {"title": "save"}, "inputs": {"images": ["14", 0], "filename_prefix": "qwen_edit"}}
+}

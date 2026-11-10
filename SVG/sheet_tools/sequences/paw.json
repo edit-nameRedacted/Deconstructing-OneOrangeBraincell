@@ -7,6 +7,25 @@
   "seed": 42,
   "loop": true,
   "front": 1,
-  "order": [1, 2, 3, 1, 4, 5, 1],
-  "default_prompt": "the cat sits facing the viewer and kneads the ground with one front paw, body and head still, eyes open"
+  "order": [
+    1,
+    2,
+    3,
+    1,
+    4,
+    5,
+    1
+  ],
+  "default_prompt": "the cat sits facing the viewer and kneads the ground with one front paw, body and head still, eyes open",
+  "steps": {
+    "1-4": {
+      "seed": 2024
+    },
+    "5-1": {
+      "seed": 2024
+    },
+    "3-1": {
+      "seed": 2024
+    }
+  }
 }

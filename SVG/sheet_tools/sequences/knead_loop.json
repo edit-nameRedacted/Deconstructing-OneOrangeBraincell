@@ -1,0 +1,4 @@
+{"name": "knead_loop_wan", "keys": "out/knead_loop_keys", "fps": 12, "seconds": 0.33, "gen_seconds": 1.0, "seed": 42, "loop": true, "front": 2,
+ "order": [2, 3, 1, 4, 5, 1, 2],
+ "default_prompt": "the cat sits facing the viewer and gently kneads the ground, pressing its front paws down one after the other, each paw lifts only a little and stays low, body and head still, eyes open",
+ "steps": {"3-1": {"seed": 7}, "5-1": {"seed": 101}, "4-5": {"seed": 2024}}}

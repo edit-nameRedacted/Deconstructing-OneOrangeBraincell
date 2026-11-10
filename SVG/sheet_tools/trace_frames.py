@@ -119,6 +119,9 @@ def main():
                     help="also write frame_NNNNN_drawnshut.svg (eyes drawn shut kept) for frames with eyes shut")
     ap.add_argument("--blink-ramp", type=int, default=2,
                     help="frames over which the kit eyes' lids close before (and open after) eyes drawn shut")
+    ap.add_argument("--rest-lid", type=float, default=0,
+                    help="lids rest this far closed on every frame (0 open .. 1 shut), e.g. 0.45 for a content, sleepy "
+                         "cat (kneading); blinks still close fully")
     ap.add_argument("--line-min", type=float, default=0)
     ap.add_argument("--line-max", type=float, default=0)
     ap.add_argument("--speck", type=int, default=40)
@@ -186,7 +189,7 @@ def main():
         print(f"{name}: {state}, eyes {len(eyes)}, nose {'yes' if r['nose'] else 'no'}", file=sys.stderr)
     json.dump({"canvas": cues["canvas"], "frames": px}, open(os.path.join(a.out, "eyes_px.json"), "w"), indent=1)
     for f, lid in zip(cues["frames"], lid_ramp(states, a.blink_ramp)):
-        f["lid"] = lid
+        f["lid"] = max(lid, a.rest_lid)
     json.dump(cues, open(os.path.join(a.out, "cues.json"), "w"), indent=1)
     flips = isolated_flips(["open" if s == "filled" else s for s in states])
     print(f"{len(files)} frames; eye states " + ", ".join(f"{s} {states.count(s)}" for s in ("open", "filled", "partial", "closed"))
